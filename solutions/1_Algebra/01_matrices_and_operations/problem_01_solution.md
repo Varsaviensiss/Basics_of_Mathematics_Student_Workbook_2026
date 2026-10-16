@@ -1,12 +1,10 @@
-# Exercise 1: Matrix Size and Entries
-
-Given
+## Given Matrices
 
 \[
 A=\begin{pmatrix}
 2&-1&3\\
 0&4&5
-\end{pmatrix},
+\end{pmatrix}
 \qquad
 B=\begin{pmatrix}
 1&0\\
@@ -17,10 +15,21 @@ B=\begin{pmatrix}
 
 ## 1. Matrix Sizes
 
-- Matrix A has 2 rows and 3 columns. Its size is \(2\times3\).
-- Matrix B has 3 rows and 2 columns. Its size is \(3\times2\).
+Matrix A has 2 rows and 3 columns. Therefore, its size is:
+
+\[
+\boxed{A: 2\times3}
+\]
+
+Matrix B has 3 rows and 2 columns. Therefore, its size is:
+
+\[
+\boxed{B: 3\times2}
+\]
 
 ## 2. Matrix Entries
+
+The first index indicates the row, and the second index indicates the column.
 
 - \(a_{12}=-1\)
 - \(a_{23}=5\)
@@ -29,18 +38,18 @@ B=\begin{pmatrix}
 
 ## 3. Rows and Columns as Vectors
 
-Second row of A:
+The second row of matrix A is:
 
 \[
-\begin{pmatrix}0&4&5\end{pmatrix}
+\boxed{\begin{pmatrix}0&4&5\end{pmatrix}}
 \]
 
-First column of B:
+The first column of matrix B is:
 
 \[
-\begin{pmatrix}
-1\\
--2\\
-4
-\end{pmatrix}
+\boxed{\begin{pmatrix}1\\-2\\4\end{pmatrix}}
 \]
+
+## Conclusion
+
+Matrix A has size \(2\times3\), and matrix B has size \(3\times2\). The required matrix entries, row vector, and column vector have been identified correctly.
