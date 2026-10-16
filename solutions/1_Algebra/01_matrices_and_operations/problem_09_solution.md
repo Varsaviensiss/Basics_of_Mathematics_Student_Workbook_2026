@@ -21,13 +21,16 @@ Sx=
 =\begin{pmatrix}2\\2\end{pmatrix}
 $$
 
-Next, apply the rotation matrix \(R\):
+Next, multiply by \(R\):
 
 $$
 RSx=
 \begin{pmatrix}0&-1\\1&0\end{pmatrix}
 \begin{pmatrix}2\\2\end{pmatrix}
+=\begin{pmatrix}-2\\2\end{pmatrix}
 $$
+
+Therefore,
 
 $$
 \boxed{RSx=\begin{pmatrix}-2\\2\end{pmatrix}}
@@ -44,19 +47,22 @@ Rx=
 =\begin{pmatrix}-2\\1\end{pmatrix}
 $$
 
-Next, apply the scaling matrix \(S\):
+Next, multiply by \(S\):
 
 $$
 SRx=
 \begin{pmatrix}2&0\\0&1\end{pmatrix}
 \begin{pmatrix}-2\\1\end{pmatrix}
+=\begin{pmatrix}-4\\1\end{pmatrix}
 $$
+
+Therefore,
 
 $$
 \boxed{SRx=\begin{pmatrix}-4\\1\end{pmatrix}}
 $$
 
-## 3. Geometric Explanation
+## 3. Compare the Results
 
 The results are different:
 
@@ -66,12 +72,16 @@ RSx=\begin{pmatrix}-2\\2\end{pmatrix},
 SRx=\begin{pmatrix}-4\\1\end{pmatrix}
 $$
 
-When we apply scaling first and then rotation, the vector becomes \((-2,2)\). When we rotate first and then apply scaling, the vector becomes \((-4,1)\).
+Thus, \(RSx\ne SRx\).
 
-The order matters because the scaling is nonuniform: the horizontal coordinate is doubled, while the vertical coordinate remains unchanged. Rotating before scaling changes which coordinates are affected by the scaling.
+## 4. Geometric Explanation
 
-Therefore, \(RSx\ne SRx\), showing that the order of transformations matters.
+The matrix \(S\) doubles the horizontal coordinate and leaves the vertical coordinate unchanged. The matrix \(R\) rotates a vector by \(90^\circ\) counterclockwise.
+
+When we scale first and then rotate, we obtain \((-2,2)\). When we rotate first and then scale, we obtain \((-4,1)\).
+
+The order matters because the scaling is nonuniform. Rotating the vector first changes its coordinates before the scaling is applied, producing a different final result.
 
 ## Conclusion
 
-Matrix multiplication represents composition of transformations. In general, changing the order of two transformations changes the final result.
+This example shows that matrix multiplication represents the composition of transformations. Changing the order of transformations can change the final result.
