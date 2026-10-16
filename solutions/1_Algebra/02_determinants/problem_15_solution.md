@@ -1,69 +1,74 @@
-# Exercise 15: Combining Determinant Properties
+# Exercise 15 — Combining Determinant Properties
 
-## Given
+## Problem
 
-Let \(A\) and \(B\) be invertible \(2\times2\) matrices such that
+Let \(A\) and \(B\) be invertible \(2\times2\) matrices satisfying
 
 \[
 \det(A)=-2,\qquad \det(B)=3.
 \]
 
-We need to calculate
+Without calculating the entries of the matrices, determine
 
 \[
-\det(B^{-1}A^TB)
+\boxed{\det(B^{-1}A^TB)}
 \]
 
-without finding the entries of the matrices.
+using determinant properties. Explain why the factors involving \(B\) cancel.
 
-## Solution
+---
 
-**Step 1: Apply the product property.**
+## Step 1 — Apply the Product Property
 
-For square matrices of the same size,
+For square matrices of the same size, the determinant of a product equals the product of their determinants:
 
 \[
-\det(XYZ)=\det(X)\det(Y)\det(Z).
+\det(XY)=\det(X)\det(Y).
 \]
 
-Therefore,
+Applying this property to the given expression, we obtain
 
 \[
 \det(B^{-1}A^TB)
 =\det(B^{-1})\det(A^T)\det(B).
 \]
 
-**Step 2: Apply the inverse and transpose properties.**
+## Step 2 — Use the Inverse and Transpose Properties
 
-The determinant of an inverse matrix is the reciprocal of the original determinant:
+Two important determinant properties are:
+
+**Inverse property**
 
 \[
-\det(B^{-1})=\frac{1}{\det(B)}=\frac13.
+\det(B^{-1})=\frac{1}{\det(B)}
 \]
 
-The determinant of a transpose equals the determinant of the original matrix:
+Since \(\det(B)=3\),
 
 \[
-\det(A^T)=\det(A)=-2.
+\det(B^{-1})=\frac13.
 \]
 
-Also,
+**Transpose property**
 
 \[
-\det(B)=3.
+\det(A^T)=\det(A)
 \]
 
-**Step 3: Substitute and simplify.**
-
-Combining these results gives
+Since \(\det(A)=-2\),
 
 \[
-\begin{aligned}
+\det(A^T)=-2.
+\]
+
+Substituting these values gives
+
+\[
 \det(B^{-1}A^TB)
-&=\frac13\cdot(-2)\cdot3\\
-&=-2.
-\end{aligned}
+=\frac13\cdot(-2)\cdot3.
 \]
+
+## Step 3 — Simplify and Explain the Cancellation
 
 The factors involving \(B\) cancel because
 
@@ -72,7 +77,20 @@ The factors involving \(B\) cancel because
 =\frac{1}{\det(B)}\det(B)=1.
 \]
 
-This cancellation is valid because \(B\) is invertible, so \(\det(B)\neq0\).
+This is valid because \(B\) is invertible, so its determinant is nonzero.
+
+Therefore, the expression simplifies to
+
+\[
+\begin{aligned}
+\det(B^{-1}A^TB)
+&=\frac13\cdot(-2)\cdot3\\[6pt]
+&=\frac{3}{3}\cdot(-2)\\[6pt]
+&=-2.
+\end{aligned}
+\]
+
+---
 
 ## Final Answer
 
@@ -80,10 +98,10 @@ This cancellation is valid because \(B\) is invertible, so \(\det(B)\neq0\).
 \boxed{\det(B^{-1}A^TB)=-2}
 \]
 
-**Properties used, in order:**
+### Properties Used
 
-1. Multiplicativity: \(\det(XY)=\det(X)\det(Y)\).
-2. Inverse property: \(\det(B^{-1})=1/\det(B)\).
-3. Transpose property: \(\det(A^T)=\det(A)\).
+1. **Product property:** \(\det(XY)=\det(X)\det(Y)\).
+2. **Inverse property:** \(\det(B^{-1})=1/\det(B)\).
+3. **Transpose property:** \(\det(A^T)=\det(A)\).
 
-Thus, the determinant depends only on \(\det(A)\), while the determinant factors involving \(B\) cancel each other.
+**Conclusion:** The determinant factors involving \(B\) multiply to \(1\), leaving only \(\det(A^T)=\det(A)=-2\). Thus, the result is independent of the particular entries of \(B\), provided that \(B\) is invertible.
