@@ -1,261 +1,62 @@
 Problem 1: Matrix Size and Entries
 1. Problem Statement
 
-Given the matrices
+Given the matrices:
 
-𝐴
-=
-(
-2
-	
-−
-1
-	
-3
+A = [[2, -1, 3], [0, 4, 5]]
 
+B = [[1, 0], [-2, 3], [4, 1]]
 
-0
-	
-4
-	
-5
-)
-,
-𝐵
-=
-(
-1
-	
-0
-
-
-−
-2
-	
-3
-
-
-4
-	
-1
-)
-.
-
-We need to determine their sizes, identify specific entries, and write a row and a column as vectors.
+We need to determine their sizes, find specific entries, and write one row and one column as vectors.
 
 2. Theoretical Background and Concepts
 
-The size of a matrix is written as 
-𝑚
-×
-𝑛
-, where 
-𝑚
- is the number of rows and 
-𝑛
- is the number of columns.
-
-The entry 
-𝑎
-𝑖
-𝑗
- denotes the element in row 
-𝑖
- and column 
-𝑗
-.
-
-A row vector contains the entries of a single row, while a column vector contains the entries of a single column.
+The size of a matrix is written as rows × columns. The entry a_ij represents the element in row i and column j.
 
 3. Detailed Step-by-Step Solution
 
-Step 1: Determine the matrix sizes.
+Step 1: Matrix sizes
 
-Matrix 
-𝐴
- has 2 rows and 3 columns. Therefore,
+Matrix A has 2 rows and 3 columns.
 
-𝐴
- is 
-2
-×
-3.
+Therefore, A is 2 × 3.
 
-Matrix 
-𝐵
- has 3 rows and 2 columns. Therefore,
+Matrix B has 3 rows and 2 columns.
 
-𝐵
- is 
-3
-×
-2.
+Therefore, B is 3 × 2.
 
-Step 2: Identify the required entries.
+Step 2: Required entries
 
-From matrix 
-𝐴
-,
+From matrix A:
 
-𝑎
-12
-=
-−
-1
-,
-𝑎
-23
-=
-5.
+a_12 = -1
 
-From matrix 
-𝐵
-,
+a_23 = 5
 
-𝑏
-21
-=
-−
-2
-,
-𝑏
-32
-=
-1.
+From matrix B:
 
-Step 3: Write the second row of 
-𝐴
-.
+b_21 = -2
 
-The second row contains the entries 
-0
-,
-4
-,
-5
-. Thus,
+b_32 = 1
 
-(
-0
-	
-4
-	
-5
-)
-.
+Step 3: Second row of A
 
-Step 4: Write the first column of 
-𝐵
-.
+The second row of A is (0, 4, 5).
 
-The first column contains the entries 
-1
-,
-−
-2
-,
-4
-. Thus,
+Step 4: First column of B
 
-(
-1
+The first column of B is (1, -2, 4).
 
-
-−
-2
-
-
-4
-)
-.
 4. Verification and Consistency Checks
-Matrix 
-𝐴
- has 2 rows and 3 columns, confirming its size 
-2
-×
-3
-.
-Matrix 
-𝐵
- has 3 rows and 2 columns, confirming its size 
-3
-×
-2
-.
-Each indexed entry matches its row and column position in the original matrices.
-The second row of 
-𝐴
- contains exactly three entries, and the first column of 
-𝐵
- contains exactly three entries.
 
-Therefore, all results are consistent with the given matrices.
+The dimensions match the number of rows and columns in each matrix. All four requested entries match their correct positions. The second row of A and the first column of B each contain three elements.
 
-Final Answers
-size
-⁡
-(
-𝐴
-)
-=
-2
-×
-3
-size
-⁡
-(
-𝐵
-)
-=
-3
-×
-2
-𝑎
-12
-=
-−
-1
-,
-𝑎
-23
-=
-5
-,
-𝑏
-21
-=
-−
-2
-,
-𝑏
-32
-=
-1
-
-Second row of 
-𝐴
-:
-
-(
-0
-,
-4
-,
-5
-)
-
-First column of 
-𝐵
-:
-
-(
-1
-
-
-−
-2
-
-
-4
-)
+Final Answer
+Size of A: 2 × 3
+Size of B: 3 × 2
+a_12 = -1
+a_23 = 5
+b_21 = -2
+b_32 = 1
+Second row of A: (0, 4, 5)
+First column of B: (1, -2, 4)
