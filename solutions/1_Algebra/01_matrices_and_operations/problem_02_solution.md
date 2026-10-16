@@ -62,4 +62,31 @@ First, calculate \(3A\):
 Next, calculate \(2B\):
 
 \[
-2B=\begin{pm
+2B=\begin{pmatrix}
+8&-4\\
+0&10
+\end{pmatrix}
+\]
+
+Therefore,
+
+\[
+3A-2B=
+\begin{pmatrix}
+3-8&6-(-4)\\
+-3-0&9-10
+\end{pmatrix}
+\]
+
+\[
+\boxed{3A-2B=\begin{pmatrix}
+-5&10\\
+-3&-1
+\end{pmatrix}}
+\]
+
+## 4. Why must matrices have the same size for addition?
+
+Matrix addition is possible only when both matrices have the same number of rows and columns. This is because each entry of one matrix must be added to the corresponding entry of the other matrix. If the matrices have different sizes, their entries cannot be matched correctly.
+
+
