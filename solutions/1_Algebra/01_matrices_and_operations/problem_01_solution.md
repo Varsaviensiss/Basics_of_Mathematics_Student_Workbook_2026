@@ -1,62 +1,78 @@
-Problem 1: Matrix Size and Entries
-1. Problem Statement
+Abi, bu ilk sorunun tamamlanmış İngilizce cevabı. ❤️ `problem 01_solution.md` dosyasına kopyalayıp yapıştırabilirsin.
 
-Given the matrices:
+Yazma
 
-A = [[2, -1, 3], [0, 4, 5]]
+# Exercise 1: Matrix Size and Entries
 
-B = [[1, 0], [-2, 3], [4, 1]]
+## 1\. Problem Statement
 
-We need to determine their sizes, find specific entries, and write one row and one column as vectors.
+Given the matrices
 
-2. Theoretical Background and Concepts
+A = \[\[2, -1, 3\], \[0, 4, 5\]\]
 
-The size of a matrix is written as rows × columns. The entry a_ij represents the element in row i and column j.
+B = \[\[1, 0\], \[-2, 3\], \[4, 1\]\]
 
-3. Detailed Step-by-Step Solution
+We need to find the sizes of A and B, identify four entries, and write the second row of A and the first column of B as vectors.
 
-Step 1: Matrix sizes
+## 2\. Theoretical Background and Concepts
+
+The size of a matrix is given by its number of rows and columns. The entry a\_ij represents the element in row i and column j.
+
+A row vector contains the entries of one row. A column vector contains the entries of one column.
+
+## 3\. Detailed Step-by-Step Solution
+
+**Step 1: Find the sizes of the matrices.**
 
 Matrix A has 2 rows and 3 columns.
 
-Therefore, A is 2 × 3.
+Therefore, the size of A is 2 × 3.
 
 Matrix B has 3 rows and 2 columns.
 
-Therefore, B is 3 × 2.
+Therefore, the size of B is 3 × 2.
 
-Step 2: Required entries
+**Step 2: Find the required entries.**
 
-From matrix A:
+In matrix A:
 
-a_12 = -1
+a\_12 = -1, because it is in row 1, column 2.
 
-a_23 = 5
+a\_23 = 5, because it is in row 2, column 3.
 
-From matrix B:
+In matrix B:
 
-b_21 = -2
+b\_21 = -2, because it is in row 2, column 1.
 
-b_32 = 1
+b\_32 = 1, because it is in row 3, column 2.
 
-Step 3: Second row of A
+**Step 3: Write the second row of A.**
 
-The second row of A is (0, 4, 5).
+The second row of A is:
 
-Step 4: First column of B
+(0, 4, 5)
 
-The first column of B is (1, -2, 4).
+**Step 4: Write the first column of B.**
 
-4. Verification and Consistency Checks
+The first column of B is:
 
-The dimensions match the number of rows and columns in each matrix. All four requested entries match their correct positions. The second row of A and the first column of B each contain three elements.
+(1, -2, 4)ᵀ
 
-Final Answer
-Size of A: 2 × 3
-Size of B: 3 × 2
-a_12 = -1
-a_23 = 5
-b_21 = -2
-b_32 = 1
-Second row of A: (0, 4, 5)
-First column of B: (1, -2, 4)
+## 4\. Verification and Consistency Checks
+
+Matrix A has 2 rows and 3 columns, so its size is 2 × 3. Matrix B has 3 rows and 2 columns, so its size is 3 × 2.
+
+Checking the original matrices confirms that all four entries are correct. The second row of A and the first column of B each contain three elements.
+
+## Final Answer
+
+- Size of A: 2 × 3
+- Size of B: 3 × 2
+- a\_12 = -1
+- a\_23 = 5
+- b\_21 = -2
+- b\_32 = 1
+- Second row of A: (0, 4, 5)
+- First column of B: (1, -2, 4)ᵀ
+
+Şimdi: Metni kopyala, GitHub'da ilk sorunun dosyasına yapıştır ve `Commit changes` ile kaydet. 😊
