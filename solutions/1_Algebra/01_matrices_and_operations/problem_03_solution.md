@@ -1,34 +1,105 @@
-Exercise 3: When Can Matrices Be Multiplied?
-1. Problem Statement
+# Exercise 3: When Can Matrices Be Multiplied?
 
-The matrix sizes are A (2 × 3), B (3 × 4), C (4 × 2), and D (2 × 2).
+Given matrix sizes:
 
-Determine whether the products AB, BA, BC, CB, AC, CA, AD, and DA are defined. If defined, state the size of each result.
+- \(A: 2\times3\)
+- \(B: 3\times4\)
+- \(C: 4\times2\)
+- \(D: 2\times2\)
 
-2. Theoretical Background and Concepts
+**Condition for matrix multiplication:**
 
-Matrix multiplication is possible when the number of columns in the first matrix equals the number of rows in the second matrix. If the sizes are m × n and n × p, the product has size m × p.
+The number of columns of the first matrix must equal the number of rows of the second matrix. The resulting matrix has the number of rows of the first matrix and the number of columns of the second matrix.
 
-3. Detailed Step-by-Step Solution
-AB: (2 × 3)(3 × 4). The inner dimensions match. Defined; result size: 2 × 4.
-BA: (3 × 4)(2 × 3). The inner dimensions 4 and 2 do not match. Not defined.
-BC: (3 × 4)(4 × 2). The inner dimensions match. Defined; result size: 3 × 2.
-CB: (4 × 2)(3 × 4). The inner dimensions 2 and 3 do not match. Not defined.
-AC: (2 × 3)(4 × 2). The inner dimensions 3 and 4 do not match. Not defined.
-CA: (4 × 2)(2 × 3). The inner dimensions match. Defined; result size: 4 × 3.
-AD: (2 × 3)(2 × 2). The inner dimensions 3 and 2 do not match. Not defined.
-DA: (2 × 2)(2 × 3). The inner dimensions match. Defined; result size: 2 × 3.
-4. Verification and Consistency Checks
+## 1. Product \(AB\)
 
-Every defined product has matching inner dimensions. Its result size is determined by the outer dimensions. All products with mismatched inner dimensions are correctly identified as undefined.
+\[
+(2\times3)(3\times4)
+\]
 
-Final Answer
+The inner dimensions are equal (3 = 3), so the product is defined.
 
-AB: 2 × 4
-BA: Not defined
-BC: 3 × 2
-CB: Not defined
-AC: Not defined
-CA: 4 × 3
-AD: Not defined
-DA: 2 × 3
+\[
+\boxed{AB: 2\times4}
+\]
+
+## 2. Product \(BA\)
+
+\[
+(3\times4)(2\times3)
+\]
+
+The inner dimensions are not equal (4 ≠ 2), so the product is not defined.
+
+## 3. Product \(BC\)
+
+\[
+(3\times4)(4\times2)
+\]
+
+The inner dimensions are equal (4 = 4), so the product is defined.
+
+\[
+\boxed{BC: 3\times2}
+\]
+
+## 4. Product \(CB\)
+
+\[
+(4\times2)(3\times4)
+\]
+
+The inner dimensions are not equal (2 ≠ 3), so the product is not defined.
+
+## 5. Product \(AC\)
+
+\[
+(2\times3)(4\times2)
+\]
+
+The inner dimensions are not equal (3 ≠ 4), so the product is not defined.
+
+## 6. Product \(CA\)
+
+\[
+(4\times2)(2\times3)
+\]
+
+The inner dimensions are equal (2 = 2), so the product is defined.
+
+\[
+\boxed{CA: 4\times3}
+\]
+
+## 7. Product \(AD\)
+
+\[
+(2\times3)(2\times2)
+\]
+
+The inner dimensions are not equal (3 ≠ 2), so the product is not defined.
+
+## 8. Product \(DA\)
+
+\[
+(2\times2)(2\times3)
+\]
+
+The inner dimensions are equal (2 = 2), so the product is defined.
+
+\[
+\boxed{DA: 2\times3}
+\]
+
+## Conclusion
+
+The defined products are \(AB\), \(BC\), \(CA\), and \(DA\).
+
+Their sizes are:
+
+- \(AB: 2\times4\)
+- \(BC: 3\times2\)
+- \(CA: 4\times3\)
+- \(DA: 2\times3\)
+
+The products \(BA\), \(CB\), \(AC\), and \(AD\) are not defined because their inner dimensions do not match.
