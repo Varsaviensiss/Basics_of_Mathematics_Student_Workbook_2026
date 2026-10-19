@@ -1,14 +1,19 @@
-# Exercise 2. Formula for a \(2\times2\) Matrix
+# Exercise 3. When Does the Inverse Not Exist?
 
 Given:
 
 $$
-A=\begin{pmatrix}3&2\\5&4\end{pmatrix}
+A=\begin{pmatrix}2&4\\1&2\end{pmatrix}
 $$
 
-We use the inverse formula for a \(2\times2\) matrix.
+We will show in two ways that \(A^{-1}\) does not exist:
 
-For a matrix
+1. Using the determinant.
+2. Using the dependence between the rows.
+
+## Step 1. Check the determinant
+
+For a \(2\times2\) matrix
 
 $$
 A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
@@ -20,104 +25,79 @@ $$
 \det(A)=ad-bc.
 $$
 
-If \(\det(A)\neq0\), then
-
-$$
-A^{-1}=\frac{1}{ad-bc}
-\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
-$$
-
-## Step 1. Calculate the determinant
-
 For the given matrix,
 
 $$
-a=3,\quad b=2,\quad c=5,\quad d=4.
+a=2,\quad b=4,\quad c=1,\quad d=2.
 $$
 
 Therefore,
 
 $$
-\det(A)=3\cdot4-2\cdot5
+\det(A)=2\cdot2-4\cdot1
 $$
 
 $$
-\det(A)=12-10
+\det(A)=4-4
 $$
 
 $$
-\boxed{\det(A)=2}
+\boxed{\det(A)=0}
 $$
 
-Since \(\det(A)\neq0\), the inverse exists.
+A square matrix is invertible if and only if its determinant is nonzero.
 
-## Step 2. Apply the inverse formula
-
-$$
-A^{-1}=\frac{1}{2}
-\begin{pmatrix}4&-2\\-5&3\end{pmatrix}
-$$
-
-Multiply every entry by \(\frac12\):
+Since
 
 $$
-\boxed{
-A^{-1}=
-\begin{pmatrix}
-2&-1\\
--\frac52&\frac32
-\end{pmatrix}
-}
+\det(A)=0,
 $$
 
-## Step 3. Verify by multiplication
-
-We check that \(AA^{-1}=I\).
+the inverse does not exist:
 
 $$
-AA^{-1}=
-\begin{pmatrix}3&2\\5&4\end{pmatrix}
-\begin{pmatrix}2&-1\\-\frac52&\frac32\end{pmatrix}
+\boxed{A^{-1}\text{ does not exist}}
 $$
 
-Multiply the rows of the first matrix by the columns of the second matrix:
+## Step 2. Check the dependence between the rows
+
+The rows of \(A\) are
 
 $$
-AA^{-1}=
-\begin{pmatrix}
-3(2)+2\left(-\frac52\right)&3(-1)+2\left(\frac32\right)\\
-5(2)+4\left(-\frac52\right)&5(-1)+4\left(\frac32\right)
-\end{pmatrix}
+R_1=(2,4),\qquad R_2=(1,2).
 $$
 
-Simplify each entry:
+Notice that
 
 $$
-AA^{-1}=
-\begin{pmatrix}
-6-5&-3+3\\
-10-10&-5+6
-\end{pmatrix}
+R_1=2R_2.
 $$
 
-Therefore,
+Indeed,
 
 $$
-AA^{-1}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I
+2(1,2)=(2,4).
+$$
+
+Therefore, the two rows are linearly dependent.
+
+A square matrix with linearly dependent rows is singular and cannot have an inverse.
+
+Hence,
+
+$$
+\boxed{A^{-1}\text{ does not exist}}
 $$
 
 ## Conclusion
 
-The determinant is nonzero, so the matrix is invertible. The inverse is
+Both methods give the same result:
+
+- The determinant is zero.
+- The rows are linearly dependent.
+
+Therefore, the matrix is singular and has no inverse.
 
 $$
-\boxed{
-A^{-1}=
-\begin{pmatrix}
-2&-1\\
--\frac52&\frac32
-\end{pmatrix}
-}
+\boxed{\det(A)=0\implies A^{-1}\text{ does not exist}}
 $$
-
-The verification \(AA^{-1}=I\) confirms that the result is correct.
