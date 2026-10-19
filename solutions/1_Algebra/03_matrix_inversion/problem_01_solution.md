@@ -123,8 +123,3 @@ Therefore, both conditions in the definition of the inverse are satisfied.
 \]
 
 **Conclusion:** Matrix \(B\) is the inverse of matrix \(A\). This is verified directly by matrix multiplication, without using any inverse formula or computational method.
-\[
-\boxed{B=A^{-1}}
-\]
-
-Therefore, \(B\) is the inverse of \(A\), verified directly through matrix multiplication without using an inverse formula.
