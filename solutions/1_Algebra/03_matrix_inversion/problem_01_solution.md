@@ -1,270 +1,123 @@
-Exercise 1. Definition of the Inverse
-For $$A=\begin{pmatrix}2&1\1&1\end{pmatrix},\qquad B=\begin{pmatrix}1&-1\-1&2\end{pmatrix}$$ check, without using a formula, whether 
-B
-=
-A
-−
-1
-. Compute 
-A
-B
- and 
-B
-A
- and relate the result to the definition of the inverse.
+# Exercise 2. Formula for a \(2\times2\) Matrix
 
-Why this exercise: starts from the definition of the inverse through multiplication before any formulas or computational methods are introduced.
+Given:
 
-Exercise 2. Formula for a 2×2 Matrix
-Find the inverse of $$A=\begin{pmatrix}3&2\5&4\end{pmatrix}$$ using the formula for a 
-2
-×
-2
- matrix. At the end, check the result by computing one product with 
-A
-.
+$$
+A=\begin{pmatrix}3&2\\5&4\end{pmatrix}
+$$
 
-Why this exercise: teaches the simplest explicit formula for an inverse and requires verification using the definition.
+We use the inverse formula for a \(2\times2\) matrix.
 
-Exercise 3. When Does the Inverse Not Exist?
-For $$A=\begin{pmatrix}2&4\1&2\end{pmatrix}$$ explain in two ways why 
-A
-−
-1
- does not exist: using the determinant and using dependence between the rows.
+For a matrix
 
-Why this exercise: connects two signs of noninvertibility instead of treating them as unrelated facts.
+$$
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+$$
 
-Exercise 4. Gauss–Jordan
-Find 
-A
-−
-1
- using the Gauss–Jordan method for $$A=\begin{pmatrix}1&2\3&5\end{pmatrix}.$$ Show the augmented matrix 
-[
-A
-∣
-I
-]
- after successive operations and explain why obtaining 
-I
- on the left gives the inverse on the right.
+the determinant is
 
-Why this exercise: introduces the Gauss–Jordan method together with its meaning, not merely as a sequence of operations.
+$$
+\det(A)=ad-bc.
+$$
 
-Exercise 5. A 3×3 Matrix
-Use Gauss–Jordan elimination to find the inverse of $$A=\begin{pmatrix}1&1&0\0&1&1\1&0&1\end{pmatrix}.$$ Check the result by multiplication.
+If \(\det(A)\neq0\), then
 
-Why this exercise: provides necessary practice with the full method in a situation where the 
-2
-×
-2
- formula no longer applies.
+$$
+A^{-1}=\frac{1}{ad-bc}
+\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
+$$
 
-Exercise 6. Solving a System Using the Inverse
-Solve 
-A
-x
-=
-b
-,
- where $$A=\begin{pmatrix}2&1\1&3\end{pmatrix},\qquad b=\begin{pmatrix}5\7\end{pmatrix},$$ using 
-x
-=
-A
-−
-1
-b
-. Then substitute the resulting vector back into the equation and check the result.
+## Step 1. Calculate the determinant
 
-Why this exercise: shows the connection between inverse matrices and solving a linear system.
+For the given matrix,
 
-Exercise 7. Inverse of a Product
-For $$A=\begin{pmatrix}1&1\0&1\end{pmatrix},\qquad B=\begin{pmatrix}2&0\0&3\end{pmatrix}$$ compute 
-(
-A
-B
-)
-−
-1
- and 
-B
-−
-1
-A
-−
-1
-. Check that the results are the same and explain the meaning of the reversed order.
+$$
+a=3,\quad b=2,\quad c=5,\quad d=4.
+$$
 
-Why this exercise: reinforces the inverse-of-a-product property and requires its interpretation.
+Therefore,
 
-Exercise 8. Inverse of a Transformation
-The matrix $$S=\begin{pmatrix}2&0\0&\frac12\end{pmatrix}$$ describes a scaling of the plane. Find 
-S
-−
-1
- and explain geometrically what the inverse transformation does. Check the action of the pair 
-S
-,
-S
-−
-1
- on one simple vector.
+$$
+\det(A)=3\cdot4-2\cdot5
+$$
 
-Why this exercise: gives the inverse the interpretation of undoing a transformation.
+$$
+\det(A)=12-10
+$$
 
-Exercise 9. Matrix Equation
-Given $$A=\begin{pmatrix}1&2\0&1\end{pmatrix},\qquad B=\begin{pmatrix}3&1\2&4\end{pmatrix}.$$ Solve the equation 
-A
-X
-=
-B
- for 
-X
-. Before calculating, decide on which side of the equation 
-A
-−
-1
- must be used. Then check the result by computing 
-A
-X
-.
+$$
+\boxed{\det(A)=2}
+$$
 
-Why this exercise: teaches that order matters in matrix equations and must guide the solution.
+Since \(\det(A)\neq0\), the inverse exists.
 
-Exercise 10. Inverse of a Diagonal Matrix
-Given $$D=\begin{pmatrix}2&0&0\0&-3&0\0&0&5\end{pmatrix},\qquad E=\begin{pmatrix}2&0&0\0&0&0\0&0&5\end{pmatrix}.$$ Without using Gauss–Jordan elimination, decide which matrix is invertible. For the invertible matrix, give the inverse and check the result by multiplication.
+## Step 2. Apply the inverse formula
 
-Why this exercise: teaches how to recognize invertibility and the inverse without using a full procedure when the matrix structure gives the answer immediately.
+$$
+A^{-1}=\frac{1}{2}
+\begin{pmatrix}4&-2\\-5&3\end{pmatrix}
+$$
 
-More Challenging Exercises
-Exercise 11. Parameter and Invertibility
-For $$A(t)=\begin{pmatrix}1&t\t&1\end{pmatrix}$$ find all 
-t
- for which the matrix is invertible, and then give a formula for 
-A
-(
-t
-)
-−
-1
-. Explain what happens to this formula at the excluded values.
+Multiply every entry by \(\frac12\):
 
-Why this exercise: combines a parameter, determinant, and an explicit inverse formula in one problem.
+$$
+\boxed{
+A^{-1}=
+\begin{pmatrix}
+2&-1\\
+-\frac52&\frac32
+\end{pmatrix}
+}
+$$
 
-Exercise 12. Finding Inverses Without Starting from Scratch
-It is known that $$A^{-1}=\begin{pmatrix}2&-1\-3&2\end{pmatrix}.$$ Without finding 
-A
-, compute 
-(
-3
-A
-)
-−
-1
-, 
-(
-A
-T
-)
-−
-1
-, and 
-(
-A
-2
-)
-−
-1
-. Justify each result using the appropriate property.
+## Step 3. Verify by multiplication
 
-Why this exercise: teaches how to use inverse properties instead of carrying out unnecessary full calculations.
+We check that \(AA^{-1}=I\).
 
-Exercise 13. Undoing a Composite Transformation
-The matrices $$S=\begin{pmatrix}2&0\0&1\end{pmatrix},\qquad H=\begin{pmatrix}1&1\0&1\end{pmatrix}$$ describe nonuniform scaling and shear. For 
-T
-=
-H
-S
-, find 
-T
-−
-1
- in two ways:
+$$
+AA^{-1}=
+\begin{pmatrix}3&2\\5&4\end{pmatrix}
+\begin{pmatrix}2&-1\\-\frac52&\frac32\end{pmatrix}
+$$
 
-first compute 
-T
-, then its inverse,
-use 
-(
-H
-S
-)
-−
-1
-=
-S
-−
-1
-H
-−
-1
-.
-Compare the results. Additionally compute 
-H
-−
-1
-S
-−
-1
- and verify that the incorrect order gives a different matrix. Explain the rule: “when undoing a composition of operations, we undo them from the end.”
+Multiply the rows of the first matrix by the columns of the second matrix:
 
-Why this exercise: reinforces the inverse of a product in a less direct configuration.
+$$
+AA^{-1}=
+\begin{pmatrix}
+3(2)+2\left(-\frac52\right)&3(-1)+2\left(\frac32\right)\\
+5(2)+4\left(-\frac52\right)&5(-1)+4\left(\frac32\right)
+\end{pmatrix}
+$$
 
-Exercise 14. A Matrix That Is Its Own Inverse
-Assume that a square matrix 
-A
- satisfies 
-A
-2
-=
-I
-.
- Show that 
-A
-−
-1
-=
-A
-.
- Then give an example of a 
-2
-×
-2
- matrix different from 
-I
- and 
-−
-I
- that satisfies this condition, and verify it by multiplication.
+Simplify each entry:
 
-Why this exercise: requires using the definition of the inverse in a short argument and constructing an example independently, without introducing a new topic.
+$$
+AA^{-1}=
+\begin{pmatrix}
+6-5&-3+3\\
+10-10&-5+6
+\end{pmatrix}
+$$
 
-Exercise 15. Two Methods for Solving the Same System
-For $$A=\begin{pmatrix}2&1\1&3\end{pmatrix},\qquad b=\begin{pmatrix}7\8\end{pmatrix}$$ solve 
-A
-x
-=
-b
- in two ways:
+Therefore,
 
-using 
-A
-−
-1
-b
-,
-using Gaussian elimination.
-Compare both solutions, the number of essential steps, and state which method was simpler in this example.
+$$
+AA^{-1}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I
+$$
 
-Why this exercise: compares two known methods and prepares the student to choose a solution method consciously.
+## Conclusion
+
+The determinant is nonzero, so the matrix is invertible. The inverse is
+
+$$
+\boxed{
+A^{-1}=
+\begin{pmatrix}
+2&-1\\
+-\frac52&\frac32
+\end{pmatrix}
+}
+$$
+
+The verification \(AA^{-1}=I\) confirms that the result is correct.
