@@ -13,7 +13,7 @@ $$
 
 We need to explain why \(\det(A)=0\) without carrying out a full determinant calculation.
 
-## 1. Identify the dependence between the rows
+## 1. Identify the Dependence Between the Rows
 
 The rows of \(A\) are
 
@@ -41,6 +41,56 @@ $$
 2(1,2,3)=(2,4,6)
 $$
 
-Therefore, two rows are linearly dependent.
+Therefore, the rows of \(A\) are linearly dependent.
 
-## 2. Connect
+## 2. Connect Row Dependence to the Determinant
+
+**Property:** If the rows of a square matrix are linearly dependent, its determinant is zero.
+
+Since \(R_2=2R_1\), two rows are proportional. Therefore,
+
+$$
+\boxed{\det(A)=0}
+$$
+
+No full determinant calculation is necessary.
+
+## 3. Explain Why the Matrix Is Not Invertible
+
+A square matrix is invertible if and only if its determinant is nonzero:
+
+$$
+A\text{ is invertible}
+\iff
+\det(A)\neq 0
+$$
+
+However, we have established that
+
+$$
+\det(A)=0
+$$
+
+Therefore,
+
+$$
+\boxed{A\text{ is not invertible}}
+$$
+
+The linear dependence between the rows means that the matrix is singular and has no inverse.
+
+## Final Answer
+
+The second row is twice the first row:
+
+$$
+\boxed{R_2=2R_1}
+$$
+
+Thus, the rows are linearly dependent, which implies
+
+$$
+\boxed{\det(A)=0}
+$$
+
+Consequently, \(A\) is a singular matrix and is not invertible.
