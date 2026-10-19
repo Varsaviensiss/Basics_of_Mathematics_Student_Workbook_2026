@@ -1,105 +1,271 @@
-# Exercise 3: When Can Matrices Be Multiplied?
+# Exercise 3. When Can Matrices Be Multiplied?
 
-Given matrix sizes:
+Given the matrix sizes:
 
-- \(A: 2\times3\)
-- \(B: 3\times4\)
-- \(C: 4\times2\)
-- \(D: 2\times2\)
+$$
+A:2\times3,\qquad B:3\times4
+$$
 
-**Condition for matrix multiplication:**
+$$
+C:4\times2,\qquad D:2\times2
+$$
 
-The number of columns of the first matrix must equal the number of rows of the second matrix. The resulting matrix has the number of rows of the first matrix and the number of columns of the second matrix.
+## Dimension Compatibility Condition
+
+Two matrices can be multiplied if the number of columns of the first matrix equals the number of rows of the second matrix.
+
+If
+
+$$
+A_{m\times n}B_{p\times q}
+$$
+
+then the product is defined only if
+
+$$
+n=p
+$$
+
+When the product is defined, its size is
+
+$$
+\boxed{m\times q}
+$$
 
 ## 1. Product \(AB\)
 
-\[
-(2\times3)(3\times4)
-\]
+The dimensions are:
 
-The inner dimensions are equal (3 = 3), so the product is defined.
+$$
+A:2\times3,\qquad B:3\times4
+$$
 
-\[
-\boxed{AB: 2\times4}
-\]
+Compare the inner dimensions:
+
+$$
+3=3
+$$
+
+The inner dimensions match, so the product is defined.
+
+The result has the outer dimensions:
+
+$$
+2\times4
+$$
+
+Therefore:
+
+$$
+\boxed{AB\text{ is defined and has size }2\times4}
+$$
 
 ## 2. Product \(BA\)
 
-\[
-(3\times4)(2\times3)
-\]
+The dimensions are:
 
-The inner dimensions are not equal (4 ≠ 2), so the product is not defined.
+$$
+B:3\times4,\qquad A:2\times3
+$$
+
+Compare the inner dimensions:
+
+$$
+4\neq2
+$$
+
+The inner dimensions do not match, so the product is not defined.
+
+Therefore:
+
+$$
+\boxed{BA\text{ is not defined}}
+$$
 
 ## 3. Product \(BC\)
 
-\[
-(3\times4)(4\times2)
-\]
+The dimensions are:
 
-The inner dimensions are equal (4 = 4), so the product is defined.
+$$
+B:3\times4,\qquad C:4\times2
+$$
 
-\[
-\boxed{BC: 3\times2}
-\]
+Compare the inner dimensions:
+
+$$
+4=4
+$$
+
+The inner dimensions match, so the product is defined.
+
+The result has the outer dimensions:
+
+$$
+3\times2
+$$
+
+Therefore:
+
+$$
+\boxed{BC\text{ is defined and has size }3\times2}
+$$
 
 ## 4. Product \(CB\)
 
-\[
-(4\times2)(3\times4)
-\]
+The dimensions are:
 
-The inner dimensions are not equal (2 ≠ 3), so the product is not defined.
+$$
+C:4\times2,\qquad B:3\times4
+$$
+
+Compare the inner dimensions:
+
+$$
+2\neq3
+$$
+
+The inner dimensions do not match, so the product is not defined.
+
+Therefore:
+
+$$
+\boxed{CB\text{ is not defined}}
+$$
 
 ## 5. Product \(AC\)
 
-\[
-(2\times3)(4\times2)
-\]
+The dimensions are:
 
-The inner dimensions are not equal (3 ≠ 4), so the product is not defined.
+$$
+A:2\times3,\qquad C:4\times2
+$$
+
+Compare the inner dimensions:
+
+$$
+3\neq4
+$$
+
+The inner dimensions do not match, so the product is not defined.
+
+Therefore:
+
+$$
+\boxed{AC\text{ is not defined}}
+$$
 
 ## 6. Product \(CA\)
 
-\[
-(4\times2)(2\times3)
-\]
+The dimensions are:
 
-The inner dimensions are equal (2 = 2), so the product is defined.
+$$
+C:4\times2,\qquad A:2\times3
+$$
 
-\[
-\boxed{CA: 4\times3}
-\]
+Compare the inner dimensions:
+
+$$
+2=2
+$$
+
+The inner dimensions match, so the product is defined.
+
+The result has the outer dimensions:
+
+$$
+4\times3
+$$
+
+Therefore:
+
+$$
+\boxed{CA\text{ is defined and has size }4\times3}
+$$
 
 ## 7. Product \(AD\)
 
-\[
-(2\times3)(2\times2)
-\]
+The dimensions are:
 
-The inner dimensions are not equal (3 ≠ 2), so the product is not defined.
+$$
+A:2\times3,\qquad D:2\times2
+$$
+
+Compare the inner dimensions:
+
+$$
+3\neq2
+$$
+
+The inner dimensions do not match, so the product is not defined.
+
+Therefore:
+
+$$
+\boxed{AD\text{ is not defined}}
+$$
 
 ## 8. Product \(DA\)
 
-\[
-(2\times2)(2\times3)
-\]
+The dimensions are:
 
-The inner dimensions are equal (2 = 2), so the product is defined.
+$$
+D:2\times2,\qquad A:2\times3
+$$
 
-\[
-\boxed{DA: 2\times3}
-\]
+Compare the inner dimensions:
 
-## Conclusion
+$$
+2=2
+$$
 
-The defined products are \(AB\), \(BC\), \(CA\), and \(DA\).
+The inner dimensions match, so the product is defined.
 
-Their sizes are:
+The result has the outer dimensions:
 
-- \(AB: 2\times4\)
-- \(BC: 3\times2\)
-- \(CA: 4\times3\)
-- \(DA: 2\times3\)
+$$
+2\times3
+$$
+
+Therefore:
+
+$$
+\boxed{DA\text{ is defined and has size }2\times3}
+$$
+
+## Summary Table
+
+| Product | Inner dimensions | Defined? | Result size |
+|---|---|---|---|
+| \(AB\) | \(3=3\) | Yes | \(2\times4\) |
+| \(BA\) | \(4\neq2\) | No | — |
+| \(BC\) | \(4=4\) | Yes | \(3\times2\) |
+| \(CB\) | \(2\neq3\) | No | — |
+| \(AC\) | \(3\neq4\) | No | — |
+| \(CA\) | \(2=2\) | Yes | \(4\times3\) |
+| \(AD\) | \(3\neq2\) | No | — |
+| \(DA\) | \(2=2\) | Yes | \(2\times3\) |
+
+## Final Answer
+
+The defined products are:
+
+$$
+\boxed{AB:2\times4}
+$$
+
+$$
+\boxed{BC:3\times2}
+$$
+
+$$
+\boxed{CA:4\times3}
+$$
+
+$$
+\boxed{DA:2\times3}
+$$
 
 The products \(BA\), \(CB\), \(AC\), and \(AD\) are not defined because their inner dimensions do not match.
+
+**Conclusion:** Matrix multiplication is possible only when the number of columns of the first matrix equals the number of rows of the second matrix. The result has the number of rows of the first matrix and the number of columns of the second matrix.
+
