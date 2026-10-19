@@ -1,51 +1,191 @@
-### Exercise 2. Determinant of a 3×3 Matrix
+# Exercise 2. Determinant of a 3×3 Matrix
 
 Given:
 
-A = | 1   2  -1 |
-    | 0   3   4 |
-    | 2   1   5 |
+$$
+A=
+\begin{pmatrix}
+1 & 2 & -1\\
+0 & 3 & 4\\
+2 & 1 & 5
+\end{pmatrix}
+$$
 
-**Step 1: Apply Sarrus' Rule**
+We need to compute \(\det(A)\) using Sarrus' rule and verify the result using a property of determinants.
 
-Repeat the first two columns:
+## 1. Compute \(\det(A)\) Using Sarrus' Rule
 
-1   2  -1 | 1   2
-0   3   4 | 0   3
-2   1   5 | 2   1
+For a \(3\times3\) matrix
 
-Sum of the downward diagonal products:
+$$
+A=
+\begin{pmatrix}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{pmatrix},
+$$
 
-1×3×5 + 2×4×2 + (-1)×0×1
-= 15 + 16 + 0
-= 31
+Sarrus' rule gives
 
-Sum of the upward diagonal products:
+$$
+\det(A)=aei+bfg+cdh-ceg-bdi-afh.
+$$
 
-(-1)×3×2 + 2×0×5 + 1×4×1
-= -6 + 0 + 4
-= -2
+For the given matrix,
+
+$$
+a=1,\quad b=2,\quad c=-1
+$$
+
+$$
+d=0,\quad e=3,\quad f=4
+$$
+
+$$
+g=2,\quad h=1,\quad i=5
+$$
+
+Calculate the three positive diagonal products:
+
+$$
+aei=(1)(3)(5)=15
+$$
+
+$$
+bfg=(2)(4)(2)=16
+$$
+
+$$
+cdh=(-1)(0)(1)=0
+$$
+
+Add them:
+
+$$
+15+16+0=31
+$$
+
+Calculate the three negative diagonal products:
+
+$$
+ceg=(-1)(3)(2)=-6
+$$
+
+$$
+bdi=(2)(0)(5)=0
+$$
+
+$$
+afh=(1)(4)(1)=4
+$$
+
+Add these products:
+
+$$
+-6+0+4=-2
+$$
+
+Subtract the sum of the negative diagonal products from the sum of the positive diagonal products:
+
+$$
+\det(A)=31-(-2)
+$$
+
+$$
+\det(A)=31+2
+$$
 
 Therefore,
 
-det(A) = 31 - (-2) = 33
+$$
+\boxed{\det(A)=33}
+$$
 
-**Step 2: Check Using a Determinant Property**
+## 2. Check Using a Property of Determinants
 
-Adding a multiple of one row to another row does not change the determinant.
+A determinant does not change when a multiple of one row is added to another row.
 
-Apply R3 → R3 - 2R1:
+Apply the row operation
 
-A = | 1   2  -1 |
-    | 0   3   4 |
-    | 0  -3   7 |
+$$
+R_3\leftarrow R_3-2R_1
+$$
 
-Expanding along the first column:
+The third row becomes:
 
-det(A) = 1 × (3×7 - 4×(-3))
-       = 21 + 12
-       = 33
+$$
+(2,1,5)-2(1,2,-1)
+$$
+
+$$
+=(2,1,5)-(2,4,-2)
+$$
+
+$$
+=(0,-3,7)
+$$
+
+The resulting matrix is
+
+$$
+A'=
+\begin{pmatrix}
+1 & 2 & -1\\
+0 & 3 & 4\\
+0 & -3 & 7
+\end{pmatrix}
+$$
+
+Since adding a multiple of one row to another does not change the determinant,
+
+$$
+\det(A')=\det(A)
+$$
+
+Expand \(\det(A')\) along the first column, which contains two zeros:
+
+$$
+\det(A')=
+1\begin{vmatrix}
+3 & 4\\
+-3 & 7
+\end{vmatrix}
+$$
+
+Calculate the \(2\times2\) determinant:
+
+$$
+\det(A')=1\big((3)(7)-(4)(-3)\big)
+$$
+
+$$
+\det(A')=21+12
+$$
+
+$$
+\det(A')=33
+$$
+
+Thus,
+
+$$
+\boxed{\det(A')=\det(A)=33}
+$$
 
 The check confirms the result.
 
-**Final Answer: det(A) = 33**
+## Final Answer
+
+Using Sarrus' rule:
+
+$$
+\boxed{\det(A)=33}
+$$
+
+Verification using a row operation that preserves the determinant:
+
+$$
+\boxed{\det(A')=33=\det(A)}
+$$
+
