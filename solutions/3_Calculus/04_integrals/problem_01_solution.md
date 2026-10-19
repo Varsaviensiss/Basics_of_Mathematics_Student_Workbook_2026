@@ -187,3 +187,4 @@ Differentiation confirms the result:
 \]
 
 The constant \(C\) accounts for all possible vertical shifts of the antiderivative and does not affect its derivative.
+
