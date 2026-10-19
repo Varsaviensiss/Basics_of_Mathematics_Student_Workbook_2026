@@ -1,148 +1,86 @@
-# Exercise 3 — Inconsistent System of Linear Equations
+# Exercise 3. Inconsistent System
 
-> **Topic:** Linear Algebra  
-> **Method:** Gaussian Elimination  
-> **Objective:** Determine whether a system has a solution and identify a contradiction using an augmented matrix.
+Given:
 
----
-
-## 1. Problem Statement
-
-Consider the following system of linear equations:
-
-\[
+$$
 \begin{cases}
 x+2y=3,\\
 2x+4y=7.
 \end{cases}
-\]
+$$
 
-Determine whether the system has a solution. If it is inconsistent, show how the contradiction appears during Gaussian elimination and explain its meaning.
+## Step 1. Write the augmented matrix
 
-### Given Information
-
-| Property | Description |
-|:--|:--|
-| Number of equations | 2 |
-| Number of unknowns | 2 |
-| Unknown variables | \(x,y\) |
-| Required method | Gaussian elimination |
-| Expected outcome | Consistent or inconsistent system |
-
----
-
-## 2. Step 1 — Construct the Augmented Matrix
-
-The coefficients of \(x\) and \(y\) form the first two columns. The constants form the last column.
-
-\[
+$$
 \left[
 \begin{array}{cc|c}
 1&2&3\\
 2&4&7
 \end{array}
 \right]
-\]
+$$
 
----
+## Step 2. Eliminate the first entry in row 2
 
-## 3. Step 2 — Apply Gaussian Elimination
+Apply:
 
-Eliminate the first entry of the second row using the operation
+$$
+R_2\leftarrow R_2-2R_1
+$$
 
-\[
-R_2\leftarrow R_2-2R_1.
-\]
+Then:
 
-The calculation for the second row is
-
-\[
-(2,\ 4\mid 7)-2(1,\ 2\mid 3)
-=(0,\ 0\mid 1).
-\]
-
-Therefore, the augmented matrix becomes
-
-\[
-\boxed{
+$$
 \left[
 \begin{array}{cc|c}
 1&2&3\\
 0&0&1
 \end{array}
 \right]
-}
-\]
+$$
 
-The second row represents the equation
+The second row represents:
 
-\[
-\boxed{0x+0y=1}
-\]
+$$
+0x+0y=1
+$$
 
-or, equivalently,
+Therefore:
 
-\[
-\boxed{0=1}.
-\]
+$$
+\boxed{0=1}
+$$
 
-This is a contradiction because zero can never equal one.
+This is a contradiction.
 
----
+## Step 3. Interpret the contradiction
 
-## 4. Step 3 — Interpret the Contradiction
+The first equation is:
 
-The original equations are
-
-\[
+$$
 x+2y=3
-\]
+$$
 
-and
+Multiplying it by \(2\) gives:
 
-\[
-2x+4y=7.
-\]
+$$
+2x+4y=6
+$$
 
-The left-hand side of the second equation is exactly twice the left-hand side of the first equation:
+However, the second equation requires:
 
-\[
-2(x+2y)=2x+4y.
-\]
+$$
+2x+4y=7
+$$
 
-Therefore, if both equations were consistent, the right-hand side would also have to double:
+The same expression cannot equal both \(6\) and \(7\).
 
-\[
-2(3)=6.
-\]
+## Conclusion
 
-However, the second equation requires the same expression to equal \(7\), not \(6\).
+The system is inconsistent and has no solution.
 
-| First equation multiplied by 2 | Second equation |
-|:--|:--|
-| \(2x+4y=6\) | \(2x+4y=7\) |
-| Required constant: \(6\) | Given constant: \(7\) |
-| The equations disagree | Contradiction |
+$$
+\boxed{\text{No solution}}
+$$
 
-The two equations describe parallel lines with different intercepts. Consequently, they cannot intersect.
-
----
-
-## 5. Final Result
-
-\[
-\boxed{\text{The system is inconsistent.}}
-\]
-
-| Question | Answer |
-|:--|:--|
-| Does a solution exist? | No |
-| What contradiction appears? | \(0=1\) |
-| Why is the system inconsistent? | The equations require the same expression to equal two different constants. |
-| Number of solutions | \(0\) |
-
-**Conclusion:** Gaussian elimination produces a row of the form \([0\quad 0\mid 1]\), which represents the impossible equation \(0=1\). Therefore, the system has no solution.
-
----
-
-*End of Exercise 3.*
+In Gaussian elimination, a row of the form \([0\quad0\mid c]\), where \(c\neq0\), indicates inconsistency.
