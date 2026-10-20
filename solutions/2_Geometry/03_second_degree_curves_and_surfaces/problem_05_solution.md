@@ -1,276 +1,193 @@
-Aga, anladım. 2. sorudaki gibi her adımı ayrıntılı göstererek, yerine koyma işlemlerini tek tek yazarak Exercise 5'i hazırladım. Bunu doğrudan kopyalayabilirsin.
-
 # Exercise 5. Hyperbola and Asymptotes
 
 ## Given
 
-The equation of the hyperbola is
+Consider the hyperbola
 
-[\
-\frac{x^2}{16}-\frac{y^2}{9}=1\
-]
+\[
+\frac{x^2}{16}-\frac{y^2}{9}=1
+\]
 
-We will identify the type of curve, find the intercepts with the (x)-axis, calculate the asymptotes, and explain the behavior of the hyperbola far from its center.
+Find the intercepts with the \(x\)-axis, the asymptotes, and describe the shape of the hyperbola. Explain why the asymptotes describe the behavior of the curve far from the center.
 
 ## Step 1: Identify the Canonical Form
 
 The canonical equation of a horizontal hyperbola centered at the origin is
 
-[\
-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\
-]
+\[
+\frac{x^2}{a^2}-\frac{y^2}{b^2}=1
+\]
 
-Compare this with the given equation:
+Comparing it with the given equation,
 
-[\
-\frac{x^2}{16}-\frac{y^2}{9}=1\
-]
-
-We obtain
-
-[\
-a^2=16,\qquad b^2=9\
-]
-
-Taking the square roots,
-
-[\
-a=\sqrt{16}=4\
-]
-
-[\
-b=\sqrt{9}=3\
-]
-
-Therefore, the equation represents a horizontal hyperbola centered at the origin.
-
-The center is
-
-[\
-C=(0,0)\
-]
-
-The vertices are located at ((\pm a,0)), so
-
-[\
-V_1=(-4,0),\qquad V_2=(4,0)\
-]
-
-## Step 2: Find the Intercepts with the (x)-Axis
-
-To find the (x)-intercepts, set (y=0) in the original equation:
-
-[\
-\frac{x^2}{16}-\frac{0^2}{9}=1\
-]
-
-Since (0^2=0),
-
-[\
-\frac{x^2}{16}=1\
-]
-
-Multiply both sides by (16):
-
-[\
-x^2=16\
-]
-
-Take the square root of both sides:
-
-[\
-x=\pm\sqrt{16}\
-]
+\[
+a^2=16,\qquad b^2=9
+\]
 
 Therefore,
 
-[\
-x=\pm4\
-]
+\[
+a=4,\qquad b=3
+\]
 
-The two (x)-intercepts are
+The center is
 
-[\
-\boxed{(-4,0)\text{ and }(4,0)}\
-]
+\[
+\boxed{C=(0,0)}
+\]
 
-Now, check whether the curve has any (y)-intercepts by setting (x=0):
+Since the \(x^2\)-term is positive and the \(y^2\)-term is negative, the hyperbola opens to the left and right.
 
-[\
-\frac{0^2}{16}-\frac{y^2}{9}=1\
-]
+Its vertices are
 
-Simplify:
+\[
+\boxed{V_1=(-4,0),\qquad V_2=(4,0)}
+\]
 
-[\
--\frac{y^2}{9}=1\
-]
+## Step 2: Find the Intercepts with the \(x\)-Axis
 
-Multiply both sides by (-9):
+To find the \(x\)-intercepts, set \(y=0\):
 
-[\
-y^2=-9\
-]
+\[
+\frac{x^2}{16}-\frac{0^2}{9}=1
+\]
 
-Since the square of a real number cannot be negative, there are no real solutions.
+Simplifying,
 
-Therefore, the hyperbola has no (y)-intercepts.
+\[
+\frac{x^2}{16}=1
+\]
+
+Multiply both sides by \(16\):
+
+\[
+x^2=16
+\]
+
+Taking the square root,
+
+\[
+x=\pm4
+\]
+
+Therefore, the \(x\)-intercepts are
+
+\[
+\boxed{(-4,0)\text{ and }(4,0)}
+\]
+
+To check for \(y\)-intercepts, set \(x=0\):
+
+\[
+-\frac{y^2}{9}=1
+\]
+
+Multiplying both sides by \(-9\),
+
+\[
+y^2=-9
+\]
+
+This equation has no real solutions. Therefore, the hyperbola has no \(y\)-intercepts.
 
 ## Step 3: Find the Asymptotes
 
-For a horizontal hyperbola in the canonical form
+For a horizontal hyperbola, the asymptotes are given by
 
-[\
-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\
-]
+\[
+y=\pm\frac{b}{a}x
+\]
 
-the asymptotes are given by
+Substituting \(a=4\) and \(b=3\),
 
-[\
-y=\pm\frac{b}{a}x\
-]
+\[
+y=\pm\frac34x
+\]
 
-From the given equation, we know that
+Thus, the asymptotes are
 
-[\
-a=4,\qquad b=3\
-]
-
-Substitute these values into the formula:
-
-[\
-y=\pm\frac34x\
-]
-
-Thus, the two asymptotes are
-
-[\
-\boxed{y=\frac34x}\
-]
+\[
+\boxed{y=\frac34x}
+\]
 
 and
 
-[\
-\boxed{y=-\frac34x}\
-]
+\[
+\boxed{y=-\frac34x}
+\]
 
-Both asymptotes pass through the center ((0,0)).
+Both asymptotes pass through the center \((0,0)\).
 
-To understand their slopes, consider the two equations:
+## Step 4: Explain the Behavior Far from the Center
 
-[\
-y=\frac34x\
-]
+Starting from the original equation,
 
-The slope of the first asymptote is (\frac34).
+\[
+\frac{x^2}{16}-\frac{y^2}{9}=1
+\]
 
-[\
-y=-\frac34x\
-]
+multiply both sides by \(144\):
 
-The slope of the second asymptote is (-\frac34).
+\[
+9x^2-16y^2=144
+\]
 
-These two lines form the diagonal directions toward which the two branches of the hyperbola extend.
+Rearranging gives
 
-## Step 4: Explain the Behavior of the Hyperbola Far from the Center
+\[
+16y^2=9x^2-144
+\]
 
-The equation is
+Divide by \(16\):
 
-[\
-\frac{x^2}{16}-\frac{y^2}{9}=1\
-]
+\[
+y^2=\frac{9}{16}x^2-9
+\]
 
-Multiply both sides by (144), the least common multiple of (16) and (9):
+For large values of \(|x|\), the constant term \(-9\) becomes negligible compared with \(\frac{9}{16}x^2\). Therefore,
 
-[\
-9x^2-16y^2=144\
-]
+\[
+y^2\approx\frac{9}{16}x^2
+\]
 
-Rearrange the equation:
+Taking square roots gives the asymptotic directions:
 
-[\
-16y^2=9x^2-144\
-]
+\[
+y\approx\pm\frac34x
+\]
 
-Divide both sides by (16):
-
-[\
-y^2=\frac{9}{16}x^2-9\
-]
-
-Take the square root:
-
-[\
-y=\pm\sqrt{\frac{9}{16}x^2-9}\
-]
-
-For large positive or negative values of (x), the constant term (-9) becomes less significant compared with (\frac{9}{16}x^2). Therefore, the equation behaves approximately like
-
-[\
-y^2\approx\frac{9}{16}x^2\
-]
-
-Taking the square root gives
-
-[\
-y\approx\pm\frac34|x|\
-]
-
-Equivalently, the branches approach the lines
-
-[\
-y=\frac34x,\qquad y=-\frac34x\
-]
-
-on their respective sides of the plane.
-
-This explains why the asymptotes describe the behavior of the hyperbola far from the center. The branches get closer to these lines as they extend outward, but they do not intersect them.
+Hence, the two branches approach the asymptotes as they extend farther from the center. The asymptotes describe the directions of the branches at large distances, although the branches do not intersect these lines.
 
 ## Step 5: Sketch the Hyperbola
 
-To draw the graph, follow these steps:
+To sketch the curve:
 
-1. Draw the horizontal (x)-axis and vertical (y)-axis.
-2. Mark the center at (C=(0,0)).
-3. Mark the vertices at ((-4,0)) and ((4,0)).
-4. Draw the asymptotes (y=\frac34x) and (y=-\frac34x) as dashed lines.
-5. Draw two separate branches: one opening to the left from ((-4,0)), and one opening to the right from ((4,0)).
-6. Make both branches approach the dashed asymptotes as they extend farther from the center.
+1. Draw the coordinate axes.
+2. Mark the center \(C=(0,0)\).
+3. Mark the vertices \((-4,0)\) and \((4,0)\).
+4. Draw the asymptotes \(y=\frac34x\) and \(y=-\frac34x\) as dashed lines.
+5. Draw two branches opening to the left and right, approaching the asymptotes as they extend outward.
 
 The graph is symmetric about both coordinate axes.
 
 ## Final Answer
 
-The canonical equation is
+The given equation represents a horizontal hyperbola centered at the origin.
 
-[\
-\boxed{\frac{x^2}{16}-\frac{y^2}{9}=1}\
-]
+\[
+\boxed{\text{Center: }(0,0)}
+\]
 
-The center is
+\[
+\boxed{\text{\(x\)-intercepts: }(-4,0),\ (4,0)}
+\]
 
-[\
-\boxed{C=(0,0)}\
-]
+\[
+\boxed{\text{No real \(y\)-intercepts}}
+\]
 
-The semiaxis lengths are
+\[
+\boxed{\text{Asymptotes: }y=\pm\frac34x}
+\]
 
-[\
-\boxed{a=4,\qquad b=3}\
-]
-
-The vertices and (x)-intercepts are
-
-[\
-\boxed{(-4,0)\text{ and }(4,0)}\
-]
-
-There are no real (y)-intercepts.
-
-The asymptotes are
-
-[\
-\boxed{y=\frac34x,\qquad y=-\frac34x}\
-]
-
-The equation represents a horizontal hyperbola with two branches opening to the left and right. Far from the center, the branches approach the two asymptotes.
+The hyperbola opens to the left and right, and its branches approach the two asymptotes far from the center.
