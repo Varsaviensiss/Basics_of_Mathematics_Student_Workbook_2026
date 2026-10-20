@@ -1,60 +1,135 @@
 ```
 
-## Problem 1. A Cubic Polynomial
+# Problem 15. Find the Error in the Monotonicity Analysis
 
-**Question:** Analyze the monotonicity and extrema of \(f(x)=x^3-3x^2+2\). Sketch the graph and mark the critical points.
-
-### Solution
-
-**1. Find the derivative**
+Given:
 
 \[
-f'(x)=3x^2-6x=3x(x-2)
+f(x)=x^3-3x
 \]
 
-**2. Find the critical points**
-
-Set \(f'(x)=0\):
+The derivative is correctly computed as:
 
 \[
-3x(x-2)=0
+f'(x)=3(x-1)(x+1)
 \]
 
-\[
-x=0 \quad \text{or} \quad x=2
-\]
+A student claims that the function is decreasing on \((-\infty,-1)\cup(1,\infty)\) and increasing on \((-1,1)\).
 
-Find the corresponding function values:
+## 1. Find the Error
+
+The critical points are found by setting the derivative equal to zero:
 
 \[
-f(0)=2
+3(x-1)(x+1)=0
 \]
 
 \[
-f(2)=8-12+2=-2
+x=-1,\qquad x=1
 \]
 
-The critical points are \((0,2)\) and \((2,-2)\).
+The student's error is reversing the signs of the derivative. Since the derivative has a positive leading coefficient, it is positive outside the roots and negative between them.
 
-**3. Determine monotonicity**
+## 2. Construct the Correct Sign Chart
 
-- For \(x<0\), \(f'(x)>0\), so the function is increasing.
-- For \(0<x<2\), \(f'(x)<0\), so the function is decreasing.
-- For \(x>2\), \(f'(x)>0\), so the function is increasing.
+The critical points divide the real line into three intervals:
 
-**4. Find the extrema**
+\[
+(-\infty,-1),\qquad (-1,1),\qquad (1,\infty)
+\]
 
-- Local maximum: \((0,2)\).
-- Local minimum: \((2,-2)\).
+The derivative signs are:
 
-**5. Sketch the graph**
+| Interval | Sign of \(f'(x)\) |
+|---|---|
+| \((-\infty,-1)\) | Positive \((+)\) |
+| \((-1,1)\) | Negative \((-)\) |
+| \((1,\infty)\) | Positive \((+)\) |
 
-The graph rises to \((0,2)\), falls to \((2,-2)\), and then rises again.
+## 3. Determine Monotonicity and Extrema
 
-As \(x\to-\infty\), \(f(x)\to-\infty\).
+- The function is increasing on \((-\infty,-1)\).
+- The function is decreasing on \((-1,1)\).
+- The function is increasing on \((1,\infty)\).
 
-As \(x\to+\infty\), \(f(x)\to+\infty\).
+At \(x=-1\), the function changes from increasing to decreasing. Therefore, there is a local maximum:
 
-Therefore, the graph is a cubic curve with a local maximum at \((0,2)\) and a local minimum at \((2,-2)\).
+\[
+f(-1)=(-1)^3-3(-1)=-1+3=2
+\]
+
+Local maximum point:
+
+\[
+\boxed{(-1,2)}
+\]
+
+At \(x=1\), the function changes from decreasing to increasing. Therefore, there is a local minimum:
+
+\[
+f(1)=1^3-3(1)=1-3=-2
+\]
+
+Local minimum point:
+
+\[
+\boxed{(1,-2)}
+\]
+
+## 4. Verify Using Test Points
+
+Choose one test point from each interval.
+
+**Interval 1: \((-\infty,-1)\)**
+
+Choose \(x=-2\):
+
+\[
+f'(-2)=3(-2-1)(-2+1)
+\]
+
+\[
+=3(-3)(-1)=9>0
+\]
+
+Therefore, the function is increasing.
+
+**Interval 2: \((-1,1)\)**
+
+Choose \(x=0\):
+
+\[
+f'(0)=3(0-1)(0+1)
+\]
+
+\[
+=3(-1)(1)=-3<0
+\]
+
+Therefore, the function is decreasing.
+
+**Interval 3: \((1,\infty)\)**
+
+Choose \(x=2\):
+
+\[
+f'(2)=3(2-1)(2+1)
+\]
+
+\[
+=3(1)(3)=9>0
+\]
+
+Therefore, the function is increasing.
+
+## Final Answers
+
+1. The student's error is reversing the signs of the derivative.
+2. The correct derivative signs are \(+,-,+\).
+3. Increasing intervals: \((-\infty,-1)\) and \((1,\infty)\).
+4. Decreasing interval: \((-1,1)\).
+5. Local maximum: \((-1,2)\).
+6. Local minimum: \((1,-2)\).
+7. Test points \(-2\), \(0\), and \(2\) confirm the correct sign chart.
 
 ```
