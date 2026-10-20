@@ -1,95 +1,42 @@
-# Exercise 1. Dominant Terms in a Sequence
-
-## Problem
-
-Compute the limit
+## Given
 
 \[
-L=\lim_{n\to\infty}
-\frac{4n^2-3n+1}{2n^2+5n-7}
+\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}
 \]
 
-Explain why the highest-degree terms determine the result.
+### 1. Divide by the Highest Power
 
-## 1. Solution Using Algebra
-
-The given sequence is
+The highest power of \(n\) in both the numerator and denominator is \(n^2\). Divide every term by \(n^2\):
 
 \[
-a_n=\frac{4n^2-3n+1}{2n^2+5n-7}.
+\lim_{n\to\infty}
+\frac{4-\frac3n+\frac1{n^2}}
+{2+\frac5n-\frac7{n^2}}
 \]
 
-Divide both the numerator and the denominator by \(n^2\):
-
-\[
-a_n=
-\frac{4-\frac{3}{n}+\frac{1}{n^2}}
-{2+\frac{5}{n}-\frac{7}{n^2}}.
-\]
+### 2. Evaluate the Limit
 
 As \(n\to\infty\),
 
 \[
-\lim_{n\to\infty}\frac1n=0,
-\qquad
-\lim_{n\to\infty}\frac1{n^2}=0.
+\frac1n\to0,\qquad \frac1{n^2}\to0
 \]
 
 Therefore,
 
 \[
-\begin{aligned}
-L
-&=\frac{4-3(0)+0}{2+5(0)-7(0)}\\[4pt]
-&=\frac42\\[4pt]
-&=\boxed{2}.
-\end{aligned}
+L=\frac{4-0+0}{2+0-0}
+=\frac42=2
 \]
 
-Thus, the limit of the sequence is \(2\).
+### 3. Why Do the Highest-Degree Terms Determine the Result?
 
-## 2. Numerical Table
+For large \(n\), the terms \(4n^2\) and \(2n^2\) dominate the lower-degree terms. The lower-degree terms become insignificant compared with \(n^2\).
 
-To observe the behaviour of the sequence, calculate several terms:
+### Final Answer
 
 \[
-a_n=\frac{4n^2-3n+1}{2n^2+5n-7}.
+\boxed{L=2}
 \]
 
-| \(n\) | \(a_n\), approximately |
-|---:|---:|
-| 2 | 1.0000 |
-| 5 | 1.7059 |
-| 10 | 1.8659 |
-| 50 | 1.9711 |
-| 100 | 1.9853 |
-| 1000 | 1.9985 |
-
-The values approach \(2\) as \(n\) increases.
-
-## 3. Why Do the Highest-Degree Terms Determine the Limit?
-
-The numerator and denominator are both polynomials of degree \(2\). Their highest-degree terms are \(4n^2\) and \(2n^2\).
-
-For large values of \(n\), the lower-degree terms become insignificant compared with \(n^2\). Therefore, the fraction behaves approximately like
-
-\[
-\frac{4n^2}{2n^2}=\frac42=2.
-\]
-
-More generally, if the numerator and denominator are polynomials of the same degree, the limit at infinity equals the ratio of their leading coefficients.
-
-## Conclusion
-
-Both the algebraic calculation and the numerical table show that
-
-\[
-\boxed{\displaystyle
-\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}=2
-}.
-\]
-
-The numerical table supports our intuition, while the algebraic calculation proves the result.
-
-
-
+For rational functions whose numerator and denominator have the same degree, the limit at infinity equals the ratio of their leading coefficients.
