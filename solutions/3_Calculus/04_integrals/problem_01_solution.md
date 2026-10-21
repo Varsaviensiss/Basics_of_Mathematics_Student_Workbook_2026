@@ -2,133 +2,123 @@
 
 # Problem 1. Antiderivative and Verification
 
-Given the function
+Given:
 
 \[
-f(x)=3x^2-4x+5,
+f(x)=3x^2-4x+5
 \]
 
-find one antiderivative, write the entire family of antiderivatives, verify the result by differentiation, and explain the meaning of the constant \(C\).
+Find one antiderivative \(F(x)\), write the entire family of antiderivatives, verify the result by differentiation, and explain the meaning of the constant \(C\).
 
-## Step 1: Find One Antiderivative
+## Step 1: Understand the Goal
 
-To find an antiderivative, integrate the function with respect to \(x\):
+We need to find a function \(F(x)\) whose derivative is \(f(x)\).
+
+In other words:
 
 \[
-F(x)=\int(3x^2-4x+5)\,dx.
+F'(x)=3x^2-4x+5
 \]
 
-Using the power rule,
+To do this, we integrate each term separately:
+
+\[
+F(x)=\int(3x^2-4x+5)\,dx
+\]
+
+## Step 2: Integrate Each Term
+
+Use the power rule for integration:
 
 \[
 \int x^n\,dx=\frac{x^{n+1}}{n+1}+C,
-\qquad n\ne-1,
+\qquad n\neq -1
 \]
 
-integrate each term separately:
+First term:
 
 \[
-\int 3x^2\,dx=x^3,
+\int 3x^2\,dx
+=3\cdot\frac{x^3}{3}
+=x^3
 \]
+
+Second term:
 
 \[
-\int -4x\,dx=-2x^2,
+\int -4x\,dx
+=-4\cdot\frac{x^2}{2}
+=-2x^2
 \]
+
+Third term:
 
 \[
-\int 5\,dx=5x.
+\int 5\,dx=5x
 \]
 
-Combining the results gives one antiderivative:
-
-\[
-\boxed{F(x)=x^3-2x^2+5x}.
-\]
-
-## Step 2: Write the Entire Family of Antiderivatives
-
-When a function is differentiated, any constant disappears because the derivative of a constant is zero.
-
-Therefore, we include an arbitrary constant \(C\):
-
-\[
-\boxed{F(x)=x^3-2x^2+5x+C}.
-\]
-
-This represents the entire family of antiderivatives of \(f(x)\).
-
-## Step 3: Verify the Result by Differentiation
-
-Differentiate the result:
-
-\[
-F'(x)=\frac{d}{dx}(x^3-2x^2+5x+C).
-\]
-
-Applying the power rule gives
-
-\[
-F'(x)=3x^2-4x+5+0.
-\]
-
-Thus,
-
-\[
-F'(x)=3x^2-4x+5.
-\]
-
-Since
-
-\[
-F'(x)=f(x),
-\]
-
-the antiderivative is verified.
-
-## Step 4: Explain the Meaning of the Constant \(C\)
-
-The constant \(C\) can be any real number. All functions of the form
+Combine the results:
 
 \[
 F(x)=x^3-2x^2+5x+C
 \]
 
-have the same derivative because the derivative of \(C\) is zero.
+## Step 3: Write One Antiderivative
 
-Geometrically, changing \(C\) shifts the graph vertically without changing its shape or slope at any point.
-
-For example, the functions
+One antiderivative is obtained by choosing \(C=0\):
 
 \[
-F_1(x)=x^3-2x^2+5x
+\boxed{F(x)=x^3-2x^2+5x}
 \]
 
-and
+## Step 4: Write the Entire Family of Antiderivatives
+
+The complete family includes every possible constant \(C\):
 
 \[
-F_2(x)=x^3-2x^2+5x+7
+\boxed{F(x)=x^3-2x^2+5x+C}
 \]
 
-have the same derivative:
+Here, \(C\) is any real constant.
+
+Different values of \(C\) shift the graph vertically, but they do not change its derivative because the derivative of a constant is zero.
+
+## Step 5: Verify the Result by Differentiation
+
+Differentiate the general antiderivative:
 
 \[
-F_1'(x)=F_2'(x)=3x^2-4x+5.
+F(x)=x^3-2x^2+5x+C
 \]
 
-Therefore, the constant \(C\) accounts for all possible vertical shifts of the antiderivative.
+Using the power rule:
+
+\[
+F'(x)=3x^2-4x+5+0
+\]
+
+Therefore:
+
+\[
+\boxed{F'(x)=3x^2-4x+5}
+\]
+
+This matches the original function \(f(x)\), so the result is correct.
 
 ## Final Answer
 
-The entire family of antiderivatives is
+One antiderivative:
 
 \[
-\boxed{F(x)=x^3-2x^2+5x+C,\qquad C\in\mathbb R}.
+\boxed{F(x)=x^3-2x^2+5x}
 \]
 
-Verification:
+The entire family of antiderivatives:
 
 \[
-\boxed{F'(x)=3x^2-4x+5=f(x)}.
+\boxed{F(x)=x^3-2x^2+5x+C}
 \]
+
+**Key idea:** Integration reverses differentiation. The constant \(C\) appears because every constant has a derivative of zero, so infinitely many functions can have the same derivative.
 
 ```
