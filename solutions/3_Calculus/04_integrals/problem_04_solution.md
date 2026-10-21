@@ -2,118 +2,125 @@
 
 # Problem 4. Substitution as Reversing the Chain Rule
 
-Compute the integral
+Given:
 
 \[
-\int 2x(x^2+1)^4\,dx.
+\int 2x(x^2+1)^4\,dx
 \]
 
-Before calculating, identify a suitable substitution and show that its derivative appears in the integral. Then verify the result by differentiation.
+We need to identify a suitable substitution, calculate the integral, and verify the result by differentiation.
 
-## Step 1: Identify the Substitution
+## Step 1: Identify the Inner Function
 
-The expression \(x^2+1\) is raised to the fourth power.
-
-Let
+Notice that the expression contains:
 
 \[
-u=x^2+1.
+(x^2+1)^4
 \]
 
-Differentiate both sides with respect to \(x\):
-
-\[
-\frac{du}{dx}=2x.
-\]
-
-Therefore,
-
-\[
-du=2x\,dx.
-\]
-
-The factor \(2x\,dx\) already appears in the original integral, so this substitution simplifies the expression.
-
-## Step 2: Rewrite the Integral
-
-The original integral is
-
-\[
-\int 2x(x^2+1)^4\,dx.
-\]
-
-Using
+The inner function is:
 
 \[
 u=x^2+1
 \]
 
-and
+Differentiate it:
 
 \[
-du=2x\,dx,
+\frac{du}{dx}=2x
 \]
 
-we obtain
+Therefore:
 
 \[
-\int u^4\,du.
+du=2x\,dx
 \]
 
-## Step 3: Integrate Using the Power Rule
+The factor \(2x\,dx\) already appears in the original integral. This makes substitution convenient.
 
-Apply the power rule:
+## Step 2: Substitute into the Integral
+
+Start with:
 
 \[
-\int u^4\,du=\frac{u^5}{5}+C.
+\int 2x(x^2+1)^4\,dx
 \]
 
-Thus,
+Using:
 
 \[
-F(u)=\frac{u^5}{5}+C.
+u=x^2+1,\qquad du=2x\,dx
 \]
 
-Substitute \(u=x^2+1\) back into the result:
+we obtain:
 
 \[
-\boxed{F(x)=\frac{(x^2+1)^5}{5}+C}.
+\int u^4\,du
 \]
 
-## Step 4: Verify by Differentiation
+## Step 3: Apply the Power Rule
+
+The power rule for integration is:
+
+\[
+\int u^n\,du=\frac{u^{n+1}}{n+1}+C
+\]
+
+For \(n=4\):
+
+\[
+\int u^4\,du=\frac{u^5}{5}+C
+\]
+
+Therefore:
+
+\[
+F(x)=\frac{u^5}{5}+C
+\]
+
+## Step 4: Substitute Back
+
+Replace \(u\) with \(x^2+1\):
+
+\[
+F(x)=\frac{(x^2+1)^5}{5}+C
+\]
+
+Thus, the antiderivative is:
+
+\[
+\boxed{F(x)=\frac{(x^2+1)^5}{5}+C}
+\]
+
+## Step 5: Verify by Differentiation
 
 Differentiate the result using the chain rule:
 
 \[
-F'(x)=\frac{d}{dx}
-\left(\frac{(x^2+1)^5}{5}+C\right).
-\]
-
-Applying the chain rule gives
-
-\[
-F'(x)=\frac15\cdot5(x^2+1)^4\cdot2x.
+F'(x)=\frac{1}{5}\cdot 5(x^2+1)^4\cdot 2x
 \]
 
 Simplify:
 
 \[
-F'(x)=2x(x^2+1)^4.
+F'(x)=(x^2+1)^4\cdot 2x
 \]
 
-This matches the original integrand exactly.
+Therefore:
 
-Therefore, the result is correct.
+\[
+\boxed{F'(x)=2x(x^2+1)^4}
+\]
+
+This matches the original integrand.
 
 ## Final Answer
 
 \[
-\boxed{
-\int 2x(x^2+1)^4\,dx
-=\frac{(x^2+1)^5}{5}+C
-}
+\boxed{\int 2x(x^2+1)^4\,dx
+=\frac{(x^2+1)^5}{5}+C}
 \]
 
-**Key idea:** Substitution reverses the chain rule. When the derivative of an inner function appears as a factor in the integrand, replacing the inner function with \(u\) can simplify the integral.
+**Key idea:** Substitution reverses the chain rule. When the derivative of an inner function appears as a factor in the integrand, replacing the inner function with \(u\) can turn a complicated integral into a simple power-rule integral.
 
 ```
