@@ -1,135 +1,146 @@
+```
 
 # Problem 2. Powers, Roots, and the Domain
 
-Compute the integral
+Given:
 
 \[
-\int\left(2x+3x^2-x^{1/3}\right)\,dx.
+\int (2x+3x^2-x^{1/3})\,dx
 \]
 
-First, rewrite the terms as powers, determine the domain of the original expression, and verify the result by differentiation.
+We need to rewrite the terms as powers, determine the domain of the original expression, calculate the antiderivative, and verify the result by differentiation.
 
 ## Step 1: Rewrite the Terms as Powers
 
-The expression is
+The integrand is:
 
 \[
-2x+3x^2-\sqrt[3]{x}.
+f(x)=2x+3x^2-x^{1/3}
 \]
 
-Rewrite the first and third terms using exponent notation:
+The fractional exponent represents a cube root:
 
 \[
-2x=2x^1,\qquad \sqrt[3]{x}=x^{1/3}.
+x^{1/3}=\sqrt[3]{x}
 \]
 
-Therefore, the integrand is
+Therefore, we can write:
 
 \[
-2x^1+3x^2-x^{1/3}.
+f(x)=2x^1+3x^2-x^{1/3}
 \]
+
+All terms are now expressed as powers of \(x\).
 
 ## Step 2: Determine the Domain
 
-The original expression contains a cube root:
+The original function contains the cube root:
 
 \[
-\sqrt[3]{x}.
+\sqrt[3]{x}
 \]
 
-Unlike a square root, a cube root is defined for both positive and negative real numbers, as well as zero.
+Unlike a square root, a cube root is defined for negative numbers, zero, and positive numbers.
 
-There are no denominators or logarithms that impose additional restrictions.
-
-Therefore, the domain is
+Therefore, the domain is:
 
 \[
-\boxed{x\in\mathbb{R}}.
+\boxed{D_f=\mathbb{R}}
 \]
 
-## Step 3: Integrate Term by Term
+The integrand is defined for every real number.
 
-Use the power rule:
+## Step 3: Apply the Power Rule for Integration
+
+The power rule is:
 
 \[
 \int x^n\,dx=\frac{x^{n+1}}{n+1}+C,
-\qquad n\ne-1.
+\qquad n\neq -1
 \]
 
-Integrate the first term:
+Integrate each term separately.
+
+First term:
 
 \[
 \int 2x\,dx
-=2\frac{x^2}{2}
-=x^2.
+=2\cdot\frac{x^2}{2}
+=x^2
 \]
 
-Integrate the second term:
+Second term:
 
 \[
 \int 3x^2\,dx
-=3\frac{x^3}{3}
-=x^3.
+=3\cdot\frac{x^3}{3}
+=x^3
 \]
 
-Integrate the third term:
+Third term:
 
 \[
 \int -x^{1/3}\,dx
 =-\frac{x^{4/3}}{4/3}
-=-\frac34x^{4/3}.
+=-\frac{3}{4}x^{4/3}
 \]
 
-Combining the terms gives
+## Step 4: Combine the Results
+
+Adding the three antiderivatives gives:
 
 \[
-\boxed{F(x)=x^2+x^3-\frac34x^{4/3}+C}.
+F(x)=x^2+x^3-\frac{3}{4}x^{4/3}+C
 \]
 
-## Step 4: Verify by Differentiation
-
-Differentiate the antiderivative:
+Thus, the entire family of antiderivatives is:
 
 \[
-F'(x)=\frac{d}{dx}
-\left(x^2+x^3-\frac34x^{4/3}+C\right).
+\boxed{F(x)=x^2+x^3-\frac{3}{4}x^{4/3}+C}
 \]
 
-Apply the power rule:
+## Step 5: Verify by Differentiation
+
+Differentiate the result:
 
 \[
-F'(x)=2x+3x^2-\frac34\cdot\frac43x^{1/3}.
+F(x)=x^2+x^3-\frac{3}{4}x^{4/3}+C
 \]
 
-Since
+Using the power rule:
 
 \[
-\frac34\cdot\frac43=1,
+F'(x)=2x+3x^2-\frac{3}{4}\cdot\frac{4}{3}x^{1/3}
 \]
 
-we obtain
+The coefficients simplify:
 
 \[
-F'(x)=2x+3x^2-x^{1/3}.
+\frac{3}{4}\cdot\frac{4}{3}=1
+\]
+
+Therefore:
+
+\[
+\boxed{F'(x)=2x+3x^2-x^{1/3}}
 \]
 
 This matches the original integrand.
 
-Therefore,
-
-\[
-F'(x)=f(x).
-\]
-
-The result is correct.
-
 ## Final Answer
 
+The domain of the original function is:
+
 \[
-\boxed{
-\int\left(2x+3x^2-x^{1/3}\right)\,dx
-=x^2+x^3-\frac34x^{4/3}+C
-}
+\boxed{D_f=\mathbb{R}}
 \]
 
-The original expression and its antiderivative are defined for all real numbers \(x\).
+The entire family of antiderivatives is:
+
+\[
+\boxed{F(x)=x^2+x^3-\frac{3}{4}x^{4/3}+C}
+\]
+
+**Key idea:** Rewrite roots as fractional powers, integrate each term using the power rule, and differentiate the result to verify it. The cube root allows the original expression to be defined for every real number.
+
+```
