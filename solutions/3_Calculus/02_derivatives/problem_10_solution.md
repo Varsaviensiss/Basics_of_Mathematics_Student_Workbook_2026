@@ -1,122 +1,75 @@
+```markdown
+# Problem 10. The Tangent Line as an Application of the Derivative
 
-# Problem 10. Finding the Equation of a Tangent Line
+For the function
 
-Given:
+$$
+f(x)=x^2-3x+1,
+$$
 
-\[
-f(x)=x^2-3x+1
-\]
+find the equation of the tangent line at the point with $x=2$. Give the point of tangency, the value $f'(2)$, the equation of the line, and verify that the point lies on the obtained tangent line.
 
-Find the equation of the tangent line at \(x=2\).
+## Step 1: Compute the Derivative
 
-## Step 1: Find the Derivative
+Using the power rule,
 
-Differentiate the function:
+$$
+f'(x)=2x-3.
+$$
 
-\[
-f(x)=x^2-3x+1
-\]
+## Step 2: Find the Tangent Slope
 
-Using the power rule:
+The derivative at $x=2$ gives the tangent slope:
 
-\[
-\frac{d}{dx}x^2=2x
-\]
+$$
+f'(2)=2(2)-3=1.
+$$
 
-\[
-\frac{d}{dx}(-3x)=-3
-\]
+Thus,
 
-\[
-\frac{d}{dx}(1)=0
-\]
+$$
+\boxed{m=f'(2)=1}.
+$$
 
-Therefore,
+## Step 3: Find the Point of Tangency
 
-\[
-\boxed{f'(x)=2x-3}
-\]
+$$
+f(2)=2^2-3(2)+1=4-6+1=-1.
+$$
 
-## Step 2: Find the Slope at \(x=2\)
+Therefore, the point of tangency is
 
-The derivative gives the slope of the tangent line.
+$$
+\boxed{(2,-1)}.
+$$
 
-Substitute \(x=2\):
+## Step 4: Find the Tangent Line
 
-\[
-f'(2)=2(2)-3
-\]
+Using the point-slope formula,
 
-\[
-f'(2)=4-3
-\]
+$$
+y-y_1=m(x-x_1),
+$$
 
-Thus, the slope is:
+we obtain
 
-\[
-\boxed{m=1}
-\]
+$$
+y-(-1)=1(x-2).
+$$
 
-## Step 3: Find the Point on the Curve
+Simplifying gives
 
-To find the point where the tangent touches the curve, calculate \(f(2)\):
+$$
+\boxed{y=x-3}.
+$$
 
-\[
-f(2)=2^2-3(2)+1
-\]
+## Step 5: Verify the Point Lies on the Line
 
-\[
-f(2)=4-6+1
-\]
+Substitute $(x,y)=(2,-1)$ into $y=x-3$:
 
-\[
-\boxed{f(2)=-1}
-\]
+$$
+-1=2-3=-1.
+$$
 
-Therefore, the point is:
-
-\[
-\boxed{(2,-1)}
-\]
-
-## Step 4: Use the Tangent Line Formula
-
-The point-slope formula is:
-
-\[
-y-y_1=m(x-x_1)
-\]
-
-We know:
-
-\[
-m=1,\qquad (x_1,y_1)=(2,-1)
-\]
-
-Substitute these values:
-
-\[
-y-(-1)=1(x-2)
-\]
-
-Simplify:
-
-\[
-y+1=x-2
-\]
-
-Subtract \(1\) from both sides:
-
-\[
-\boxed{y=x-3}
-\]
-
-## Final Answer
-
-The equation of the tangent line at \(x=2\) is:
-
-\[
-\boxed{y=x-3}
-\]
-
-**Key idea:** To find a tangent line, calculate the derivative to obtain the slope, find the point on the curve, and substitute both into the point-slope formula.
+The equality holds, verifying that the point of tangency $(2,-1)$ lies on the obtained line. Its slope is also $1=f'(2)$, as required.
+```
