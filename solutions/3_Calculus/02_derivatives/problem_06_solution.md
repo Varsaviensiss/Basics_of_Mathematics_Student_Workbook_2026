@@ -1,130 +1,67 @@
-```
+```markdown
+# Problem 6. Product Rule and Trigonometry
 
-# Problem 6. Product Rule and Derivative Interpretation
+For the function
 
-Given:
+$$
+f(x)=x\sin x+\cos x,
+$$
 
-\[
-f(x)=x\sin x+\cos x
-\]
+compute the derivative and simplify the result. Then compute $f'(0)$ and interpret the direction of the tangent line at that point.
 
 ## Step 1: Identify the Rules
 
-The function contains a product, \(x\sin x\), and a sum.
+The term $x\sin x$ is a product of two functions, so we use the product rule:
 
-We use the **product rule**:
+$$
+(uv)'=u'v+uv'.
+$$
 
-\[
-(uv)'=u'v+uv'
-\]
+We also use
 
-We also use the basic derivative rules:
+$$
+(\sin x)'=\cos x,\qquad (\cos x)'=-\sin x.
+$$
 
-\[
-\frac{d}{dx}(\sin x)=\cos x
-\]
+## Step 2: Compute and Simplify the Derivative
 
-\[
-\frac{d}{dx}(\cos x)=-\sin x
-\]
+For $x\sin x$, take $u=x$ and $v=\sin x$. Then $u'=1$ and $v'=\cos x$, so
 
-## Step 2: Differentiate the Product
+$$
+\frac{d}{dx}(x\sin x)=\sin x+x\cos x.
+$$
 
-For \(x\sin x\), let
+Differentiating the entire function gives
 
-\[
-u=x,\qquad v=\sin x
-\]
+$$
+f'(x)=\sin x+x\cos x-\sin x.
+$$
 
-Then
+The sine terms cancel. Therefore,
 
-\[
-u'=1,\qquad v'=\cos x
-\]
+$$
+\boxed{f'(x)=x\cos x}.
+$$
 
-Applying the product rule:
+## Step 3: Compute the Derivative at Zero
 
-\[
-\frac{d}{dx}(x\sin x)
-=1\cdot\sin x+x\cos x
-\]
+$$
+f'(0)=0\cos 0=\boxed{0}.
+$$
 
-Therefore,
+## Step 4: Interpret the Tangent Direction
 
-\[
-\frac{d}{dx}(x\sin x)=\sin x+x\cos x
-\]
-
-## Step 3: Differentiate the Entire Function
-
-Since
-
-\[
-f(x)=x\sin x+\cos x
-\]
-
-we obtain
-
-\[
-f'(x)=\sin x+x\cos x-\sin x
-\]
-
-The terms \(\sin x\) and \(-\sin x\) cancel.
-
-Thus, the simplified derivative is
-
-\[
-\boxed{f'(x)=x\cos x}
-\]
-
-## Step 4: Calculate \(f'(0)\)
-
-Substitute \(x=0\):
-
-\[
-f'(0)=0\cos 0
-\]
-
-Since \(\cos 0=1\),
-
-\[
-\boxed{f'(0)=0}
-\]
-
-## Step 5: Interpret the Result
-
-The derivative represents the slope of the tangent line to the graph.
-
-At \(x=0\), the slope is zero:
-
-\[
-f'(0)=0
-\]
+The derivative gives the slope of the tangent line. Since $f'(0)=0$, the tangent line at $x=0$ is horizontal.
 
 Also,
 
-\[
-f(0)=0\sin 0+\cos 0=1
-\]
+$$
+f(0)=0\sin 0+\cos 0=1.
+$$
 
-Therefore, the graph passes through \((0,1)\) and has a **horizontal tangent line** at that point.
+Thus, the point of tangency is $(0,1)$, and the tangent line is
 
-The tangent line is
-
-\[
-\boxed{y=1}
-\]
-
-## Final Answer
-
-\[
-\boxed{f'(x)=x\cos x}
-\]
-
-\[
-\boxed{f'(0)=0}
-\]
-
-The tangent line at \(x=0\) is horizontal because its slope is zero.
-
+$$
+\boxed{y=1}.
+$$
 ```
