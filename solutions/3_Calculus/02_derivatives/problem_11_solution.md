@@ -1,115 +1,68 @@
-```
+```markdown
+# Problem 11. Derivative from the Definition
 
-# Problem 11. Finding a Derivative Using the Definition
+Using only
 
-Given:
+$$
+f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h},
+$$
 
-\[
-f(x)=x^2
-\]
+find the derivative of $f(x)=x^2$. Compare the result with the power rule and indicate where the limit is used in the calculation.
 
-Find the derivative using the **definition of the derivative**, rather than the power rule.
+## Step 1: Substitute into the Definition
 
-## Step 1: Write the Definition
+Since $f(x+h)=(x+h)^2$,
 
-The derivative is defined as:
+$$
+f'(x)=\lim_{h\to0}\frac{(x+h)^2-x^2}{h}.
+$$
 
-\[
-f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
-\]
+## Step 2: Expand and Simplify
 
-This formula measures the change in the function divided by the change in \(x\), as the change approaches zero.
+Expanding the numerator gives
 
-## Step 2: Calculate \(f(x+h)\)
+$$
+f'(x)=\lim_{h\to0}\frac{x^2+2xh+h^2-x^2}{h}
+=\lim_{h\to0}\frac{2xh+h^2}{h}.
+$$
 
-Since:
+Factor out $h$:
 
-\[
-f(x)=x^2
-\]
+$$
+f'(x)=\lim_{h\to0}\frac{h(2x+h)}{h}.
+$$
 
-replace \(x\) with \(x+h\):
+For $h\neq0$, cancellation gives
 
-\[
-f(x+h)=(x+h)^2
-\]
+$$
+f'(x)=\lim_{h\to0}(2x+h).
+$$
 
-Expand the square:
+Cancellation is valid because a limit as $h\to0$ considers nonzero values of $h$ approaching zero.
 
-\[
-f(x+h)=x^2+2xh+h^2
-\]
+## Step 3: Evaluate the Limit
 
-## Step 3: Substitute into the Definition
+For each fixed $x$, as $h\to0$, the expression $2x+h$ approaches $2x$. Therefore,
 
-Substitute \(f(x+h)\) and \(f(x)\) into the formula:
+$$
+f'(x)=\lim_{h\to0}(2x+h)=2x.
+$$
 
-\[
-f'(x)=\lim_{h\to 0}\frac{(x+h)^2-x^2}{h}
-\]
+Thus,
 
-Expand and simplify the numerator:
+$$
+\boxed{f'(x)=2x}.
+$$
 
-\[
-f'(x)=\lim_{h\to 0}\frac{x^2+2xh+h^2-x^2}{h}
-\]
+The limit is evaluated in this final step. The preceding expansion and cancellation are algebraic operations valid for $h\neq0$. We do not substitute $h=0$ into the original quotient, which is undefined there.
 
-The \(x^2\) terms cancel:
+## Step 4: Compare with the Power Rule
 
-\[
-f'(x)=\lim_{h\to 0}\frac{2xh+h^2}{h}
-\]
+The power rule gives
 
-## Step 4: Simplify the Expression
+$$
+\frac{d}{dx}x^2=2x^{2-1}=2x.
+$$
 
-Factor \(h\) from the numerator:
-
-\[
-f'(x)=\lim_{h\to 0}\frac{h(2x+h)}{h}
-\]
-
-For \(h\neq 0\), cancel \(h\):
-
-\[
-f'(x)=\lim_{h\to 0}(2x+h)
-\]
-
-## Step 5: Evaluate the Limit
-
-As \(h\to 0\), the expression becomes:
-
-\[
-f'(x)=2x+0
-\]
-
-Therefore,
-
-\[
-\boxed{f'(x)=2x}
-\]
-
-## Step 6: Compare with the Power Rule
-
-The power rule states:
-
-\[
-\frac{d}{dx}x^n=nx^{n-1}
-\]
-
-For \(f(x)=x^2\):
-
-\[
-f'(x)=2x^{2-1}=2x
-\]
-
-Both methods give the same result.
-
-## Final Answer
-
-\[
-\boxed{f'(x)=2x}
-\]
-
-**Key idea:** The derivative definition uses a limit to calculate the instantaneous rate of change. The power rule gives the same derivative more quickly, but the definition explains where the derivative comes from.
-
+This agrees with the result obtained directly from the definition. The power rule was used only for comparison, not in the definition-based derivation.
 ```
