@@ -1,93 +1,71 @@
-```
+```markdown
+# Problem 13. A Multi-Layer Composition
 
-# Problem 13. Multiple Applications of the Chain Rule
+For the function
 
-Given:
+$$
+f(x)=e^{\sin(x^2)},
+$$
 
-\[
-f(x)=e^{\sin(x^2)}
-\]
+compute the derivative. First write the layers
 
-Find the derivative using the chain rule.
+$$
+x\longrightarrow x^2\longrightarrow\sin(x^2)
+\longrightarrow e^{\sin(x^2)}
+$$
 
-## Step 1: Identify the Nested Functions
+and explain why differentiation moves through them in the reverse order.
 
-This function contains three layers:
+## Step 1: Identify the Layers
 
-1. The innermost function: \(u=x^2\)
-2. The middle function: \(\sin(u)\)
-3. The outermost function: \(e^{\sin(u)}\)
+The function is evaluated from the inside outward:
 
-We must differentiate each layer, starting from the outside and working inward.
+$$
+u=x^2,\qquad v=\sin u,\qquad y=e^v.
+$$
 
-## Step 2: Differentiate the Outer Function
+First we square $x$, then take the sine, and finally apply the exponential function.
 
-The outer function is an exponential function:
+## Step 2: Explain the Outside-In Procedure
 
-\[
-\frac{d}{dx}e^u=e^u\cdot u'
-\]
+To differentiate, we start with the outermost function $y=e^v$. Its derivative describes how $y$ changes with its input $v$. We then multiply by how $v$ changes with $u$, and finally by how $u$ changes with $x$.
 
-Keeping the exponent unchanged for now:
+The chain rule expresses this as
 
-\[
-f'(x)=e^{\sin(x^2)}\cdot\frac{d}{dx}\sin(x^2)
-\]
+$$
+\frac{dy}{dx}
+=\frac{dy}{dv}\frac{dv}{du}\frac{du}{dx}.
+$$
 
-## Step 3: Differentiate the Middle Function
+Thus, differentiation works through the layers in reverse order: exponential, sine, then square. Each outer response is multiplied by the rate of change of its input, accounting for all three factors.
 
-The derivative of \(\sin(u)\) is:
+## Step 3: Differentiate Each Layer
 
-\[
-\frac{d}{dx}\sin(u)=\cos(u)\cdot u'
-\]
+$$
+\frac{dy}{dv}=e^v,
+\qquad
+\frac{dv}{du}=\cos u,
+\qquad
+\frac{du}{dx}=2x.
+$$
 
-Substituting \(u=x^2\):
+## Step 4: Combine the Factors
 
-\[
-\frac{d}{dx}\sin(x^2)=\cos(x^2)\cdot\frac{d}{dx}(x^2)
-\]
+Applying the chain rule gives
 
-## Step 4: Differentiate the Inner Function
+$$
+f'(x)=e^v\cos u\cdot2x.
+$$
 
-The innermost function is:
+Substituting $u=x^2$ and $v=\sin(x^2)$,
 
-\[
-u=x^2
-\]
+$$
+f'(x)=e^{\sin(x^2)}\cos(x^2)\cdot2x.
+$$
 
-Using the power rule:
+Therefore,
 
-\[
-\frac{d}{dx}(x^2)=2x
-\]
-
-Therefore:
-
-\[
-\frac{d}{dx}\sin(x^2)=2x\cos(x^2)
-\]
-
-## Step 5: Combine All the Derivatives
-
-Substitute the result from Step 4 into the expression from Step 2:
-
-\[
-f'(x)=e^{\sin(x^2)}\cdot\cos(x^2)\cdot 2x
-\]
-
-Rearranging the factors gives:
-
-\[
-\boxed{f'(x)=2x\cos(x^2)e^{\sin(x^2)}}
-\]
-
-## Final Answer
-
-\[
-\boxed{f'(x)=2x\cos(x^2)e^{\sin(x^2)}}
-\]
-
-**Key idea:** For nested functions, apply the chain rule at every layer. Differentiate the outer function, keep the inner expression unchanged, and multiply by the derivative of the inner expression.
-
+$$
+\boxed{f'(x)=2x\cos(x^2)e^{\sin(x^2)}}.
+$$
 ```
