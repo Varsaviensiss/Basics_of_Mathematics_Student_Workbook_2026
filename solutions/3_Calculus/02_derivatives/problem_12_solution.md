@@ -1,121 +1,69 @@
-```
+```markdown
+# Problem 12. Several Rules at Once
 
-# Problem 12. Product Rule and Chain Rule
+For the function
 
-Given:
+$$
+f(x)=(x^2+1)^3e^x,
+$$
 
-\[
-f(x)=(x^2+1)^3e^x
-\]
+compute the derivative. Before calculating, write down a plan: which rule applies to the whole expression and which rule applies to one of its factors. Finally, organize the result by factoring out common factors.
 
-## Step 1: Identify the Rules
+## Step 1: Plan Before Calculating
 
-The function is the product of two expressions:
+The whole expression is a product of $(x^2+1)^3$ and $e^x$, so we will use the product rule:
 
-\[
-u=(x^2+1)^3,\qquad v=e^x
-\]
+$$
+(uv)'=u'v+uv'.
+$$
 
-Therefore, we use the **product rule**:
+The first factor is a composition, so we will use the chain rule to differentiate it. Its outer function is the cube function, and its inner function is $x^2+1$.
 
-\[
-(uv)'=u'v+uv'
-\]
+The second factor, $e^x$, is its own derivative. After applying the product rule, we will factor out the common factors.
 
-To differentiate \((x^2+1)^3\), we also need the **chain rule**.
+## Step 2: Differentiate the Factors
 
-## Step 2: Differentiate the First Factor
+Let
 
-Let:
+$$
+u(x)=(x^2+1)^3,\qquad v(x)=e^x.
+$$
 
-\[
-u=(x^2+1)^3
-\]
+Using the chain rule,
 
-Using the chain rule:
+$$
+u'(x)=3(x^2+1)^2(2x)=6x(x^2+1)^2.
+$$
 
-\[
-\frac{d}{dx}(g(x))^3=3(g(x))^2g'(x)
-\]
+Also,
 
-Here, the inner function is:
+$$
+v'(x)=e^x.
+$$
 
-\[
-g(x)=x^2+1
-\]
+## Step 3: Apply the Product Rule
 
-Its derivative is:
+$$
+f'(x)=u'(x)v(x)+u(x)v'(x).
+$$
 
-\[
-g'(x)=2x
-\]
+Substituting gives
 
-Therefore:
+$$
+f'(x)=6x(x^2+1)^2e^x+(x^2+1)^3e^x.
+$$
 
-\[
-u'=3(x^2+1)^2(2x)
-\]
+## Step 4: Factor the Result
 
-Simplify:
+Both terms contain $e^x(x^2+1)^2$. Factoring gives
 
-\[
-\boxed{u'=6x(x^2+1)^2}
-\]
+$$
+f'(x)=e^x(x^2+1)^2[6x+(x^2+1)].
+$$
 
-## Step 3: Differentiate the Second Factor
+Therefore,
 
-Let:
-
-\[
-v=e^x
-\]
-
-The derivative of \(e^x\) is \(e^x\), so:
-
-\[
-\boxed{v'=e^x}
-\]
-
-## Step 4: Apply the Product Rule
-
-Using:
-
-\[
-f'(x)=u'v+uv'
-\]
-
-Substitute the derivatives:
-
-\[
-f'(x)=6x(x^2+1)^2e^x+(x^2+1)^3e^x
-\]
-
-## Step 5: Simplify the Result
-
-Both terms contain \(e^x(x^2+1)^2\). Factor it out:
-
-\[
-f'(x)=e^x(x^2+1)^2[6x+(x^2+1)]
-\]
-
-Simplify the expression inside the brackets:
-
-\[
-6x+(x^2+1)=x^2+6x+1
-\]
-
-Therefore, the simplified derivative is:
-
-\[
-\boxed{f'(x)=e^x(x^2+1)^2(x^2+6x+1)}
-\]
-
-## Final Answer
-
-\[
-\boxed{f'(x)=e^x(x^2+1)^2(x^2+6x+1)}
-\]
-
-**Key idea:** When a function is a product, use the product rule. If one factor contains a function raised to a power, use the chain rule to differentiate that factor.
-
+$$
+\boxed{f'(x)=e^x(x^2+1)^2(x^2+6x+1)}.
+$$
 ```
