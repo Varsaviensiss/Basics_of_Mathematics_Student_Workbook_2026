@@ -1,97 +1,50 @@
-```
+# Problem 8. Two Exponential Functions
 
-# Problem 8. Derivatives of Exponential Functions
+For the function
 
-Given:
+$$
+f(x)=e^{2x-3}+5^x,
+$$
 
-\[
-f(x)=e^{2x-3}+5^x
-\]
+compute the derivative. Explain why the factor $2$ appears in the first term and why $\ln 5$ appears in the second.
 
-## Step 1: Identify the Derivative Rules
+## Step 1: Differentiate the First Term
 
-We use two exponential derivative rules.
+The inner function is $u(x)=2x-3$, whose derivative is $u'(x)=2$.
 
-For the natural exponential function:
+By the chain rule,
 
-\[
-\frac{d}{dx}e^{u}=e^u\cdot u'
-\]
+$$
+\frac{d}{dx}e^{2x-3}
+=e^{2x-3}\frac{d}{dx}(2x-3)
+=2e^{2x-3}.
+$$
 
-For an exponential function with base \(a\):
+The factor $2$ comes from differentiating the exponent $2x-3$.
 
-\[
-\frac{d}{dx}a^x=a^x\ln(a)
-\]
+## Step 2: Differentiate the Second Term
 
-## Step 2: Differentiate the First Term
+Rewrite the exponential using base $e$:
 
-The first term is:
+$$
+5^x=e^{x\ln 5}.
+$$
 
-\[
-e^{2x-3}
-\]
+Since $\ln 5$ is constant, the derivative of the exponent $x\ln 5$ is $\ln 5$. Applying the chain rule gives
 
-The inner function is:
+$$
+\frac{d}{dx}5^x
+=\frac{d}{dx}e^{x\ln 5}
+=e^{x\ln 5}\ln 5
+=5^x\ln 5.
+$$
 
-\[
-u=2x-3
-\]
+Thus, the factor $\ln 5$ comes from differentiating the exponent $x\ln 5$.
 
-Its derivative is:
+## Step 3: Combine the Derivatives
 
-\[
-u'=2
-\]
+Using the sum rule,
 
-Using the chain rule:
-
-\[
-\frac{d}{dx}e^{2x-3}=e^{2x-3}\cdot 2
-\]
-
-Therefore,
-
-\[
-\frac{d}{dx}e^{2x-3}=2e^{2x-3}
-\]
-
-## Step 3: Differentiate the Second Term
-
-The second term is:
-
-\[
-5^x
-\]
-
-Using the exponential derivative rule:
-
-\[
-\frac{d}{dx}5^x=5^x\ln(5)
-\]
-
-Therefore,
-
-\[
-\frac{d}{dx}5^x=5^x\ln(5)
-\]
-
-## Step 4: Combine the Derivatives
-
-Since the original function is a sum, differentiate each term separately:
-
-\[
-f'(x)=2e^{2x-3}+5^x\ln(5)
-\]
-
-## Final Answer
-
-\[
-\boxed{f'(x)=2e^{2x-3}+5^x\ln(5)}
-\]
-
-**Key idea:**
-- For \(e^{u}\), multiply by the derivative of the exponent \(u'\).
-- For \(a^x\), multiply by \(\ln(a)\).
-
-```
+$$
+\boxed{f'(x)=2e^{2x-3}+5^x\ln 5}.
+$$
