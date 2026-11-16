@@ -1,97 +1,73 @@
+```markdown
+# Problem 7. A Trigonometric Composition
 
-# Problem 7. Chain Rule
+For the function
 
-Given:
+$$
+f(x)=\sin(x^2+1),
+$$
 
-\[
-f(x)=\sin(x^2+1)
-\]
+compute the derivative. Explicitly identify the outer function, the inner function, and the derivative of the inner function. Finally, determine the sign of $f'(0)$.
 
-## Step 1: Identify the Inner and Outer Functions
+## Step 1: Identify the Layers
 
-This function contains one function inside another, so we use the **chain rule**.
+The inner function is
 
-The chain rule is:
+$$
+u(x)=x^2+1.
+$$
 
-\[
-\frac{d}{dx}f(g(x))=f'(g(x))\cdot g'(x)
-\]
+The outer function is
 
-Identify the outer and inner functions:
+$$
+g(u)=\sin u.
+$$
 
-- Outer function: \(\sin(u)\)
-- Inner function: \(u=x^2+1\)
+Thus, $f(x)=g(u(x))$, and we use the chain rule.
 
-## Step 2: Differentiate the Outer Function
+## Step 2: Differentiate Each Layer
 
-The derivative of \(\sin(u)\) is:
+The derivative of the outer function with respect to $u$ is
 
-\[
-\frac{d}{du}\sin(u)=\cos(u)
-\]
+$$
+g'(u)=\cos u.
+$$
 
-Therefore, the derivative of the outer function is:
+The derivative of the inner function is
 
-\[
-\cos(x^2+1)
-\]
+$$
+u'(x)=2x.
+$$
 
-## Step 3: Differentiate the Inner Function
+## Step 3: Apply the Chain Rule
 
-The inner function is:
+The chain rule gives
 
-\[
-u=x^2+1
-\]
-
-Its derivative is:
-
-\[
-\frac{du}{dx}=2x
-\]
-
-## Step 4: Apply the Chain Rule
-
-Multiply the derivative of the outer function by the derivative of the inner function:
-
-\[
-f'(x)=\cos(x^2+1)\cdot 2x
-\]
-
-Thus,
-
-\[
-\boxed{f'(x)=2x\cos(x^2+1)}
-\]
-
-## Step 5: Determine the Sign of \(f'(0)\)
-
-Substitute \(x=0\):
-
-\[
-f'(0)=2(0)\cos(0^2+1)
-\]
-
-\[
-f'(0)=0\cdot\cos(1)
-\]
+$$
+f'(x)=g'(u(x))u'(x).
+$$
 
 Therefore,
 
-\[
-\boxed{f'(0)=0}
-\]
+$$
+\boxed{f'(x)=2x\cos(x^2+1)}.
+$$
 
-The tangent line at \(x=0\) is horizontal.
+The factor $2x$ appears because it is the derivative of the inner function.
 
-## Final Answer
+## Step 4: Determine the Sign at Zero
 
-\[
-\boxed{f'(x)=2x\cos(x^2+1)}
-\]
+Substituting $x=0$ gives
 
-\[
-\boxed{f'(0)=0}
-\]
+$$
+f'(0)=2(0)\cos(1)=0.
+$$
 
-**Key idea:** When differentiating a composite function, differentiate the outer function first, keep the inner function unchanged, and then multiply by the derivative of the inner function.
+Thus,
+
+$$
+\boxed{f'(0)=0}.
+$$
+
+Its value is zero, so it is neither positive nor negative. The tangent line at $x=0$ is horizontal.
+```
