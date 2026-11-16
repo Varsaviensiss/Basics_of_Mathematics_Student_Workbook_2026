@@ -1,131 +1,71 @@
-```
+Düzeltilmiş hâli, kopyala:
 
+```markdown
 # Problem 5. The Chain Rule as Working Through Layers
 
 Given the function
 
-\[
+$$
 f(x)=(3x^2-2x+1)^5,
-\]
+$$
 
-identify the inner and outer functions, compute their derivatives, and apply the chain rule.
+identify the inner and outer functions, compute their derivatives, and combine the result according to the chain rule. Explain the origin of the additional factor.
 
 ## Step 1: Identify the Inner and Outer Functions
 
-The function contains an expression raised to the fifth power.
-
 The inner function is
 
-\[
+$$
 u(x)=3x^2-2x+1.
-\]
+$$
 
 The outer function is
 
-\[
+$$
 g(u)=u^5.
-\]
+$$
 
-Therefore, the original function can be written as
+Thus, $f(x)=g(u(x))$.
 
-\[
-f(x)=g(u(x)).
-\]
+## Step 2: Differentiate Each Function
 
-## Step 2: Differentiate the Inner Function
+Using the power rule, the derivative of the inner function is
 
-Differentiate
-
-\[
-u(x)=3x^2-2x+1.
-\]
-
-Using the power rule,
-
-\[
+$$
 u'(x)=6x-2.
-\]
+$$
 
-Thus,
+The derivative of the outer function with respect to $u$ is
 
-\[
-\boxed{u'(x)=6x-2}.
-\]
-
-## Step 3: Differentiate the Outer Function
-
-The outer function is
-
-\[
-g(u)=u^5.
-\]
-
-Differentiating with respect to \(u\),
-
-\[
+$$
 g'(u)=5u^4.
-\]
+$$
 
-Therefore,
+## Step 3: Apply the Chain Rule
 
-\[
-\boxed{g'(u)=5u^4}.
-\]
+The chain rule gives
 
-## Step 4: Apply the Chain Rule
+$$
+f'(x)=g'(u(x))u'(x).
+$$
 
-The chain rule states that
+Differentiate the outer function, keeping the inner expression unchanged, and multiply by the derivative of the inner function:
 
-\[
-\boxed{f'(x)=g'(u(x))\cdot u'(x)}.
-\]
-
-In words, differentiate the outer function first, keep the inner expression unchanged, and then multiply by the derivative of the inner function.
-
-Substitute the expressions we found:
-
-\[
-f'(x)=5(3x^2-2x+1)^4(6x-2).
-\]
-
-Therefore,
-
-\[
+$$
 \boxed{f'(x)=5(3x^2-2x+1)^4(6x-2)}.
-\]
+$$
 
-We can also factor out \(2\) from \(6x-2\):
+Factoring $6x-2=2(3x-1)$ also gives
 
-\[
+$$
 \boxed{f'(x)=10(3x-1)(3x^2-2x+1)^4}.
-\]
+$$
 
-## Step 5: Explain the Additional Factor
+## Step 4: Explain the Additional Factor
 
-The factor
+The additional factor $6x-2$ is the derivative of the inner function $3x^2-2x+1$.
 
-\[
-6x-2
-\]
+The outer derivative describes how the fifth power changes with its input. Since that input also changes with $x$, the chain rule multiplies the outer derivative by the rate of change of the inner function.
 
-appears because the inner function \(3x^2-2x+1\) also depends on \(x\).
-
-If we differentiated only the outer power, we would obtain
-
-\[
-5(3x^2-2x+1)^4,
-\]
-
-which is incomplete. The chain rule requires multiplying this expression by the derivative of the inner function.
-
-## Final Answer
-
-\[
-\boxed{
-f'(x)=5(3x^2-2x+1)^4(6x-2)
-}
-\]
-
-**Key idea:** When a function is composed of multiple layers, differentiate the outer layer and multiply by the derivative of the inner layer.
-
+Therefore, differentiating only the outer power would omit the required factor $6x-2$.
 ```
