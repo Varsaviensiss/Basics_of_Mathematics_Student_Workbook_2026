@@ -1,142 +1,83 @@
-```
+```markdown
+# Problem 15. The Difference Quotient as a Check of the Derivative
 
-# Problem 15. Understanding the Difference Quotient
+Choose one function from the problem set and a point $x_0$ at which the derivative exists. Compute $f'(x_0)$ exactly, and then calculate
 
-Given:
+$$
+\frac{f(x_0+h)-f(x_0)}{h}
+$$
 
-\[
-f(x)=x^2
-\]
+for $h=1$, $0.1$, and $0.01$. Compare the values with $f'(x_0)$ and explain why the difference quotient approaching a single number is consistent with the definition of the derivative, while a few computations do not replace a limit argument.
 
-Use the difference quotient to estimate the derivative at \(x=1\), and explain how it approaches the exact derivative.
+## Step 1: Choose the Function and Point
 
-## Step 1: Write the Difference Quotient
+Choose $f(x)=x^2$ from Problem 11 and $x_0=1$.
 
-The difference quotient is:
+By the power rule,
 
-\[
-\frac{f(x+h)-f(x)}{h}
-\]
+$$
+f'(x)=2x.
+$$
 
-To estimate the derivative at \(x=1\), substitute \(x=1\):
+Therefore, the exact derivative at the chosen point is
 
-\[
-\frac{f(1+h)-f(1)}{h}
-\]
+$$
+\boxed{f'(1)=2}.
+$$
 
-## Step 2: Calculate the Function Values
+## Step 2: Compute the Difference Quotient
 
-Since \(f(x)=x^2\):
+For $h\neq0$, let
 
-\[
-f(1+h)=(1+h)^2
-\]
+$$
+Q(h)=\frac{f(1+h)-f(1)}{h}.
+$$
 
-Expanding:
+Substituting the function values and simplifying,
 
-\[
-f(1+h)=1+2h+h^2
-\]
-
-Also:
-
-\[
-f(1)=1^2=1
-\]
-
-## Step 3: Simplify the Difference Quotient
-
-Substitute the function values:
-
-\[
-\frac{f(1+h)-f(1)}{h}
-=
-\frac{(1+h)^2-1}{h}
-\]
-
-Expand and simplify:
-
-\[
-=\frac{1+2h+h^2-1}{h}
-\]
-
-\[
+$$
+Q(h)=\frac{(1+h)^2-1}{h}
 =\frac{2h+h^2}{h}
-\]
+=\boxed{2+h}.
+$$
 
-Factor and cancel \(h\), where \(h\neq 0\):
+## Step 3: Calculate and Compare Values
 
-\[
-=\frac{h(2+h)}{h}
-\]
+| $h$ | Difference quotient $Q(h)=2+h$ | Exact derivative $f'(1)$ |
+|---:|---:|---:|
+| $1$ | $3$ | $2$ |
+| $0.1$ | $2.1$ | $2$ |
+| $0.01$ | $2.01$ | $2$ |
 
-Therefore:
+The calculated values get closer to $2$ as these positive values of $h$ get closer to zero. This illustrates the behavior expected from the definition of the derivative.
 
-\[
-\boxed{\frac{f(1+h)-f(1)}{h}=2+h}
-\]
+## Step 4: Prove the Limit
 
-## Step 4: Estimate the Derivative
+The algebraic identity $Q(h)=2+h$ holds for every nonzero real $h$. Hence,
 
-Choose values of \(h\) that get closer to zero.
+$$
+\lim_{h\to0}Q(h)
+=\lim_{h\to0}(2+h)
+=2.
+$$
 
-| \(h\) | Difference quotient \(2+h\) |
-|---:|---:|
-| \(1\) | \(3\) |
-| \(0.1\) | \(2.1\) |
-| \(0.01\) | \(2.01\) |
-| \(0.001\) | \(2.001\) |
-| \(-0.01\) | \(1.99\) |
-| \(-0.001\) | \(1.999\) |
+This holds as $h$ approaches zero from either side. More explicitly,
 
-As \(h\) approaches zero from either direction, the difference quotient approaches \(2\).
+$$
+|Q(h)-2|=|h|.
+$$
 
-## Step 5: Find the Exact Derivative
+For any $\varepsilon>0$, choosing $\delta=\varepsilon$ ensures that $0<|h|<\delta$ implies $|Q(h)-2|<\varepsilon$.
 
-The derivative is the limit of the difference quotient:
+Therefore, by the definition of the derivative,
 
-\[
-f'(1)=\lim_{h\to 0}\frac{f(1+h)-f(1)}{h}
-\]
+$$
+\boxed{f'(1)=2}.
+$$
 
-Using the simplified expression:
+## Step 5: Explain Why the Table Is Not a Proof
 
-\[
-f'(1)=\lim_{h\to 0}(2+h)
-\]
+Finitely many values of $h$ leave untested values arbitrarily close to zero. A table therefore cannot establish what happens for every sufficiently small nonzero $h$, including values approaching zero from the negative side.
 
-As \(h\to 0\):
-
-\[
-\boxed{f'(1)=2}
-\]
-
-This agrees with the power rule:
-
-\[
-f'(x)=2x
-\]
-
-Therefore:
-
-\[
-f'(1)=2(1)=2
-\]
-
-## Final Answer
-
-The difference quotient is:
-
-\[
-\boxed{2+h}
-\]
-
-The exact derivative at \(x=1\) is:
-
-\[
-\boxed{f'(1)=2}
-\]
-
-**Key idea:** The difference quotient gives the slope of a secant line. As \(h\) approaches zero, the secant slope approaches the slope of the tangent line, which is the derivative. Numerical examples illustrate this behavior, while the limit establishes the exact result.
-
+The formula $Q(h)=2+h$ proves convergence for every approach $h\to0$. Thus, the table illustrates the derivative limit, while the algebraic limit argument proves it.
 ```
