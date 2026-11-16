@@ -1,153 +1,75 @@
-```
-
 # Problem 2. Powers, Roots, and the Domain
 
 Given the function
 
-\[
-f(x)=2x-3x^2+\sqrt{x},
-\]
+$$
+f(x)=2\sqrt{x}-\frac{3}{x^2}+x^{3/2},
+$$
 
 1. Rewrite the function using powers.
 2. Determine its domain.
 3. Compute the derivative.
 4. Compare the domain of the function with the domain of its derivative.
 
-## Step 1: Rewrite the Function Using Powers
+## Solution
 
-We know that
+### 1. Rewrite Using Powers
 
-\[
-\sqrt{x}=x^{1/2}.
-\]
+Using $\sqrt{x}=x^{1/2}$ and $1/x^2=x^{-2}$, we obtain
 
-Therefore, the function can be written as
+$$
+\boxed{f(x)=2x^{1/2}-3x^{-2}+x^{3/2}}.
+$$
 
-\[
-\boxed{f(x)=2x-3x^2+x^{1/2}}.
-\]
+This form allows us to apply the power rule term by term.
 
-This form allows us to apply the power rule to each term.
+### 2. Domain of the Function
 
-## Step 2: Determine the Domain
+The terms $\sqrt{x}$ and $x^{3/2}$ require $x\geq0$ over the real numbers. The denominator $x^2$ requires $x\neq0$.
 
-The terms \(2x\) and \(-3x^2\) are defined for all real numbers.
+Combining these restrictions gives
 
-However, the square root \(\sqrt{x}\) is defined over the real numbers only when
+$$
+\boxed{D_f=(0,\infty)}.
+$$
 
-\[
-x\geq 0.
-\]
-
-Therefore, the domain of the original function is
-
-\[
-\boxed{D_f=[0,\infty)}.
-\]
-
-## Step 3: Compute the Derivative
+### 3. Compute the Derivative
 
 Using the power rule,
 
-\[
+$$
 \frac{d}{dx}x^n=nx^{n-1},
-\]
+$$
 
-differentiate each term separately:
+we differentiate each term:
 
-\[
-\frac{d}{dx}(2x)=2,
-\]
+$$
+f'(x)
+=2\cdot\frac12x^{-1/2}
+-3(-2)x^{-3}
++\frac32x^{1/2}.
+$$
 
-\[
-\frac{d}{dx}(-3x^2)=-6x,
-\]
+Therefore,
 
-\[
-\frac{d}{dx}(x^{1/2})
-=\frac12x^{-1/2}.
-\]
+$$
+\boxed{f'(x)=\frac{1}{\sqrt{x}}+\frac{6}{x^3}+\frac32\sqrt{x}}.
+$$
 
-Combining the results,
+### 4. Compare the Domains
 
-\[
-f'(x)=2-6x+\frac12x^{-1/2}.
-\]
-
-Rewrite the negative exponent using a square root:
-
-\[
-\boxed{f'(x)=2-6x+\frac{1}{2\sqrt{x}}}.
-\]
-
-## Step 4: Determine the Domain of the Derivative
-
-The derivative contains the term
-
-\[
-\frac{1}{2\sqrt{x}}.
-\]
-
-For this expression to be defined, the square root must be real and the denominator must not equal zero.
+The term $1/\sqrt{x}$ requires $x>0$, the term $6/x^3$ requires $x\neq0$, and $\sqrt{x}$ requires $x\geq0$.
 
 Thus,
 
-\[
-x>0.
-\]
-
-At \(x=0\), the original function is defined, but the derivative formula is undefined. In fact, the right-hand difference quotient for the square-root term grows without bound as \(x\) approaches zero from the right, so there is no finite derivative at \(x=0\).
-
-Therefore, the domain of the derivative is
-
-\[
+$$
 \boxed{D_{f'}=(0,\infty)}.
-\]
+$$
 
-## Step 5: Compare the Domains
+The two domains agree:
 
-The original function is defined at \(x=0\), but its derivative is not defined there.
+$$
+\boxed{D_f=D_{f'}=(0,\infty)}.
+$$
 
-Hence,
-
-\[
-\boxed{D_f=[0,\infty)}
-\]
-
-and
-
-\[
-\boxed{D_{f'}=(0,\infty)}.
-\]
-
-The derivative's domain is smaller because differentiability requires a finite derivative, which fails at \(x=0\).
-
-## Final Answers
-
-**Function in power form:**
-
-\[
-\boxed{f(x)=2x-3x^2+x^{1/2}}
-\]
-
-**Domain of the function:**
-
-\[
-\boxed{D_f=[0,\infty)}
-\]
-
-**Derivative:**
-
-\[
-\boxed{f'(x)=2-6x+\frac{1}{2\sqrt{x}},\quad x>0}
-\]
-
-**Domain of the derivative:**
-
-\[
-\boxed{D_{f'}=(0,\infty)}
-\]
-
-**Key idea:** A function can be defined at a point without being differentiable there. In this example, \(f(0)\) exists, but \(f'(0)\) does not.
-
-```
+The original function already excludes $x=0$, so differentiation introduces no additional domain restriction.
