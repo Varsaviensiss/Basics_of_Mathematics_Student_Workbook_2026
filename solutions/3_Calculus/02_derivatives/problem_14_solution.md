@@ -1,144 +1,96 @@
-```
+```markdown
+# Problem 14. Continuity and Differentiability of a Piecewise Function
 
-# Problem 14. Continuity and Differentiability
+Investigate the behavior at $x=0$ of
 
-Given the piecewise function:
-
-\[
+$$
 f(x)=
 \begin{cases}
-x^2, & x\geq 0\\
-ax, & x<0
+x^2, & x\geq0,\\
+ax, & x<0.
 \end{cases}
-\]
+$$
 
-Determine the value of \(a\) for which the function is continuous and differentiable at \(x=0\).
+For which values of $a$ is the function continuous? For which values do the one-sided derivatives exist and agree? For which value of $a$ is the function differentiable? Explain why continuity alone is not sufficient.
 
-## Step 1: Check Continuity at \(x=0\)
+## Step 1: Check Continuity at Zero
 
-A function is continuous at \(x=0\) if:
+The function value is
 
-\[
-\lim_{x\to 0}f(x)=f(0)
-\]
+$$
+f(0)=0^2=0.
+$$
 
-Since \(x\geq 0\), we use \(f(x)=x^2\) to find \(f(0)\):
+For every real $a$, the one-sided limits are
 
-\[
-f(0)=0^2=0
-\]
+$$
+\lim_{x\to0^-}f(x)=\lim_{x\to0^-}ax=0
+$$
 
-Now calculate the left-hand limit:
+and
 
-\[
-\lim_{x\to 0^-}f(x)=\lim_{x\to 0^-}ax=0
-\]
+$$
+\lim_{x\to0^+}f(x)=\lim_{x\to0^+}x^2=0.
+$$
 
-Calculate the right-hand limit:
+Both limits equal $f(0)$. Therefore, the function is continuous at zero for
 
-\[
-\lim_{x\to 0^+}f(x)=\lim_{x\to 0^+}x^2=0
-\]
+$$
+\boxed{a\in\mathbb{R}}.
+$$
 
-Both limits equal the function value:
+## Step 2: Compute the One-Sided Derivatives
 
-\[
-\lim_{x\to 0^-}f(x)
-=
-\lim_{x\to 0^+}f(x)
-=
-f(0)=0
-\]
+Using the difference quotient and $f(0)=0$, the left-hand derivative is
 
-Therefore, the function is continuous at \(x=0\) **for every real value of \(a\)**.
+$$
+f'_-(0)
+=\lim_{h\to0^-}\frac{f(h)-f(0)}{h}
+=\lim_{h\to0^-}\frac{ah}{h}
+=a.
+$$
 
-\[
-\boxed{a\in\mathbb{R}}
-\]
+The right-hand derivative is
 
-## Step 2: Check Differentiability at \(x=0\)
+$$
+f'_+(0)
+=\lim_{h\to0^+}\frac{f(h)-f(0)}{h}
+=\lim_{h\to0^+}\frac{h^2}{h}
+=\lim_{h\to0^+}h
+=0.
+$$
 
-A function is differentiable at \(x=0\) if its left-hand and right-hand derivatives are equal.
+Thus, both one-sided derivatives exist for every real $a$:
 
-### Left-hand derivative
+$$
+\boxed{f'_-(0)=a,\qquad f'_+(0)=0}.
+$$
 
-For \(x<0\):
+They agree exactly when
 
-\[
-f(x)=ax
-\]
+$$
+\boxed{a=0}.
+$$
 
-Differentiating gives:
+## Step 3: Determine Differentiability
 
-\[
-f'(x)=a
-\]
+The derivative at zero exists precisely when the two one-sided derivatives agree. Therefore, the function is differentiable at zero only for
 
-Therefore:
+$$
+\boxed{a=0}.
+$$
 
-\[
-\boxed{f'_-(0)=a}
-\]
+In that case, $f'(0)=0$.
 
-### Right-hand derivative
+## Step 4: Explain Why Continuity Is Not Sufficient
 
-For \(x\geq 0\):
+Continuity requires the function values from both sides to approach $f(0)$. Differentiability additionally requires the one-sided slopes to agree.
 
-\[
-f(x)=x^2
-\]
+For example, when $a=1$, the function is continuous at zero, but
 
-Differentiating gives:
+$$
+f'_-(0)=1\neq0=f'_+(0).
+$$
 
-\[
-f'(x)=2x
-\]
-
-At \(x=0\):
-
-\[
-\boxed{f'_+(0)=2(0)=0}
-\]
-
-## Step 3: Set the Derivatives Equal
-
-For differentiability, the two one-sided derivatives must agree:
-
-\[
-f'_-(0)=f'_+(0)
-\]
-
-Substitute their values:
-
-\[
-a=0
-\]
-
-Thus, the function is differentiable at \(x=0\) only when:
-
-\[
-\boxed{a=0}
-\]
-
-## Step 4: Interpret the Result
-
-- **Continuity:** The two pieces meet at \((0,0)\) for every real \(a\).
-- **Differentiability:** The slopes must also match at \(x=0\). The left-hand slope is \(a\), while the right-hand slope is \(0\). They match only when \(a=0\).
-
-## Final Answer
-
-**For continuity:**
-
-\[
-\boxed{a\in\mathbb{R}}
-\]
-
-**For differentiability:**
-
-\[
-\boxed{a=0}
-\]
-
-**Key idea:** Differentiability implies continuity, but continuity does not necessarily imply differentiability. A function can be continuous while having different slopes on its two sides.
-
+Hence, it is not differentiable there. Matching values alone does not guarantee matching slopes.
 ```
