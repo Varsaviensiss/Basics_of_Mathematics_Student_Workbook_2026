@@ -1,4 +1,3 @@
-```markdown
 # Exercise 11. Decomposition into Parallel and Perpendicular Components
 
 Given $\mathbf{u}=(3,4)$ and $\mathbf{v}=(1,2)$, find the components of $\mathbf{u}$ parallel and perpendicular to $\mathbf{v}$. Verify that they add up to $\mathbf{u}$ and that the perpendicular component is orthogonal to $\mathbf{v}$. Explain why these two checks are independent.
@@ -39,4 +38,3 @@ $$
 - **Perpendicularity can pass while reconstruction fails.** Choose $\mathbf{p}=(1,2)$ and $\mathbf{q}=(2,-1)$. Here $\mathbf{p}$ is parallel to $\mathbf{v}$ and $\mathbf{q}\cdot\mathbf{v}=2(1)-1(2)=0$, but $\mathbf{p}+\mathbf{q}=(3,1)\ne\mathbf{u}$.
 
 Each check can pass while the other fails, so both checks are necessary.
-```
