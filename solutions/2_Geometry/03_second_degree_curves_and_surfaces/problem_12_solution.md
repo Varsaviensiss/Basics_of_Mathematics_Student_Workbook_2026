@@ -1,76 +1,37 @@
+# Exercise 12. Recognizing a Surface from Cross-Sections
 
-## Exercise 12. Recognizing a Surface from Cross-Sections
+## Question
 
-### 1. Find the Equation
+Find an equation for a surface whose cross-section at $z=0$ is a single point and whose horizontal cross-sections at $z=c>0$ are circles with radii that increase as $c$ increases. Every vertical plane containing the $z$-axis should cut the surface in an upward-opening parabola. Verify all these properties for your equation.
 
-The cross-section at \(z=0\) is a single point, and for \(z>0\), the horizontal cross-sections are circles with increasing radius.
+## Solution
 
 A suitable equation is
 
-\[
-\boxed{z=x^2+y^2}
-\]
+$$
+\boxed{z=x^2+y^2}.
+$$
 
-### 2. Check the Cross-Section \(z=0\)
+### 1. Horizontal Cross-Sections
 
-Substitute \(z=0\):
+At $z=0$, the equation becomes $x^2+y^2=0$. Both squares are nonnegative, so $x=y=0$. The section is the single point $(0,0,0)$.
 
-\[
-0=x^2+y^2
-\]
+At $z=c>0$, the equation becomes $x^2+y^2=c$. This is a circle in the plane $z=c$, centered at $(0,0,c)$, with radius $\sqrt{c}$. Its radius increases with $c$.
 
-Since \(x^2\geq0\) and \(y^2\geq0\), the only solution is
+### 2. Vertical Cross-Sections
 
-\[
-\boxed{(x,y,z)=(0,0,0)}
-\]
+In the plane $x=0$, the section is $z=y^2$. In the plane $y=0$, it is $z=x^2$.
 
-Thus, the cross-section is a single point.
+More generally, fix an angle $\theta$. In the vertical plane through the $z$-axis at that angle, write
 
-### 3. Check the Cross-Sections \(z=c\)
+$$
+x=s\cos\theta,\qquad y=s\sin\theta,\qquad s\in\mathbb R.
+$$
 
-Substitute \(z=c\):
+Substituting gives
 
-\[
-c=x^2+y^2
-\]
+$$
+z=s^2\cos^2\theta+s^2\sin^2\theta=s^2.
+$$
 
-Therefore,
-
-\[
-\boxed{x^2+y^2=c}
-\]
-
-For \(c>0\), this is a circle with radius
-
-\[
-\boxed{r=\sqrt{c}}
-\]
-
-As \(c\) increases, the radius increases.
-
-### 4. Check the Vertical Cross-Sections
-
-For \(x=0\):
-
-\[
-z=y^2
-\]
-
-For \(y=0\):
-
-\[
-z=x^2
-\]
-
-Both equations describe upward-opening parabolas in their respective vertical planes.
-
-### 5. Conclusion
-
-The equation
-
-\[
-\boxed{z=x^2+y^2}
-\]
-
-satisfies all the given conditions. It describes an upward-opening circular paraboloid with vertex at the origin and axis of symmetry along the \(z\)-axis.
+Thus every such plane cuts the surface in an upward-opening parabola with vertex at the origin. The surface is an upward-opening circular paraboloid with the $z$-axis as its axis of symmetry.
