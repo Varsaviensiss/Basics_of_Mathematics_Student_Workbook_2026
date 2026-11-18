@@ -2,102 +2,41 @@
 
 ## Part 1. Distance from a Point to a Line
 
-### Given
+Find the distance from $P=(2,3)$ to the line $3x+4y-10=0$.
 
-$$
-P=(2,3)
-$$
-
-$$
-3x+4y-10=0
-$$
-
-The distance from a point \((x_0,y_0)\) to a line \(ax+by+c=0\) is
-
-$$
-d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
-$$
-
-Substitute \(a=3\), \(b=4\), \(c=-10\), and \(P=(2,3)\):
+The normal vector is $\mathbf n=(3,4)$, so its length is $\sqrt{3^2+4^2}=5$. The distance is
 
 $$
 d=\frac{|3(2)+4(3)-10|}{\sqrt{3^2+4^2}}
-$$
-
-$$
-=\frac{|6+12-10|}{\sqrt{9+16}}
-$$
-
-$$
-=\frac8{\sqrt{25}}
-$$
-
-$$
-\boxed{d= \frac85}
+=\boxed{\frac{8}{5}}.
 $$
 
 ## Part 2. Distance from a Point to a Plane
 
-### Given
+Find the distance from $Q=(2,-1,3)$ to the plane $2x-2y+z-4=0$.
 
-$$
-Q=(2,-1,3)
-$$
-
-$$
-2x-2y+z-4=0
-$$
-
-The distance from a point \((x_0,y_0,z_0)\) to a plane \(ax+by+cz+d=0\) is
-
-$$
-d=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}
-$$
-
-Substitute the values:
+The normal vector is $\mathbf n=(2,-2,1)$, so its length is $\sqrt{2^2+(-2)^2+1^2}=3$. The distance is
 
 $$
 d=\frac{|2(2)-2(-1)+3-4|}{\sqrt{2^2+(-2)^2+1^2}}
+=\boxed{\frac{5}{3}}.
 $$
 
-$$
-=\frac{|4+2+3-4|}{\sqrt{4+4+1}}
-$$
+## Part 3. Why Both Formulas Work
+
+In either case, write the equation as $\mathbf n\cdot Y+k=0$ and choose a point $X_0$ on the line or plane. For a point $X$, the perpendicular distance is the magnitude of the scalar projection of $X-X_0$ onto the unit normal $\mathbf n/\|\mathbf n\|$:
 
 $$
-=\frac5{\sqrt9}
+d=\left|(X-X_0)\cdot\frac{\mathbf n}{\|\mathbf n\|}\right|
+=\frac{|(X-X_0)\cdot\mathbf n|}{\|\mathbf n\|}.
 $$
 
-$$
-\boxed{d=\frac53}
-$$
-
-## Part 3. Compare the Formulas
-
-For a line in two dimensions:
+Since $X_0$ lies on the line or plane, $\mathbf n\cdot X_0=-k$. Substituting gives
 
 $$
-d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+(X-X_0)\cdot\mathbf n=\mathbf n\cdot X+k,
+\qquad
+d=\frac{|\mathbf n\cdot X+k|}{\|\mathbf n\|}.
 $$
 
-For a plane in three dimensions:
-
-$$
-d=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}
-$$
-
-Both formulas use the same geometric idea:
-
-- The numerator measures the point's signed displacement relative to the line or plane equation.
-- The denominator is the length of the normal vector.
-- The absolute value ensures that distance is nonnegative.
-
-## Final Answers
-
-$$
-\boxed{d(P,\text{line})=\frac85}
-$$
-
-$$
-\boxed{d(Q,\text{plane})=\frac53}
-$$
+The expression $\mathbf n\cdot X+k$ is the **unnormalized signed residual**. Dividing it by $\|\mathbf n\|$ gives the signed distance in the chosen normal direction. Taking the absolute value gives the perpendicular distance.
