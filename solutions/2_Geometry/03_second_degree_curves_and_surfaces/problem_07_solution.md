@@ -1,50 +1,46 @@
+# Exercise 7. Classifying a Second-Degree Equation
 
-## Exercise 7. Classifying a Second-Degree Equation
+## Question
 
-### 1. \(4x^2+9y^2=36\)
+Classify each equation by the curve it represents in the real plane. If an equation has no real points, explain why.
 
-Divide both sides by \(36\):
+1. $4x^2+9y^2=36$
+2. $x^2-y^2=1$
+3. $x^2-4y=0$
+4. $x^2+y^2+1=0$
 
-\[
+## Solution
+
+### 1. Ellipse
+
+Divide both sides by $36$:
+
+$$
 \frac{x^2}{9}+\frac{y^2}{4}=1.
-\]
+$$
 
-This is an **ellipse** centered at \((0,0)\), with semiaxes \(a=3\) and \(b=2\).
+This is an ellipse centered at $(0,0)$, with horizontal semiaxis $3$ and vertical semiaxis $2$.
 
-### 2. \(x^2-y^2=1\)
+### 2. Hyperbola
 
-This is a **hyperbola** in standard form:
+The equation $x^2-y^2=1$ is already in canonical form. It is a hyperbola centered at $(0,0)$, with two branches opening left and right along the $x$-axis.
 
-\[
-\frac{x^2}{1}-\frac{y^2}{1}=1.
-\]
+### 3. Parabola
 
-It is centered at \((0,0)\) and opens along the \(x\)-axis.
+Rearranging $x^2-4y=0$ gives
 
-### 3. \(x^2-4y=0\)
-
-Solve for \(y\):
-
-\[
+$$
 y=\frac{x^2}{4}.
-\]
+$$
 
-This is a **parabola** with vertex \((0,0)\), opening upward.
+This is a parabola with vertex $(0,0)$ that opens upward.
 
-### 4. \(x^2+y^2+1=0\)
+### 4. Empty Real Set
 
-Rearrange:
+Rearranging gives
 
-\[
+$$
 x^2+y^2=-1.
-\]
+$$
 
-Since \(x^2\geq0\) and \(y^2\geq0\) for all real \(x,y\),
-
-\[
-x^2+y^2\geq0.
-\]
-
-Therefore, \(x^2+y^2\) cannot equal \(-1\).
-
-**Conclusion:** There are no real points satisfying this equation; its real solution set is empty.
+For real $x$ and $y$, both squares are nonnegative, so their sum cannot equal $-1$. Therefore, the real solution set is empty.
