@@ -1,55 +1,46 @@
 # Exercise 4. Analyze the Sequences
 
-**1.** (\displaystyle \lim\_{n\to\infty}\left(\frac{2}{3}\right)^n)
+## Question
 
-Since (0<\frac{2}{3}<1), each term becomes smaller as (n) increases. Therefore, the sequence approaches zero.
+Determine whether each sequence converges or diverges. If it converges, find its limit. If it diverges, explain whether it grows without bound or oscillates. Justify each answer.
 
-[\
-\boxed{\lim\_{n\to\infty}\left(\frac{2}{3}\right)^n=0}\
-]
+1. $\left(\frac{2}{3}\right)^n$
+2. $\left(\frac{3}{2}\right)^n$
+3. $(-1)^n$
+4. $\frac{(-1)^n}{n}$
 
-**2.** (\displaystyle \lim\_{n\to\infty}\left(\frac{3}{2}\right)^n)
+## Solution
 
-Since (\frac{3}{2}>1), the terms become larger as (n) increases. Therefore, the sequence grows without bound.
+### 1. $\left(\frac{2}{3}\right)^n$
 
-[\
-\boxed{\lim\_{n\to\infty}\left(\frac{3}{2}\right)^n=+\infty}\
-]
+Since $0<\frac{2}{3}<1$, the terms of this geometric sequence approach zero:
 
-**3.** (\displaystyle \lim\_{n\to\infty}(-1)^n)
+$$
+\boxed{\lim_{n\to\infty}\left(\frac{2}{3}\right)^n=0}.
+$$
 
-The sequence alternates between (1) and (-1).
+### 2. $\left(\frac{3}{2}\right)^n$
 
-For even values of (n), ((-1)^n=1).
+Since $\frac{3}{2}>1$, the terms of this geometric sequence grow without bound:
 
-For odd values of (n), ((-1)^n=-1).
+$$
+\boxed{\lim_{n\to\infty}\left(\frac{3}{2}\right)^n=+\infty}.
+$$
 
-Since the sequence does not approach a single value, the limit does not exist.
+### 3. $(-1)^n$
 
-[\
-\boxed{\lim\_{n\to\infty}(-1)^n\text{ does not exist}}\
-]
+The even-indexed terms are all $1$, and the odd-indexed terms are all $-1$. These two subsequences have different limits, so $(-1)^n$ oscillates and its limit does not exist.
 
-**4.** (\displaystyle \lim\_{n\to\infty}\frac{(-1)^n}{n})
+### 4. $\frac{(-1)^n}{n}$
 
-Since ((-1)^n) alternates between (1) and (-1), the numerator remains bounded. Meanwhile, the denominator (n) increases without bound.
+Since $-1\leq(-1)^n\leq1$, for every $n\geq1$ we have
 
-We can also use the inequality
+$$
+-\frac{1}{n}\leq\frac{(-1)^n}{n}\leq\frac{1}{n}.
+$$
 
-[\
--\frac{1}{n}\leq\frac{(-1)^n}{n}\leq\frac{1}{n}.\
-]
+Both bounds approach zero as $n\to\infty$. By the Squeeze Theorem,
 
-As (n\to\infty),
-
-[\
-\lim\_{n\to\infty}-\frac{1}{n}=0\
-\quad\text{and}\quad\
-\lim\_{n\to\infty}\frac{1}{n}=0.\
-]
-
-By the Squeeze Theorem, the limit is zero.
-
-[\
-\boxed{\lim\_{n\to\infty}\frac{(-1)^n}{n}=0}\
-]
+$$
+\boxed{\lim_{n\to\infty}\frac{(-1)^n}{n}=0}.
+$$
