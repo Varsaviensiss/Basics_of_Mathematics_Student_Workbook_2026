@@ -1,141 +1,27 @@
-## Exercise 14. Cone and Cylinder
+# Exercise 14. Cone and Cylinder
 
-### 1. First Surface
+## Question
 
-**Given equation:**
+Compare the surfaces $x^2+y^2=z^2$ and $x^2+y^2=4$. For each surface, find and describe the cross-sections in the planes $z=c$, $x=0$, and $y=0$. Draw a labeled sketch of each surface and explain why the horizontal radius varies for the cone but stays constant for the cylinder.
 
-\[
-x^2+y^2=z^2
-\]
+## Solution
 
-#### Cross-Section \(z=c\)
+### 1. Double Cone
 
-Substitute \(z=c\) into the equation:
+- At $z=c$, the equation becomes $x^2+y^2=c^2$. For $c\ne0$, this is a circle of radius $\lvert c\rvert$ centered at $(0,0,c)$. At $c=0$, the section is the single point $(0,0,0)$.
+- At $x=0$, the equation becomes $y^2=z^2$, giving two intersecting lines $y=\pm z$ in the $yz$-plane.
+- At $y=0$, the equation becomes $x^2=z^2$, giving two intersecting lines $x=\pm z$ in the $xz$-plane.
 
-\[
-x^2+y^2=c^2
-\]
+The two halves meet at the origin. The horizontal radius is $\lvert z\rvert$, so the cone widens in both directions away from the plane $z=0$.
 
-This is a circle with radius
+### 2. Circular Cylinder
 
-\[
-\boxed{r=|c|}
-\]
+- At $z=c$, the equation is $x^2+y^2=4$. For every real $c$, the section is a circle of radius $2$ centered at $(0,0,c)$.
+- At $x=0$, the equation becomes $y^2=4$, giving two parallel lines $y=\pm2$ in the $yz$-plane.
+- At $y=0$, the equation becomes $x^2=4$, giving two parallel lines $x=\pm2$ in the $xz$-plane.
 
-When \(c=0\), the cross-section is a single point at the origin.
+The cylinder extends in both directions along the $z$-axis. Its equation is independent of $z$, so its radius is always $2$.
 
-#### Cross-Section \(x=0\)
+### 3. Labeled Sketches
 
-Substitute \(x=0\):
-
-\[
-y^2=z^2
-\]
-
-Therefore,
-
-\[
-\boxed{y=\pm z}
-\]
-
-This cross-section consists of two intersecting straight lines.
-
-#### Cross-Section \(y=0\)
-
-Substitute \(y=0\):
-
-\[
-x^2=z^2
-\]
-
-Therefore,
-
-\[
-\boxed{x=\pm z}
-\]
-
-This cross-section also consists of two intersecting straight lines.
-
-#### Shape and Explanation
-
-The surface is a double cone with its vertex at the origin. The radius of each horizontal circular cross-section is \(r=|z|\), so it increases as the distance from the origin increases.
-
-**Sketch:** Two cones joined at their vertices at the origin, extending upward and downward along the \(z\)-axis.
-
----
-
-### 2. Second Surface
-
-**Given equation:**
-
-\[
-x^2+y^2=4
-\]
-
-#### Cross-Section \(z=c\)
-
-The equation does not contain \(z\), so
-
-\[
-x^2+y^2=4
-\]
-
-This is a circle with constant radius
-
-\[
-\boxed{r=2}
-\]
-
-for every real value of \(c\).
-
-#### Cross-Section \(x=0\)
-
-Substitute \(x=0\):
-
-\[
-y^2=4
-\]
-
-Therefore,
-
-\[
-\boxed{y=\pm2}
-\]
-
-This cross-section consists of two parallel straight lines in the \(yz\)-plane.
-
-#### Cross-Section \(y=0\)
-
-Substitute \(y=0\):
-
-\[
-x^2=4
-\]
-
-Therefore,
-
-\[
-\boxed{x=\pm2}
-\]
-
-This cross-section consists of two parallel straight lines in the \(xz\)-plane.
-
-#### Shape and Explanation
-
-The surface is a circular cylinder of radius \(2\), extending infinitely along the \(z\)-axis. Its radius remains constant because the equation does not depend on \(z\).
-
-**Sketch:** A vertical circular cylinder with radius \(2\).
-
----
-
-### 3. Comparison
-
-| Feature | Cone | Cylinder |
-|---|---|---|
-| Equation | \(x^2+y^2=z^2\) | \(x^2+y^2=4\) |
-| Horizontal cross-section | \(x^2+y^2=c^2\) | \(x^2+y^2=4\) |
-| Radius | \(r=|c|\) | \(r=2\) |
-| Vertical cross-sections | Intersecting lines | Parallel lines |
-| Shape | Double cone | Circular cylinder |
-
-**Conclusion:** The cone's radius depends on \(z\) because \(z^2\) appears in its equation. The cylinder's radius is constant because its equation contains no \(z\)-term.
+![Double cone with vertex at the origin and circular cylinder with radius 2. Both sketches show the z-axis and labeled horizontal sections.](./cone-cylinder-exercise-14.png)
