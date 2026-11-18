@@ -1,86 +1,45 @@
+# Exercise 11. Two Similar Surfaces
 
-## Exercise 11. Two Similar Surfaces
+## Question
 
-We compare the surfaces
+Compare the surfaces
 
-\[
+$$
 x^2+y^2-z^2=1
-\]
-
-and
-
-\[
+\qquad\text{and}\qquad
 x^2+y^2-z^2=-1.
-\]
+$$
 
-### 1. Surface: \(x^2+y^2-z^2=1\)
+For each surface, describe the horizontal cross-sections at $z=c$. State when they exist, give their radii, and explain how they change with $c$. Compare the connectivity of the surfaces and draw labeled sketches showing the $z$-axis.
 
-Set \(z=c\):
+## Solution
 
-\[
-x^2+y^2-c^2=1
-\]
+### 1. One-Sheet Hyperboloid
 
-\[
+For $x^2+y^2-z^2=1$, setting $z=c$ gives
+
+$$
 x^2+y^2=1+c^2.
-\]
+$$
 
-This is a circle with radius
+For every real $c$, the cross-section is a circle centered at $(0,0,c)$ with radius $\sqrt{1+c^2}$. The radius is smallest at $c=0$, where it equals $1$, and increases as $|c|$ increases. These circles form one connected surface with a narrow waist at $z=0$.
 
-\[
-r=\sqrt{1+c^2}.
-\]
+### 2. Two-Sheet Hyperboloid
 
-The cross-section exists for every real value of \(c\).
+For $x^2+y^2-z^2=-1$, setting $z=c$ gives
 
-Examples:
-
-- \(c=0\): \(r=1\)
-- \(c=\pm1\): \(r=\sqrt{2}\)
-- \(c=\pm2\): \(r=\sqrt{5}\)
-
-The radius is smallest at \(z=0\) and increases as \(|z|\) increases. The surface is a **connected hourglass-shaped surface** with a narrowest circular cross-section at the center.
-
-### 2. Surface: \(x^2+y^2-z^2=-1\)
-
-Set \(z=c\):
-
-\[
-x^2+y^2-c^2=-1
-\]
-
-\[
+$$
 x^2+y^2=c^2-1.
-\]
+$$
 
-A circular cross-section exists only when
+- If $|c|>1$, the cross-section is a circle of radius $\sqrt{c^2-1}$ centered at $(0,0,c)$.
+- If $|c|=1$, the cross-section is a single point, $(0,0,c)$.
+- If $|c|<1$, the cross-section is empty.
 
-\[
-c^2-1\geq 0
-\quad\Rightarrow\quad
-|c|\geq1.
-\]
+The upper sheet begins at $(0,0,1)$ and widens as $z$ increases. The lower sheet begins at $(0,0,-1)$ and widens as $z$ decreases. The gap $-1<z<1$ separates the two sheets.
 
-When it exists, its radius is
+### 3. Labeled Sketches
 
-\[
-r=\sqrt{c^2-1}.
-\]
+![One-sheet hyperboloid with its waist at z=0 and two-sheet hyperboloid with vertices at z=±1. Both sketches show the z-axis.](./hyperboloids-exercise-11.png)
 
-Examples:
-
-- \(c=0\): no real cross-section
-- \(c=\pm1\): radius \(r=0\), a single point
-- \(c=\pm2\): \(r=\sqrt{3}\)
-- \(c=\pm3\): \(r=\sqrt{8}=2\sqrt{2}\)
-
-The surface has two separate parts: one above \(z=1\) and one below \(z=-1\). The parts widen as \(|z|\) increases.
-
-### 3. Comparison and sketches
-
-- \(x^2+y^2-z^2=1\): one connected surface with a narrowest circle of radius \(1\) at \(z=0\).
-- \(x^2+y^2-z^2=-1\): two disconnected parts, beginning at the points \((0,0,1)\) and \((0,0,-1)\).
-
-Both surfaces have circular horizontal cross-sections, but the first has circles for every \(z=c\), while the second has circles only for \(|c|\geq1\).
-
-Sketch the first as a connected hourglass-like surface. Sketch the second as two separate, outward-widening bowls facing away from each other along the \(z\)-axis.
+For the first sketch, draw the radius-$1$ waist at $z=0$ and widen the surface above and below it. For the second, mark the two vertices on the $z$-axis and draw the sheets widening away from the gap.
