@@ -1,107 +1,61 @@
+# Exercise 8. Sphere
 
-## Exercise 8. Sphere
+## Question
 
-Given:
+Given the equation
 
-\[
-x^2+y^2+z^2-4x+2y-6z-2=0
-\]
+$$
+x^2+y^2+z^2-4x+2y-6z-2=0,
+$$
 
-### 1. Reduce to canonical form
+rewrite it in canonical form and find the center and radius of the sphere. Give two points on the sphere and verify that both satisfy the original equation.
 
-Group the terms:
+## Solution
 
-\[
-(x^2-4x)+(y^2+2y)+(z^2-6z)=2
-\]
+### 1. Reduce to Canonical Form
 
-Complete the square:
+Group the terms and complete the square:
 
-\[
-x^2-4x=(x-2)^2-4
-\]
+$$
+(x^2-4x)+(y^2+2y)+(z^2-6z)=2.
+$$
 
-\[
-y^2+2y=(y+1)^2-1
-\]
+$$
+(x-2)^2-4+(y+1)^2-1+(z-3)^2-9=2.
+$$
 
-\[
-z^2-6z=(z-3)^2-9
-\]
+Moving the constants to the right gives
 
-Substitute:
+$$
+\boxed{(x-2)^2+(y+1)^2+(z-3)^2=16}.
+$$
 
-\[
-(x-2)^2-4+(y+1)^2-1+(z-3)^2-9=2
-\]
+### 2. Find the Center and Radius
 
-Simplify:
+The center is $C=(2,-1,3)$, and the radius is $r=\sqrt{16}=4$.
 
-\[
-\boxed{(x-2)^2+(y+1)^2+(z-3)^2=16}
-\]
+### 3. Give and Verify Two Points
 
-### 2. Find the center and radius
+Moving four units along the $x$-axis in either direction from the center gives $P_1=(6,-1,3)$ and $P_2=(-2,-1,3)$.
 
-The standard equation of a sphere is
+Substituting $P_1$ into the original left-hand side gives
 
-\[
-(x-a)^2+(y-b)^2+(z-c)^2=r^2.
-\]
+$$
+4? 
+$$
 
-Therefore, the center is
+For $P_1=(6,-1,3)$, the calculation is
 
-\[
-\boxed{C=(2,-1,3)}
-\]
+$$
+6^2+(-1)^2+3^2-4(6)+2(-1)-6(3)-2
+=36+1+9-24-2-18-2=0.
+$$
 
-and the radius is
+For $P_2=(-2,-1,3)$, the calculation is
 
-\[
-\boxed{r=4}.
-\]
+$$
+(-2)^2+(-1)^2+3^2-4(-2)+2(-1)-6(3)-2
+=4+1+9+8-2-18-2=0.
+$$
 
-### 3. Give two points on the sphere and check them
-
-Choose two points:
-
-\[
-P_1=(6,-1,3),\qquad P_2=(-2,-1,3).
-\]
-
-**Check \(P_1=(6,-1,3)\):**
-
-\[
-(6-2)^2+(-1+1)^2+(3-3)^2
-=16.
-\]
-
-In the original equation:
-
-\[
-36+1+9-24-2-18-2=0.
-\]
-
-So \(P_1\) lies on the sphere.
-
-**Check \(P_2=(-2,-1,3)\):**
-
-\[
-(-2-2)^2+(-1+1)^2+(3-3)^2
-=16.
-\]
-
-In the original equation:
-
-\[
-4+1+9+8-2-18-2=0.
-\]
-
-So \(P_2\) also lies on the sphere.
-
-**Final answer:**
-
-- Canonical form: \((x-2)^2+(y+1)^2+(z-3)^2=16\)
-- Center: \((2,-1,3)\)
-- Radius: \(4\)
-- Two points on the sphere: \((6,-1,3)\) and \((-2,-1,3)\)
+Both points satisfy the original equation, so both lie on the sphere.
