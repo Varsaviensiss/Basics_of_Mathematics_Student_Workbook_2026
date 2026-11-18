@@ -53,7 +53,7 @@ for every positive integer $n$.
 
 **Base case.** For $n=1$, the formula gives $A^1=A$.
 
-**Inductive step.** Assume $A^n=\begin{pmatrix}1&n\\0&1\end{pmatrix}$ for some positive integer $n$. Multiplying by $A$ on the right gives
+**Inductive step.** Assume the formula holds for some positive integer $n$. Multiplying $A^n$ by $A$ on the right gives
 
 ```math
 A^{n+1}=A^nA
