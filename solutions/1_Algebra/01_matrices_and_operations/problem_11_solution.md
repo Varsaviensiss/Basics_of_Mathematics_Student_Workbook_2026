@@ -1,87 +1,60 @@
 # Exercise 11. When Do Matrices Commute?
 
-Given:
+Given
 
-$$
+```math
 A=\begin{pmatrix}1&1\\0&1\end{pmatrix},
 \qquad
-B=\begin{pmatrix}a&b\\c&d\end{pmatrix}
-$$
+B=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+```
 
-We want to find the conditions under which \(AB=BA\).
+find the conditions on $a,b,c,d$ for which $AB=BA$.
 
-## 1. Compute \(AB\)
+## 1. Compute AB
 
-$$
+Each entry is the dot product of a row of $A$ with a column of $B$.
+
+```math
 AB=
-\begin{pmatrix}1&1\\0&1\end{pmatrix}
-\begin{pmatrix}a&b\\c&d\end{pmatrix}
-$$
-
-Multiplying the matrices gives
-
-$$
-AB=\begin{pmatrix}a+c&b+d\\c&d\end{pmatrix}
-$$
-
-## 2. Compute \(BA\)
-
-$$
-BA=
-\begin{pmatrix}a&b\\c&d\end{pmatrix}
-\begin{pmatrix}1&1\\0&1\end{pmatrix}
-$$
-
-Multiplying the matrices gives
-
-$$
-BA=\begin{pmatrix}a&a+b\\c&c+d\end{pmatrix}
-$$
-
-## 3. Find the Conditions for \(AB=BA\)
-
-For the matrices to be equal, their corresponding entries must be equal:
-
-$$
-\begin{pmatrix}a+c&b+d\\c&d\end{pmatrix}
+\begin{pmatrix}
+1\cdot a+1\cdot c & 1\cdot b+1\cdot d\\
+0\cdot a+1\cdot c & 0\cdot b+1\cdot d
+\end{pmatrix}
 =
-\begin{pmatrix}a&a+b\\c&c+d\end{pmatrix}
-$$
+\begin{pmatrix}
+a+c & b+d\\
+c & d
+\end{pmatrix}.
+```
 
-Comparing entries gives
+## 2. Compute BA
 
-$$
-a+c=a \quad\Rightarrow\quad c=0
-$$
+Now take the dot product of each row of $B$ with each column of $A$.
 
-$$
-b+d=a+b \quad\Rightarrow\quad d=a
-$$
+```math
+BA=
+\begin{pmatrix}
+a\cdot1+b\cdot0 & a\cdot1+b\cdot1\\
+c\cdot1+d\cdot0 & c\cdot1+d\cdot1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a & a+b\\
+c & c+d
+\end{pmatrix}.
+```
 
-The remaining equations give the same conditions.
+## 3. Compare Corresponding Entries
 
-Therefore, the required conditions are
+| Entry | Equality | Condition |
+|---|---|---|
+| $(1,1)$ | $a+c=a$ | $c=0$ |
+| $(1,2)$ | $b+d=a+b$ | $d=a$ |
+| $(2,1)$ | $c=c$ | Always true |
+| $(2,2)$ | $d=c+d$ | $c=0$ |
 
-$$
-\boxed{c=0,\qquad d=a}
-$$
+Thus, $AB=BA$ if and only if $c=0$ and $d=a$. Under these conditions, all four entries agree. Therefore, the matrices that commute with $A$ have the form
 
-## 4. General Form of \(B\)
-
-Substituting these conditions into \(B\), we obtain
-
-$$
-\boxed{B=\begin{pmatrix}a&b\\0&a\end{pmatrix}}
-$$
-
-where \(a\) and \(b\) can be any real numbers.
-
-## Conclusion
-
-The matrices \(A\) and \(B\) commute if and only if \(c=0\) and \(d=a\). Thus, all matrices that commute with \(A\) have the form
-
-$$
-B=\begin{pmatrix}a&b\\0&a\end{pmatrix}
-$$
-
-This example shows that although matrix multiplication is not commutative in general, certain matrices do commute when specific conditions are satisfied.
+```math
+B=\begin{pmatrix}a&b\\0&a\end{pmatrix},
+\qquad a,b\in\mathbb{R}.
