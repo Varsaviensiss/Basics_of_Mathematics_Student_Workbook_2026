@@ -1,66 +1,37 @@
 # Exercise 12. Exponential Function Limit
 
-We need to compute
+## Question
 
-[\
-L=\lim\_{x\to0}(1+3x)^{1/x}.\
-]
+Evaluate the limit
 
-**Step 1: Transform the exponent**
+$$
+\lim_{x\to0}(1+3x)^{1/x}.
+$$
 
-We rewrite the expression as
+Transform the expression into the standard form that tends to $e$ and explain its connection with the classical sequence limit in Exercise 5.
 
-[\
-(1+3x)^{1/x}\
-\=\left[(1+3x)^{1/(3x)}\right]^3.\
-]
+## Solution
 
-Therefore,
+For nonzero $x$ sufficiently close to zero, $1+3x>0$. Since $1/x=3/(3x)$, we can write
 
-[\
-L=\left[\lim\_{x\to0}(1+3x)^{1/(3x)}\right]^3.\
-]
+$$
+(1+3x)^{1/x}
+=
+\left[(1+3x)^{1/(3x)}\right]^3.
+$$
 
-**Step 2: Use a substitution**
+Let $t=3x$. As $x\to0$, we have $t\to0$, so
 
-Let
+$$
+\lim_{x\to0}(1+3x)^{1/x}
+=
+\left[\lim_{t\to0}(1+t)^{1/t}\right]^3
+=
+\boxed{e^3}.
+$$
 
-[\
-t=3x.\
-]
+## Connection with Exercise 5
 
-When (x\to0), we also have (t\to0). Thus,
+In Exercise 5, taking $t=1/n$ gives $(1+t)^{1/t}=(1+1/n)^n$. This is the same expression evaluated along a sequence of positive values approaching zero.
 
-[\
-L=\left[\lim\_{t\to0}(1+t)^{1/t}\right]^3.\
-]
-
-**Step 3: Apply the classical limit**
-
-From Exercise 5, we know that
-
-[\
-\lim\_{t\to0}(1+t)^{1/t}=e.\
-]
-
-Therefore,
-
-[\
-L=e^3.\
-]
-
-**Final Answer:**
-
-[\
-\boxed{\lim\_{x\to0}(1+3x)^{1/x}=e^3}\
-]
-
-Numerically,
-
-[\
-e^3\approx20.0855.\
-]
-
-**Explanation:**
-
-This problem uses the same classical limit as Exercise 5. By rewriting the expression and making the substitution (t=3x), we obtain the standard form that approaches (e). Since the original expression is the cube of this standard form, the final answer is (e^3).
+Here $t$ can approach zero from either side. The two-sided standard limit follows from $\ln(1+t)/t\to1$, since this quotient is the difference quotient of $\ln$ at $1$. Thus $(1+t)^{1/t}\to e$, and cubing gives $e^3$.
