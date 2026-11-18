@@ -1,91 +1,38 @@
-# Exercise 9. Matrix Equation
+# Exercise 9. A System from a Sum Condition
 
-Given:
+## Question
 
-$$
-A=\begin{pmatrix}1&2\\0&1\end{pmatrix},
-\qquad
-B=\begin{pmatrix}3&1\\2&4\end{pmatrix}
-$$
+Find $x$ and $y$ satisfying
 
-We need to solve:
+```math
+\begin{cases}
+x+y=10,\\
+2x+5y=32.
+\end{cases}
+```
 
-$$
-AX=B
-$$
+Solve the system and explain geometrically why the solution is unique.
 
-## Step 1. Determine which side to multiply
+## Solution
 
-Since \(A\) multiplies \(X\) on the left, multiply both sides by \(A^{-1}\) on the left:
+Subtract twice the first equation from the second:
 
-$$
-A^{-1}(AX)=A^{-1}B
-$$
+```math
+(2x+5y)-2(x+y)=32-2(10)
+\quad\Longrightarrow\quad
+3y=12
+\quad\Longrightarrow\quad
+y=4.
+```
 
-Using associativity:
+Substitute $y=4$ into $x+y=10$ to get $x=6$.
 
-$$
-(A^{-1}A)X=A^{-1}B
-$$
+## Check Both Equations
 
-Since \(A^{-1}A=I\):
+```math
+6+4=10,\qquad 2(6)+5(4)=12+20=32.
+```
 
-$$
-IX=A^{-1}B
-$$
+## Why the Solution Is Unique
 
-Therefore:
-
-$$
-\boxed{X=A^{-1}B}
-$$
-
-## Step 2. Find \(A^{-1}\)
-
-$$
-A^{-1}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}
-$$
-
-## Step 3. Calculate \(X\)
-
-$$
-X=
-\begin{pmatrix}1&-2\\0&1\end{pmatrix}
-\begin{pmatrix}3&1\\2&4\end{pmatrix}
-$$
-
-$$
-X=
-\begin{pmatrix}
-3-4&1-8\\
-2&4
-\end{pmatrix}
-$$
-
-Hence:
-
-$$
-\boxed{X=\begin{pmatrix}-1&-7\\2&4\end{pmatrix}}
-$$
-
-## Step 4. Verify by computing \(AX\)
-
-$$
-AX=
-\begin{pmatrix}1&2\\0&1\end{pmatrix}
-\begin{pmatrix}-1&-7\\2&4\end{pmatrix}
-$$
-
-$$
-AX=
-\begin{pmatrix}
--1+4&-7+8\\
-2&4
-\end{pmatrix}
-$$
-
-$$
-AX=\begin{pmatrix}3&1\\2&4\end{pmatrix}=B
-$$
-
-The solution is correct.
+The equations describe the lines $y=10-x$ and $y=\frac{32}{5}-\frac25 x$. Their slopes are $-1$ and $-\frac25$, respectively. Since the slopes are different, the lines intersect exactly once, at $(6,4)$.
