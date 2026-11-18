@@ -1,79 +1,47 @@
-# Exercise 8. Inverse of a Transformation
+# Exercise 8. Two Systems with the Same Coefficient Matrix
 
-Given the scaling matrix:
+## Question
 
-$$
-S=\begin{pmatrix}2&0\\0&\frac12\end{pmatrix}
-$$
+Solve both systems by elimination:
 
-The transformation multiplies the \(x\)-coordinate by \(2\) and the \(y\)-coordinate by \(\frac12\).
+```math
+\begin{cases}
+2x+y=5,\\
+x-y=1,
+\end{cases}
+\qquad
+\begin{cases}
+2x+y=1,\\
+x-y=4.
+\end{cases}
+```
 
-## Step 1. Find \(S^{-1}\)
+Compare the successive elimination steps. Which part of the calculation is the same in both cases, and why?
 
-For a diagonal matrix with nonzero diagonal entries, the inverse is obtained by taking the reciprocal of each diagonal entry.
+## Solution
 
-Therefore:
+### 1. First System
 
-$$
-\boxed{
-S^{-1}=\begin{pmatrix}\frac12&0\\0&2\end{pmatrix}
-}
-$$
+Subtract twice the second equation from the first to eliminate $x$:
 
-## Step 2. Check the inverse
+```math
+(2x+y)-2(x-y)=5-2(1)
+\quad\Longrightarrow\quad 3y=3.
+```
 
-$$
-SS^{-1}
-=
-\begin{pmatrix}2&0\\0&\frac12\end{pmatrix}
-\begin{pmatrix}\frac12&0\\0&2\end{pmatrix}
-$$
+Thus $y=1$. Substituting into $x-y=1$ gives $x=2$. The solution is $(x,y)=(2,1)$.
 
-$$
-SS^{-1}
-=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I
-$$
+### 2. Second System
 
-Similarly:
+Apply the same elimination step:
 
-$$
-S^{-1}S=I
-$$
+```math
+(2x+y)-2(x-y)=1-2(4)
+\quad\Longrightarrow\quad 3y=-7.
+```
 
-## Step 3. Geometric interpretation
+Thus $y=-7/3$. Substituting into $x-y=4$ gives $x=4-7/3=5/3$. The solution is $(x,y)=(5/3,-7/3)$.
 
-The original transformation doubles the horizontal coordinate and halves the vertical coordinate.
+### 3. Compare the Steps
 
-The inverse transformation halves the horizontal coordinate and doubles the vertical coordinate. It undoes the original scaling.
-
-## Step 4. Check a vector
-
-Choose:
-
-$$
-v=\begin{pmatrix}2\\4\end{pmatrix}
-$$
-
-Apply \(S\):
-
-$$
-Sv=
-\begin{pmatrix}2&0\\0&\frac12\end{pmatrix}
-\begin{pmatrix}2\\4\end{pmatrix}
-=
-\begin{pmatrix}4\\2\end{pmatrix}
-$$
-
-Now apply \(S^{-1}\):
-
-$$
-S^{-1}(Sv)=
-\begin{pmatrix}\frac12&0\\0&2\end{pmatrix}
-\begin{pmatrix}4\\2\end{pmatrix}
-$$
-
-$$
-S^{-1}(Sv)=\begin{pmatrix}2\\4\end{pmatrix}=v
-$$
-
-The original vector is recovered, confirming that \(S^{-1}\) undoes \(S\).
+Both systems have the same coefficient matrix, so the row operation $R_1\leftarrow R_1-2R_2$ changes the coefficient entries of the first row from $(2,1)$ to $(0,3)$ in both cases. The right-hand sides differ, so the same operation gives $5-2(1)=3$ in the first system and $1-2(4)=-7$ in the second.
