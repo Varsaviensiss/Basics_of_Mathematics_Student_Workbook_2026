@@ -1,123 +1,43 @@
-# Exercise 2. Formula for a \(2\times2\) Matrix
+# Exercise 1. Verifying an Inverse by Definition
 
-Given:
+## Question
 
-$$
-A=\begin{pmatrix}3&2\\5&4\end{pmatrix}
-$$
+Given
 
-We use the inverse formula for a \(2\times2\) matrix.
+```math
+A=\begin{pmatrix}2&1\\1&1\end{pmatrix},
+\qquad
+B=\begin{pmatrix}1&-1\\-1&2\end{pmatrix},
+```
 
-For a matrix
+compute $AB$ and $BA$ entry by entry. Use the definition of an inverse to determine whether $B=A^{-1}$, without using an inverse formula.
 
-$$
-A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
-$$
+## Solution
 
-the determinant is
+Compute $AB$ by multiplying each row of $A$ by each column of $B$:
 
-$$
-\det(A)=ad-bc.
-$$
-
-If \(\det(A)\neq0\), then
-
-$$
-A^{-1}=\frac{1}{ad-bc}
-\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
-$$
-
-## Step 1. Calculate the determinant
-
-For the given matrix,
-
-$$
-a=3,\quad b=2,\quad c=5,\quad d=4.
-$$
-
-Therefore,
-
-$$
-\det(A)=3\cdot4-2\cdot5
-$$
-
-$$
-\det(A)=12-10
-$$
-
-$$
-\boxed{\det(A)=2}
-$$
-
-Since \(\det(A)\neq0\), the inverse exists.
-
-## Step 2. Apply the inverse formula
-
-$$
-A^{-1}=\frac{1}{2}
-\begin{pmatrix}4&-2\\-5&3\end{pmatrix}
-$$
-
-Multiply every entry by \(\frac12\):
-
-$$
-\boxed{
-A^{-1}=
+```math
+AB=
 \begin{pmatrix}
-2&-1\\
--\frac52&\frac32
+2\cdot1+1\cdot(-1) & 2\cdot(-1)+1\cdot2\\
+1\cdot1+1\cdot(-1) & 1\cdot(-1)+1\cdot2
 \end{pmatrix}
-}
-$$
+=
+\begin{pmatrix}1&0\\0&1\end{pmatrix}
+=I.
+```
 
-## Step 3. Verify by multiplication
+Compute $BA$ by multiplying each row of $B$ by each column of $A$:
 
-We check that \(AA^{-1}=I\).
-
-$$
-AA^{-1}=
-\begin{pmatrix}3&2\\5&4\end{pmatrix}
-\begin{pmatrix}2&-1\\-\frac52&\frac32\end{pmatrix}
-$$
-
-Multiply the rows of the first matrix by the columns of the second matrix:
-
-$$
-AA^{-1}=
+```math
+BA=
 \begin{pmatrix}
-3(2)+2\left(-\frac52\right)&3(-1)+2\left(\frac32\right)\\
-5(2)+4\left(-\frac52\right)&5(-1)+4\left(\frac32\right)
+1\cdot2+(-1)\cdot1 & 1\cdot1+(-1)\cdot1\\
+(-1)\cdot2+2\cdot1 & (-1)\cdot1+2\cdot1
 \end{pmatrix}
-$$
+=
+\begin{pmatrix}1&0\\0&1\end{pmatrix}
+=I.
+```
 
-Simplify each entry:
-
-$$
-AA^{-1}=
-\begin{pmatrix}
-6-5&-3+3\\
-10-10&-5+6
-\end{pmatrix}
-$$
-
-Therefore,
-
-$$
-AA^{-1}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I
-$$
-
-## Conclusion
-
-The determinant is nonzero, so the matrix is invertible. The inverse is
-
-$$
-\boxed{
-A^{-1}=
-\begin{pmatrix}
-2&-1\\
--\frac52&\frac32
-\end{pmatrix}
-}
-$$
-
-The verification \(AA^{-1}=I\) confirms that the result is correct.
+Since $AB=BA=I$, the definition of an inverse gives $B=A^{-1}$.
