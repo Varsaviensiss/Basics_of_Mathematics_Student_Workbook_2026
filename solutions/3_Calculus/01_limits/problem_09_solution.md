@@ -1,105 +1,33 @@
 # Exercise 9. One-Sided Limits and an Asymptote
 
-We are given the function
+## Question
 
-[\
-f(x)=\frac{1}{x-2}.\
-]
+For $f(x)=\frac{1}{x-2}$, find the left-hand and right-hand limits as $x$ approaches $2$. Determine whether the two-sided limit exists, identify the vertical asymptote, and sketch both branches of the graph, marking the line $x=2$.
 
-We need to analyze the left-hand and right-hand limits as (x\to2), determine whether the two-sided limit exists, and identify the vertical asymptote.
+## Solution
 
-**Step 1: Left-hand limit**
+### Left-Hand Limit
 
-The left-hand limit is
+As $x\to2^-$, the denominator $x-2$ approaches zero through negative values. Its reciprocal decreases without bound:
 
-[\
-\lim\_{x\to2^-}\frac{1}{x-2}.\
-]
+$$
+\lim_{x\to2^-}\frac{1}{x-2}=-\infty.
+$$
 
-When (x) approaches (2) from the left, (x<2). Therefore, (x-2) is a small negative number.
+### Right-Hand Limit
 
-As the denominator approaches zero from the negative side, the fraction decreases without bound.
+As $x\to2^+$, the denominator $x-2$ approaches zero through positive values. Its reciprocal increases without bound:
 
-[\
-\boxed{\lim\_{x\to2^-}\frac{1}{x-2}=-\infty}\
-]
+$$
+\lim_{x\to2^+}\frac{1}{x-2}=+\infty.
+$$
 
-**Step 2: Right-hand limit**
+### Two-Sided Limit and Vertical Asymptote
 
-The right-hand limit is
+The one-sided limits go to opposite infinities, so the two-sided limit does not exist. Since the function is unbounded as $x$ approaches $2$ from either side, the line $x=2$ is a vertical asymptote.
 
-[\
-\lim\_{x\to2^+}\frac{1}{x-2}.\
-]
+### Graph
 
-When (x) approaches (2) from the right, (x>2). Therefore, (x-2) is a small positive number.
+![Graph of f(x) = 1/(x-2), showing both branches and the dashed vertical asymptote x=2](./exercise-09-graph.png)
 
-As the denominator approaches zero from the positive side, the fraction increases without bound.
-
-[\
-\boxed{\lim\_{x\to2^+}\frac{1}{x-2}=+\infty}\
-]
-
-**Step 3: Does the two-sided limit exist?**
-
-For a two-sided limit to exist as a finite real number, the left-hand and right-hand limits must be equal.
-
-Here,
-
-[\
-\lim\_{x\to2^-}f(x)=-\infty\
-]
-
-and
-
-[\
-\lim\_{x\to2^+}f(x)=+\infty.\
-]
-
-Since the two sides behave differently, the two-sided limit does not exist.
-
-[\
-\boxed{\lim\_{x\to2}\frac{1}{x-2}\text{ does not exist}}\
-]
-
-**Step 4: Identify the vertical asymptote**
-
-The denominator becomes zero when
-
-[\
-x-2=0.\
-]
-
-Solving gives
-
-[\
-x=2.\
-]
-
-Therefore, the vertical asymptote is
-
-[\
-\boxed{x=2}.\
-]
-
-**Step 5: Interpret the graph**
-
-\<Graph expressions={[{"latex":"y=\frac{1}{x-2}"} ,{"latex":"x=2"}]} />
-
-The graph has two branches. As (x) approaches (2) from the left, the graph falls toward negative infinity. As (x) approaches (2) from the right, the graph rises toward positive infinity. The graph approaches the vertical line (x=2) but never crosses it.
-
-**Final Answer:**
-
-[\
-\boxed{\lim\_{x\to2^-}f(x)=-\infty}\
-]
-
-[\
-\boxed{\lim\_{x\to2^+}f(x)=+\infty}\
-]
-
-The two-sided limit does not exist, and the vertical asymptote is (x=2).
-
-
-
-Clarify the Infinite-Limit ConclusionReplace the Unsupported Graph Placeholder
+The left branch lies below the horizontal axis and falls without bound near $x=2$. The right branch lies above the horizontal axis and rises without bound near $x=2$. Far from the asymptote, both branches approach $y=0$.
