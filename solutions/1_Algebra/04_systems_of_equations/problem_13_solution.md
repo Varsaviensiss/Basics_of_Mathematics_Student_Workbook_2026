@@ -1,128 +1,44 @@
-# Exercise 13. Undoing a Composite Transformation
+# Exercise 13. Does Every Equation Add New Information?
 
-Given:
+## Question
 
-$$
-S=\begin{pmatrix}2&0\\0&1\end{pmatrix},
-\qquad
-H=\begin{pmatrix}1&1\\0&1\end{pmatrix}
-$$
+Consider the system
 
-The composite transformation is:
+```math
+\begin{cases}
+x_1+x_2=10,\\
+x_2+x_3=8,\\
+x_1-x_3=2.
+\end{cases}
+```
 
-$$
-T=HS
-$$
+Solve the system and check whether all three equations are independently necessary to describe the solution set. If one follows from the others, show this by calculation.
 
-## Method 1. Compute \(T\), then find its inverse
+## Solution
 
-First:
+Subtract the second equation from the first:
 
-$$
-T=HS
-=
-\begin{pmatrix}1&1\\0&1\end{pmatrix}
-\begin{pmatrix}2&0\\0&1\end{pmatrix}
-$$
+```math
+(x_1+x_2)-(x_2+x_3)=10-8
+\quad\Longrightarrow\quad x_1-x_3=2.
+```
 
-Therefore:
+This is exactly the third equation. It follows from the first two, so it adds no new constraint.
 
-$$
-T=\begin{pmatrix}2&1\\0&1\end{pmatrix}
-$$
+The first two equations are independent: one determines $x_1$ and the other determines $x_3$ once $x_2$ is chosen. Thus, two independent constraints on three variables leave one free variable. Let $x_2=t$, where $t$ is any real number. Then $x_1=10-t$ and $x_3=8-t$, so the full solution set is
 
-Its determinant is:
+```math
+\boxed{(x_1,x_2,x_3)=(10-t,t,8-t),\qquad t\in\mathbb R}.
+```
 
-$$
-\det(T)=2\cdot1-1\cdot0=2
-$$
+## Check All Three Equations
 
-Using the \(2\times2\) inverse formula:
+```math
+\begin{aligned}
+x_1+x_2 &=(10-t)+t=10,\\
+x_2+x_3 &=t+(8-t)=8,\\
+x_1-x_3 &=(10-t)-(8-t)=2.
+\end{aligned}
+```
 
-$$
-T^{-1}
-=\frac12\begin{pmatrix}1&-1\\0&2\end{pmatrix}
-$$
-
-Hence:
-
-$$
-\boxed{
-T^{-1}=\begin{pmatrix}\frac12&-\frac12\\0&1\end{pmatrix}
-}
-$$
-
-## Method 2. Use the inverse-of-a-product property
-
-The rule is:
-
-$$
-(HS)^{-1}=S^{-1}H^{-1}
-$$
-
-First calculate:
-
-$$
-S^{-1}=\begin{pmatrix}\frac12&0\\0&1\end{pmatrix}
-$$
-
-and
-
-$$
-H^{-1}=\begin{pmatrix}1&-1\\0&1\end{pmatrix}
-$$
-
-Multiply in reverse order:
-
-$$
-S^{-1}H^{-1}
-=
-\begin{pmatrix}\frac12&0\\0&1\end{pmatrix}
-\begin{pmatrix}1&-1\\0&1\end{pmatrix}
-$$
-
-Thus:
-
-$$
-\boxed{
-S^{-1}H^{-1}=\begin{pmatrix}\frac12&-\frac12\\0&1\end{pmatrix}
-}
-$$
-
-Both methods give the same answer.
-
-## Step 3. Check the incorrect order
-
-Calculate:
-
-$$
-H^{-1}S^{-1}
-=
-\begin{pmatrix}1&-1\\0&1\end{pmatrix}
-\begin{pmatrix}\frac12&0\\0&1\end{pmatrix}
-$$
-
-$$
-\boxed{
-H^{-1}S^{-1}=
-\begin{pmatrix}\frac12&-1\\0&1\end{pmatrix}
-}
-$$
-
-This differs from the correct inverse:
-
-$$
-H^{-1}S^{-1}\neq T^{-1}
-$$
-
-## Conclusion
-
-Since \(T=HS\), the transformation \(S\) is applied first and \(H\) second. To undo the composition, we must undo \(H\) first and then \(S\).
-
-Therefore:
-
-$$
-\boxed{(HS)^{-1}=S^{-1}H^{-1}}
-$$
-
-The order of the factors is reversed when taking the inverse of a product.
+All three equations hold for every real $t$, so there are infinitely many solutions.
