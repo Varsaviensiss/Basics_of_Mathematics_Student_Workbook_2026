@@ -1,43 +1,46 @@
-**Exercise 2. Different Growth Rates**
+# Exercise 2. Different Growth Rates
 
-**1. Compute:**
+## Question
 
-\[
+Compute the following limits:
+
+1. $\displaystyle \lim_{n\to\infty}\frac{3n+1}{n^2+4}$
+2. $\displaystyle \lim_{n\to\infty}\frac{2n^3-n}{5n^2+1}$
+
+Compare the two results and explain how the degrees and the signs of the leading terms determine the behavior of each expression.
+
+## Solution
+
+### 1. First Limit
+
+Divide the numerator and denominator by $n^2$:
+
+$$
 \lim_{n\to\infty}\frac{3n+1}{n^2+4}
-\]
+=
+\lim_{n\to\infty}\frac{3/n+1/n^2}{1+4/n^2}
+=
+\frac{0}{1}
+=
+\boxed{0}.
+$$
 
-Divide the numerator and denominator by \(n^2\):
+The denominator has degree $2$, while the numerator has degree $1$. The denominator grows faster, so the ratio approaches zero.
 
-\[
-=\lim_{n\to\infty}\frac{\frac{3}{n}+\frac{1}{n^2}}{1+\frac{4}{n^2}}
-\]
+### 2. Second Limit
 
-As \(n\to\infty\), all fractions approach \(0\).
+Divide the numerator and denominator by $n^2$:
 
-\[
-=\frac{0+0}{1+0}=\boxed{0}
-\]
+$$
+\lim_{n\to\infty}\frac{2n^3-n}{5n^2+1}
+=
+\lim_{n\to\infty}\frac{2n-1/n}{5+1/n^2}
+=
+\boxed{+\infty}.
+$$
 
-**2. Compute:**
+The numerator $2n-1/n$ tends to $+\infty$, and the denominator $5+1/n^2$ tends to the positive constant $5$.
 
-\[
-\lim_{n\to\infty}\frac{2n^3-n^5}{n^2+1}
-\]
+### Comparison
 
-Divide the numerator and denominator by \(n^5\):
-
-\[
-=\lim_{n\to\infty}\frac{\frac{2}{n^2}-1}{\frac{1}{n^3}+\frac{1}{n^5}}
-\]
-
-As \(n\to\infty\), the numerator approaches \(-1\), while the denominator approaches \(0\) through positive values.
-
-Therefore,
-
-\[
-\boxed{-\infty}
-\]
-
-**General Observation:**
-
-If the degree of the numerator is smaller than the degree of the denominator, the limit is \(0\). If the degree of the numerator is greater, the limit may approach positive or negative infinity, depending on the signs of the leading terms.
+The first ratio approaches $0$ because the numerator has lower degree than the denominator. In the second ratio, the numerator has degree $3$ and the denominator has degree $2$, so the ratio grows in magnitude. Both leading coefficients, $2$ and $5$, are positive, so it grows toward $+\infty$.
