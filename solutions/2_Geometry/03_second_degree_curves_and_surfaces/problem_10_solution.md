@@ -1,91 +1,29 @@
+# Exercise 10. Paraboloids
 
-## Exercise 10. Paraboloids
+## Question
 
-We compare the surfaces
+For the surfaces $z=x^2+y^2$ and $z=x^2-y^2$, find and describe the cross-sections in the planes $x=0$, $y=0$, and $z=c$. In the horizontal sections, consider $c>0$, $c=0$, and $c<0$. Draw a labeled sketch of each surface and explain the difference between the bowl and saddle shapes.
 
-\[
-z=x^2+y^2
-\]
+## Solution
 
-and
+### 1. Elliptic Paraboloid: $z=x^2+y^2$
 
-\[
-z=x^2-y^2.
-\]
+- In the plane $x=0$, the section is $z=y^2$, an upward-opening parabola in the $yz$-plane.
+- In the plane $y=0$, the section is $z=x^2$, an upward-opening parabola in the $xz$-plane.
+- In the plane $z=c$, the section satisfies $x^2+y^2=c$. For $c>0$, it is a circle of radius $\sqrt{c}$ centered at $(0,0,c)$. For $c=0$, it is the origin. For $c<0$, the section is empty.
 
-### 1. Surface: \(z=x^2+y^2\)
+Both vertical sections open upward, and the circles widen as $c$ increases. The surface is an upward-opening bowl with vertex $(0,0,0)$.
 
-**Cross-section \(x=0\):**
+### 2. Hyperbolic Paraboloid: $z=x^2-y^2$
 
-\[
-z=y^2
-\]
+- In the plane $x=0$, the section is $z=-y^2$, a downward-opening parabola in the $yz$-plane.
+- In the plane $y=0$, the section is $z=x^2$, an upward-opening parabola in the $xz$-plane.
+- In the plane $z=c$, the section satisfies $x^2-y^2=c$. For $c>0$, it is a hyperbola opening in the $x$-direction. For $c<0$, it is a hyperbola opening in the $y$-direction. For $c=0$, factoring gives $(x-y)(x+y)=0$, so the section consists of the lines $y=x$ and $y=-x$ in the plane $z=0$.
 
-This is a parabola opening upward in the \(yz\)-plane.
+The surface rises along the $x$-direction and falls along the $y$-direction from $(0,0,0)$. This gives it a saddle shape.
 
-**Cross-section \(y=0\):**
+### 3. Labeled Sketches
 
-\[
-z=x^2
-\]
+![Upward bowl and saddle, with coordinate axes and the sections x=0 and y=0 labeled](./paraboloids-exercise-10.png)
 
-This is a parabola opening upward in the \(xz\)-plane.
-
-**Cross-section \(z=c\):**
-
-\[
-x^2+y^2=c
-\]
-
-- If \(c>0\), the cross-section is a circle of radius \(r=\sqrt{c}\).
-- If \(c=0\), the cross-section is a single point at the origin.
-- If \(c<0\), there is no real cross-section.
-
-**Qualitative sketch:** This surface is an upward-opening circular paraboloid, shaped like a bowl. Its vertex is \((0,0,0)\).
-
-### 2. Surface: \(z=x^2-y^2\)
-
-**Cross-section \(x=0\):**
-
-\[
-z=-y^2
-\]
-
-This is a parabola opening downward in the \(yz\)-plane.
-
-**Cross-section \(y=0\):**
-
-\[
-z=x^2
-\]
-
-This is a parabola opening upward in the \(xz\)-plane.
-
-**Cross-section \(z=c\):**
-
-\[
-x^2-y^2=c
-\]
-
-- If \(c>0\), the cross-section is a hyperbola opening along the \(x\)-direction.
-- If \(c<0\), the cross-section is a hyperbola opening along the \(y\)-direction.
-- If \(c=0\), the cross-section consists of two intersecting lines:
-
-\[
-x^2-y^2=0
-\]
-
-\[
-(x-y)(x+y)=0
-\]
-
-\[
-y=x \quad \text{or} \quad y=-x.
-\]
-
-**Qualitative sketch:** This surface is a hyperbolic paraboloid, shaped like a saddle. It curves upward in the \(x\)-direction and downward in the \(y\)-direction. Its saddle point is \((0,0,0)\).
-
-### 3. Comparison
-
-- \(z=x^2+y^2\) is an **elliptic paraboloid**. Its horizontal cross-sections are circles, and both vertical cross-sections open upward.
-- \(z=x^2-y^2\) is a **hyperbolic paraboloid**. Its horizontal cross-sections are hyperbolas (or two lines when \(c=0\)), and its vertical cross-sections curve in opposite directions.
+In the bowl, both highlighted sections open upward. In the saddle, the section along $x$ opens upward and the section along $y$ opens downward.
