@@ -1,64 +1,40 @@
 # Exercise 7. Limit at a Point and Canceling a Factor
 
-We need to compute
+## Question
 
-\[
-L=\lim_{x\to3}\frac{x^2-4x+3}{x-3}.
-\]
+Compute the limit by factoring the numerator and canceling the common factor:
 
-**Step 1: Substitute \(x=3\)**
+$$
+\lim_{x\to3}\frac{x^2-4x+3}{x-3}.
+$$
 
-Substituting \(x=3\) gives
+Explain why the value of the function at $x=3$ is not needed to evaluate this limit.
 
-\[
-\frac{3^2-4(3)+3}{3-3}
-=\frac{9-12+3}{0}
-=\frac00.
-\]
+## Solution
 
-This is an indeterminate form, so we need to simplify the expression.
+Direct substitution gives the indeterminate form $0/0$. Factor the numerator:
 
-**Step 2: Factor the numerator**
-
-We factor \(x^2-4x+3\):
-
-\[
+$$
 x^2-4x+3=(x-1)(x-3).
-\]
+$$
 
-Therefore,
+For $x\ne3$, we can cancel the common factor:
 
-\[
-L=\lim_{x\to3}\frac{(x-1)(x-3)}{x-3}.
-\]
+$$
+\frac{x^2-4x+3}{x-3}
+=\frac{(x-1)(x-3)}{x-3}
+=x-1.
+$$
 
-**Step 3: Cancel the common factor**
+Since $x-1$ is continuous at $x=3$,
 
-For \(x\ne3\), we can cancel the factor \(x-3\):
+$$
+\lim_{x\to3}\frac{x^2-4x+3}{x-3}
+=\lim_{x\to3}(x-1)
+=3-1
+=\boxed{2}.
+$$
 
-\[
-L=\lim_{x\to3}(x-1).
-\]
+### Why the Function Value at $x=3$ Is Not Needed
 
-**Step 4: Calculate the limit**
-
-Now we substitute \(x=3\):
-
-\[
-L=3-1=2.
-\]
-
-Therefore, the final answer is
-
-\[
-\boxed{\lim_{x\to3}\frac{x^2-4x+3}{x-3}=2}.
-\]
-
-**Explanation: Why is the value of the function at \(x=3\) not needed?**
-
-The limit describes the value that the function approaches as \(x\) gets closer to \(3\), not necessarily the value of the function at \(x=3\).
-
-The original function is undefined at \(x=3\) because its denominator is zero. However, for values of \(x\) near \(3\), with \(x\ne3\), the expression simplifies to \(x-1\). As \(x\) approaches \(3\), this expression approaches \(2\).
-
-Therefore, the function does not need to be defined at \(x=3\) for its limit to exist.
-
+The limit depends on the function values for $x$ arbitrarily close to $3$ with $x\ne3$. The original fraction is undefined at $x=3$, but it equals $x-1$ on both sides of $3$. Those nearby values approach $2$, so the limit exists.
