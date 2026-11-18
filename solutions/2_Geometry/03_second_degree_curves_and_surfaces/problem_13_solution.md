@@ -1,97 +1,33 @@
+# Exercise 13. Intersection of a Sphere and a Plane
 
-## Exercise 13. Intersection of a Sphere and a Plane
+## Question
 
-### 1. Given Equations
+Find the intersection of the sphere $x^2+y^2+z^2=25$ with the plane $z=3$. Identify the intersection curve and give its center and radius. Then replace $z=3$ with $z=c$ and describe the intersection for all real values of $c$.
 
-Sphere:
+## Solution
 
-\[
-x^2+y^2+z^2=25
-\]
+### 1. Intersection at $z=3$
 
-Plane:
+Substituting $z=3$ into the sphere equation gives
 
-\[
-z=3
-\]
-
-### 2. Find the Intersection Curve
-
-Substitute \(z=3\) into the sphere equation:
-
-\[
+$$
 x^2+y^2+3^2=25
-\]
+\quad\Longrightarrow\quad
+x^2+y^2=16.
+$$
 
-Simplify:
+The intersection is a circle in the plane $z=3$, centered at $(0,0,3)$ with radius $\sqrt{16}=4$.
 
-\[
-x^2+y^2+9=25
-\]
+### 2. Intersection at $z=c$
 
-\[
-\boxed{x^2+y^2=16}
-\]
+Substituting $z=c$ gives
 
-This is a circle in the plane \(z=3\).
+$$
+x^2+y^2=25-c^2.
+$$
 
-### 3. Find the Radius
+- If $|c|<5$, the intersection is a circle centered at $(0,0,c)$ with radius $\sqrt{25-c^2}$.
+- If $|c|=5$, the right-hand side is zero, so the intersection is the single point $(0,0,c)$.
+- If $|c|>5$, the right-hand side is negative. Since $x^2+y^2$ is nonnegative, there is no real intersection.
 
-The standard equation of a circle is
-
-\[
-x^2+y^2=r^2.
-\]
-
-Comparing with \(x^2+y^2=16\):
-
-\[
-r^2=16
-\]
-
-\[
-\boxed{r=4}
-\]
-
-The intersection is a circle of radius \(4\), centered at \((0,0,3)\).
-
-### 4. General Case: \(z=c\)
-
-Substitute \(z=c\) into the sphere equation:
-
-\[
-x^2+y^2+c^2=25
-\]
-
-Rearrange:
-
-\[
-\boxed{x^2+y^2=25-c^2}
-\]
-
-The radius satisfies
-
-\[
-r^2=25-c^2.
-\]
-
-Therefore:
-
-- **If \(|c|<5\):** The intersection is a circle with radius
-  \[
-  \boxed{r=\sqrt{25-c^2}}.
-  \]
-
-- **If \(|c|=5\):** The intersection is a single point at \((0,0,\pm5)\), with radius \(0\).
-
-- **If \(|c|>5\):** There is no real intersection because \(25-c^2<0\).
-
-### Final Answer
-
-For \(z=3\), the intersection curve is
-
-\[
-\boxed{x^2+y^2=16,\qquad r=4}.
-\]
-
-As \(c\) approaches \(5\) or \(-5\), the circular cross-sections shrink to a point. Beyond these values, no intersection exists.
+The radius is largest at $c=0$ and decreases to zero as $|c|$ approaches $5$.
