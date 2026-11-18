@@ -1,112 +1,47 @@
-# Exercise 12. Finding Inverses Without Starting from Scratch
+# Exercise 12. Homogeneous System
 
-Given:
+## Question
 
-$$
-A^{-1}=\begin{pmatrix}2&-1\\-3&2\end{pmatrix}
-$$
+Solve the system
 
-We will compute \((3A)^{-1}\), \((A^T)^{-1}\), and \((A^2)^{-1}\) without finding \(A\).
+```math
+\begin{cases}
+x+2y-z=0,\\
+2x+4y-2z=0,\\
+x-y+2z=0.
+\end{cases}
+```
 
-## 1. Compute \((3A)^{-1}\)
+Give all solutions in parametric form and explain why $(0,0,0)$ always satisfies a homogeneous system.
 
-For any nonzero scalar \(k\):
+## Solution
 
-$$
-(kA)^{-1}=\frac1kA^{-1}
-$$
+Subtract twice the first equation from the second. This gives $0=0$, so the second equation adds no constraint. Subtract the first equation from the third:
 
-Therefore:
+```math
+(x-y+2z)-(x+2y-z)=0
+\quad\Longrightarrow\quad -3y+3z=0
+\quad\Longrightarrow\quad z=y.
+```
 
-$$
-(3A)^{-1}=\frac13A^{-1}
-$$
+Let $y=t$, where $t$ is any real number. Then $z=t$, and the first equation gives $x+2t-t=0$, so $x=-t$. The full solution set is
 
-Substitute the given inverse:
+```math
+\boxed{(x,y,z)=(-t,t,t),\qquad t\in\mathbb{R}}.
+```
 
-$$
-(3A)^{-1}
-=\frac13\begin{pmatrix}2&-1\\-3&2\end{pmatrix}
-$$
+## Check All Three Equations
 
-Hence:
+```math
+\begin{aligned}
+(-t)+2t-t&=0,\\
+2(-t)+4t-2t&=0,\\
+(-t)-t+2t&=0.
+\end{aligned}
+```
 
-$$
-\boxed{
-(3A)^{-1}=
-\begin{pmatrix}
-\frac23&-\frac13\\
--1&\frac23
-\end{pmatrix}
-}
-$$
+These equalities hold for every real $t$.
 
-## 2. Compute \((A^T)^{-1}\)
+## Why Every Homogeneous System Has a Zero Solution
 
-The transpose property is:
-
-$$
-(A^T)^{-1}=(A^{-1})^T
-$$
-
-Therefore:
-
-$$
-(A^T)^{-1}
-=
-\begin{pmatrix}2&-1\\-3&2\end{pmatrix}^T
-$$
-
-Thus:
-
-$$
-\boxed{
-(A^T)^{-1}=
-\begin{pmatrix}2&-3\\-1&2\end{pmatrix}
-}
-$$
-
-## 3. Compute \((A^2)^{-1}\)
-
-The inverse of a product satisfies:
-
-$$
-(AB)^{-1}=B^{-1}A^{-1}
-$$
-
-Taking \(B=A\):
-
-$$
-(A^2)^{-1}=(A^{-1})^2
-$$
-
-Therefore:
-
-$$
-(A^2)^{-1}
-=
-\begin{pmatrix}2&-1\\-3&2\end{pmatrix}
-\begin{pmatrix}2&-1\\-3&2\end{pmatrix}
-$$
-
-Multiply:
-
-$$
-(A^2)^{-1}
-=
-\begin{pmatrix}
-4+3&-2-2\\
--6-6&3+4
-\end{pmatrix}
-$$
-
-Hence:
-
-$$
-\boxed{
-(A^2)^{-1}=
-\begin{pmatrix}7&-4\\-12&7\end{pmatrix}
-}
-$$
-
-All three results follow directly from the standard properties of inverse matrices.
+In a homogeneous linear system, the right-hand side of every equation is zero. Setting every unknown to zero makes each term on the left a coefficient multiplied by zero. Their sum is zero, so every equation is satisfied. Here, setting $t=0$ gives the zero solution $(0,0,0)$.
