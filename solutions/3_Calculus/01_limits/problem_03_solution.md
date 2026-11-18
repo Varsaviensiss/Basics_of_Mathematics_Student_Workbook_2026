@@ -1,54 +1,39 @@
-**Exercise 3. A Square Root and Removing an Indeterminate Form**
+# Exercise 3. A Square Root and Removing an Indeterminate Form
 
-Given:
+## Question
 
-\[
-\lim_{n\to\infty}(\sqrt{n^2+5n}-n)
-\]
+Evaluate
 
-**Solution:**
+$$
+\lim_{n\to\infty}\left(\sqrt{n^2+5n}-n\right).
+$$
 
-Multiply and divide by the conjugate expression:
+Use the conjugate and explain why it removes the difficulty in evaluating the limit.
 
-\[
-=\lim_{n\to\infty}
-\frac{(\sqrt{n^2+5n}-n)(\sqrt{n^2+5n}+n)}
-{\sqrt{n^2+5n}+n}
-\]
+## Solution
 
-Using the identity \((a-b)(a+b)=a^2-b^2\):
+Both $\sqrt{n^2+5n}$ and $n$ tend to infinity, so their difference has the indeterminate form $\infty-\infty$.
 
-\[
-=\lim_{n\to\infty}\frac{n^2+5n-n^2}{\sqrt{n^2+5n}+n}
-\]
+Multiply and divide by the conjugate $\sqrt{n^2+5n}+n$. Using the identity $(a-b)(a+b)=a^2-b^2$, we get
 
-Simplify:
+$$
+\sqrt{n^2+5n}-n
+=
+\frac{(n^2+5n)-n^2}{\sqrt{n^2+5n}+n}
+=
+\frac{5n}{\sqrt{n^2+5n}+n}.
+$$
 
-\[
-=\lim_{n\to\infty}\frac{5n}{\sqrt{n^2+5n}+n}
-\]
+The conjugate turns the difference of two growing terms into a quotient. The $n^2$ terms cancel in the numerator, and for $n>0$ we can divide both numerator and denominator by $n$:
 
-Divide the numerator and denominator by \(n\):
+$$
+\frac{5n}{\sqrt{n^2+5n}+n}
+=
+\frac{5}{\sqrt{1+5/n}+1}.
+$$
 
-\[
-=\lim_{n\to\infty}\frac{5}{\sqrt{1+\frac{5}{n}}+1}
-\]
+Since $5/n\to0$, the denominator tends to $2$. Therefore,
 
-As \(n\to\infty\), \(\frac{5}{n}\to0\).
-
-Therefore,
-
-\[
-=\frac{5}{\sqrt{1+0}+1}
-=\frac{5}{2}
-\]
-
-**Final Answer:**
-
-\[
-\boxed{\frac{5}{2}}
-\]
-
-**Explanation:**
-
-The conjugate expression removes the square root by using the difference of squares identity. This simplifies the expression and allows us to calculate the limit directly.
+$$
+\boxed{\lim_{n\to\infty}\left(\sqrt{n^2+5n}-n\right)=\frac52}.
+$$
