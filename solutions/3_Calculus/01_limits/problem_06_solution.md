@@ -1,55 +1,35 @@
 # Exercise 6. From a Sequence to a Function — Limit at Infinity
 
-We need to compute
+## Question
 
-[\
-L=\lim\_{x\to\infty}\frac{3x^2-x+15}{5x^2+4x-2}.\
-]
+Compute the limit
 
-**Step 1: Identify the highest power**
+$$
+\lim_{x\to\infty}\frac{3x^2-x+1}{5x^2+4x-2}.
+$$
 
-The highest power of (x) in both the numerator and denominator is (x^2).
+Compare your method with Exercise 1. Explain why the same method works and how a function limit as the real variable $x$ tends to infinity differs from a sequence limit as the integer index $n$ tends to infinity.
 
-**Step 2: Divide every term by (x^2)**
+## Solution
 
-[\
-L=\lim\_{x\to\infty}\
-\frac{\frac{3x^2}{x^2}-\frac{x}{x^2}+\frac{15}{x^2}}\
-{\frac{5x^2}{x^2}+\frac{4x}{x^2}-\frac{2}{x^2}}.\
-]
+The highest power of $x$ in both the numerator and denominator is $x^2$. Dividing every term by $x^2$ gives
 
-Simplifying gives
+$$
+\lim_{x\to\infty}\frac{3x^2-x+1}{5x^2+4x-2}
+=
+\lim_{x\to\infty}\frac{3-\frac{1}{x}+\frac{1}{x^2}}{5+\frac{4}{x}-\frac{2}{x^2}}.
+$$
 
-[\
-L=\lim\_{x\to\infty}\
-\frac{3-\frac1x+\frac{15}{x^2}}\
-{5+\frac4x-\frac{2}{x^2}}.\
-]
+As $x\to\infty$, both $1/x$ and $1/x^2$ tend to zero. The denominator tends to $5\ne0$, so
 
-**Step 3: Apply the limit**
+$$
+\lim_{x\to\infty}\frac{3x^2-x+1}{5x^2+4x-2}
+=\frac{3-0+0}{5+0-0}
+=\boxed{\frac{3}{5}}.
+$$
 
-As (x\to\infty),
+### Comparison with Exercise 1
 
-[\
-\frac1x\to0,\qquad \frac1{x^2}\to0.\
-]
+In both exercises, dividing by the highest power makes the lower-degree terms tend to zero. The ratio of the leading coefficients gives $4/2=2$ in Exercise 1 and $3/5$ here.
 
-Therefore,
-
-[\
-L=\frac{3-0+0}{5+0-0}.\
-]
-
-Hence,
-
-[\
-\boxed{L=\frac35}\
-]
-
-**Comparison with Exercise 1**
-
-The method is the same as in Exercise 1. In both problems, we divide the numerator and denominator by the highest power of the variable. The terms with lower powers approach zero, so only the leading coefficients determine the limit.
-
-The difference is that Exercise 1 deals with a sequence, where (n) takes positive integer values. Here, (x) is a real variable and can take any real value while approaching infinity.
-
-**Conclusion:** The technique stays the same, but the variable changes from integer values (n) to real values (x).
+In Exercise 1, $n$ takes positive integer values. Here, $x$ ranges over real values, and the limit must hold for all sufficiently large real $x$. The same method works because $1/x$ and $1/x^2$ tend to zero over the real numbers as well.
