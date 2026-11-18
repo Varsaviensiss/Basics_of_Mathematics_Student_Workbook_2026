@@ -1,159 +1,103 @@
-# Exercise 5. Inverse of a \(3\times3\) Matrix
+# Exercise 5. Inverse of a 3 × 3 Matrix
 
-Given:
+## Question
 
-$$
-A=\begin{pmatrix}
-1&1&0\\
-0&1&1\\
-1&0&1
-\end{pmatrix}
-$$
+Find the inverse of the matrix below using Gauss–Jordan elimination on $[A\mid I]$. Explain why the right block becomes $A^{-1}$ and verify the result by multiplication.
 
-Start with the augmented matrix \([A\mid I]\).
+```math
+A=\begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix}.
+```
 
-$$
-\left[
-\begin{array}{ccc|ccc}
+## Solution
+
+### 1. Row-Reduce the Augmented Matrix
+
+Start with $[A\mid I]$ and eliminate the first two entries of row 3:
+
+```math
+\left[\begin{array}{ccc|ccc}
 1&1&0&1&0&0\\
 0&1&1&0&1&0\\
 1&0&1&0&0&1
-\end{array}
-\right]
-$$
-
-## Step 1. Eliminate the first entry in row 3
-
-Apply:
-
-$$
-R_3\leftarrow R_3-R_1
-$$
-
-$$
-\left[
-\begin{array}{ccc|ccc}
+\end{array}\right]
+\xrightarrow{R_3\leftarrow R_3-R_1}
+\left[\begin{array}{ccc|ccc}
 1&1&0&1&0&0\\
 0&1&1&0&1&0\\
 0&-1&1&-1&0&1
-\end{array}
-\right]
-$$
-
-## Step 2. Eliminate the second entry in row 3
-
-Apply:
-
-$$
-R_3\leftarrow R_3+R_2
-$$
-
-$$
-\left[
-\begin{array}{ccc|ccc}
+\end{array}\right]
+\xrightarrow{R_3\leftarrow R_3+R_2}
+\left[\begin{array}{ccc|ccc}
 1&1&0&1&0&0\\
 0&1&1&0&1&0\\
 0&0&2&-1&1&1
-\end{array}
-\right]
-$$
+\end{array}\right].
+```
 
-## Step 3. Make the third pivot equal to 1
+Make the third pivot equal to $1$ and clear the entry above it in row 2:
 
-Apply:
-
-$$
-R_3\leftarrow \frac12R_3
-$$
-
-$$
-\left[
-\begin{array}{ccc|ccc}
+```math
+\left[\begin{array}{ccc|ccc}
+1&1&0&1&0&0\\
+0&1&1&0&1&0\\
+0&0&2&-1&1&1
+\end{array}\right]
+\xrightarrow{R_3\leftarrow R_3/2}
+\left[\begin{array}{ccc|ccc}
 1&1&0&1&0&0\\
 0&1&1&0&1&0\\
 0&0&1&-\frac12&\frac12&\frac12
-\end{array}
-\right]
-$$
-
-## Step 4. Eliminate the third-column entries above the pivot
-
-Apply:
-
-$$
-R_2\leftarrow R_2-R_3
-$$
-
-$$
-\left[
-\begin{array}{ccc|ccc}
+\end{array}\right]
+\xrightarrow{R_2\leftarrow R_2-R_3}
+\left[\begin{array}{ccc|ccc}
 1&1&0&1&0&0\\
 0&1&0&\frac12&\frac12&-\frac12\\
 0&0&1&-\frac12&\frac12&\frac12
-\end{array}
-\right]
-$$
+\end{array}\right].
+```
 
-## Step 5. Eliminate the second-column entry in row 1
+Finally, apply $R_1\leftarrow R_1-R_2$:
 
-Apply:
-
-$$
-R_1\leftarrow R_1-R_2
-$$
-
-$$
-\left[
-\begin{array}{ccc|ccc}
+```math
+\left[\begin{array}{ccc|ccc}
 1&0&0&\frac12&-\frac12&\frac12\\
 0&1&0&\frac12&\frac12&-\frac12\\
 0&0&1&-\frac12&\frac12&\frac12
-\end{array}
-\right]
-$$
+\end{array}\right].
+```
 
-Thus:
+### 2. Explain Why the Right Block Is the Inverse
 
-$$
-\boxed{
+Let $E$ be the product of the elementary matrices representing these row operations. Applying the same operations to both blocks gives $[EA\mid EI]=[I\mid E]$. The left block shows that $EA=I$. Since $E$ is invertible, $A=E^{-1}$, so the right block $E$ equals $A^{-1}$:
+
+```math
 A^{-1}=\frac12
 \begin{pmatrix}
 1&-1&1\\
 1&1&-1\\
 -1&1&1
-\end{pmatrix}
-}
-$$
+\end{pmatrix}.
+```
 
-## Step 6. Verify by multiplication
+### 3. Verify by Multiplication
 
-$$
+Taking the dot product of each row of $A$ with each column of the displayed integer matrix gives the following entries. Terms multiplied by zero are omitted.
+
+```math
 AA^{-1}
-=
-\frac12
+=\frac12
 \begin{pmatrix}
-1&1&0\\
-0&1&1\\
-1&0&1
+1+1&-1+1&1-1\\
+1-1&1+1&-1+1\\
+1-1&-1+1&1+1
 \end{pmatrix}
-\begin{pmatrix}
-1&-1&1\\
-1&1&-1\\
--1&1&1
-\end{pmatrix}
-$$
-
-$$
 =\frac12
 \begin{pmatrix}
 2&0&0\\
 0&2&0\\
 0&0&2
 \end{pmatrix}
-$$
+=I.
+```
 
-$$
-\boxed{AA^{-1}=I}
-$$
-
-The inverse is correct.
+The product is the identity, which verifies the inverse relation.
