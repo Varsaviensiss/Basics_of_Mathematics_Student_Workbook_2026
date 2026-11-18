@@ -1,91 +1,50 @@
 # Exercise 13. Fundamental Trigonometric Limit
 
-We use the fundamental trigonometric limit
+## Question
 
-[\
-\lim\_{x\to0}\frac{\sin x}{x}=1.\
-]
+Use the fundamental trigonometric limit, with angles measured in radians,
 
-## 1. Compute (\displaystyle\lim\_{x\to0}\frac{\sin 5x}{x})
+$$
+\lim_{u\to0}\frac{\sin u}{u}=1,
+$$
 
-**Step 1: Rewrite the expression**
+to evaluate both of the following limits. Show how each expression reduces to the fundamental limit.
 
-Multiply and divide by (5):
+1. $\displaystyle\lim_{x\to0}\frac{\sin(5x)}{x}$
+2. $\displaystyle\lim_{x\to0}\frac{\sin(2x)}{\sin(3x)}$
 
-[\
-\lim\_{x\to0}\frac{\sin 5x}{x}\
-\=5\lim\_{x\to0}\frac{\sin 5x}{5x}.\
-]
+## Solution
 
-**Step 2: Apply the fundamental limit**
+### 1. First Limit
 
-As (x\to0), we have (5x\to0). Therefore,
+For $x\ne0$, rewrite the expression as
 
-[\
-\lim\_{x\to0}\frac{\sin 5x}{5x}=1.\
-]
+$$
+\frac{\sin(5x)}{x}
+=5\frac{\sin(5x)}{5x}.
+$$
 
-Thus,
+Since $5x\to0$ as $x\to0$, the fundamental limit gives
 
-[\
-L=5\cdot1.\
-]
+$$
+\lim_{x\to0}\frac{\sin(5x)}{x}
+=5\cdot1
+=\boxed{5}.
+$$
 
-**Answer:**
+### 2. Second Limit
 
-[\
-\boxed{\lim\_{x\to0}\frac{\sin 5x}{x}=5}\
-]
+For nonzero $x$ sufficiently close to zero, rewrite the ratio as
 
-## 2. Compute (\displaystyle\lim\_{x\to0}\frac{\sin 2x}{\sin 3x})
+$$
+\frac{\sin(2x)}{\sin(3x)}
+=\frac{2}{3}\frac{\sin(2x)/(2x)}{\sin(3x)/(3x)}.
+$$
 
-**Step 1: Rewrite the expression**
+Both $2x$ and $3x$ tend to zero, so both sine quotients tend to $1$. Since the denominator tends to a nonzero value,
 
-Multiply and divide by (2x) in the numerator and by (3x) in the denominator:
-
-[\
-L=\lim\_{x\to0}\
-\frac{\sin 2x}{2x}\
-\cdot\
-\frac{3x}{\sin 3x}\
-\cdot\frac23.\
-]
-
-Rearranging gives
-
-[\
-L=\frac23\
-\lim\_{x\to0}\frac{\sin 2x}{2x}\
-\cdot\
-\lim\_{x\to0}\frac{3x}{\sin 3x}.\
-]
-
-**Step 2: Apply the fundamental limit**
-
-Since (2x\to0) and (3x\to0),
-
-[\
-\lim\_{x\to0}\frac{\sin 2x}{2x}=1\
-]
-
-and
-
-[\
-\lim\_{x\to0}\frac{3x}{\sin 3x}=1.\
-]
-
-Therefore,
-
-[\
-L=\frac23\cdot1\cdot1.\
-]
-
-**Answer:**
-
-[\
-\boxed{\lim\_{x\to0}\frac{\sin 2x}{\sin 3x}=\frac23}\
-]
-
-## Conclusion
-
-Both limits are calculated using the fundamental trigonometric limit. The key is to rewrite each expression so that it contains the standard form (\frac{\sin u}{u}), whose limit is (1) as (u\to0).
+$$
+\lim_{x\to0}\frac{\sin(2x)}{\sin(3x)}
+=\frac{2}{3}\cdot\frac{1}{1}
+=\boxed{\frac{2}{3}}.
+$$
