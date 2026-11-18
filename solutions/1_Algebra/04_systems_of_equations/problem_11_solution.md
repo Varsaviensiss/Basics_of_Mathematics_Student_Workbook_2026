@@ -1,90 +1,62 @@
-# Exercise 11. Parameter and Invertibility
+# Exercise 11. A Parameter in a System of Three Equations
 
-Given:
+## Question
 
-$$
-A(t)=\begin{pmatrix}1&t\\t&1\end{pmatrix}
-$$
+Analyze the number of solutions depending on $t$:
 
-## Step 1. Find the determinant
+```math
+\begin{cases}
+x+y+z=1,\\
+x+ty+z=2,\\
+x+y+tz=3.
+\end{cases}
+```
 
-$$
-\det(A(t))=1\cdot1-t\cdot t
-$$
+Use elimination and separately analyze any parameter value for which a standard calculation step ceases to be valid.
 
-$$
-\boxed{\det(A(t))=1-t^2}
-$$
+## Solution
 
-A matrix is invertible if and only if its determinant is nonzero.
+Subtract the first equation from the second and from the third:
 
-Therefore:
+```math
+\begin{aligned}
+(x+ty+z)-(x+y+z)&=2-1
+&\quad\Longrightarrow\quad (t-1)y&=1,\\
+(x+y+tz)-(x+y+z)&=3-1
+&\quad\Longrightarrow\quad (t-1)z&=2.
+\end{aligned}
+```
 
-$$
-1-t^2\neq0
-$$
+### Case 1: $t=1$
 
-$$
-t^2\neq1
-$$
+The first reduced equation becomes $0=1$, a contradiction. Therefore, the system has **no solution** at $t=1$.
 
-$$
-\boxed{t\neq1,\qquad t\neq-1}
-$$
+### Case 2: $t\ne1$
 
-## Step 2. Find the inverse
+Since $t-1$ is nonzero, we can divide both reduced equations by it:
 
-For a \(2\times2\) matrix:
+```math
+y=\frac{1}{t-1},
+\qquad
+z=\frac{2}{t-1}.
+```
 
-$$
-\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}
-=
-\frac1{ad-bc}
-\begin{pmatrix}d&-b\\-c&a\end{pmatrix}
-$$
+The first equation then gives
 
-Applying this formula:
+```math
+x=1-y-z=1-\frac{3}{t-1}.
+```
 
-$$
-A(t)^{-1}
-=
-\frac1{1-t^2}
-\begin{pmatrix}1&-t\\-t&1\end{pmatrix}
-$$
+Each variable is determined, so this solution is unique.
 
-Thus, for \(t\neq\pm1\):
+### Check All Three Equations
 
-$$
-\boxed{
-A(t)^{-1}
-=
-\frac1{1-t^2}
-\begin{pmatrix}1&-t\\-t&1\end{pmatrix}
-}
-$$
+```math
+\begin{aligned}
+x+y+z &=1-\frac{3}{t-1}+\frac{1}{t-1}+\frac{2}{t-1}=1,\\
+x+ty+z &=(x+y+z)+(t-1)y=1+1=2,\\
+x+y+tz &=(x+y+z)+(t-1)z=1+2=3.
+\end{aligned}
+```
 
-## Step 3. Explain the excluded values
-
-When \(t=1\):
-
-$$
-A(1)=\begin{pmatrix}1&1\\1&1\end{pmatrix}
-$$
-
-The rows are identical, so the matrix is singular.
-
-When \(t=-1\):
-
-$$
-A(-1)=\begin{pmatrix}1&-1\\-1&1\end{pmatrix}
-$$
-
-The second row is the negative of the first row, so the rows are linearly dependent.
-
-In both cases, the determinant is zero:
-
-$$
-1-(\pm1)^2=0
-$$
-
-The inverse formula has a zero denominator at these values, so the inverse does not exist.
+Thus, the system has **no solution when $t=1$** and **exactly one solution when $t\ne1$**.
