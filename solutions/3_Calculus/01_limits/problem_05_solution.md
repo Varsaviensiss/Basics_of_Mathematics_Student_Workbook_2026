@@ -1,57 +1,43 @@
-# Exercise 5. The Classical Limit Leading to the Number (e)
+# Exercise 5. The Classical Limit Leading to the Number e
 
-We need to compute the limit
+## Question
 
-[\
-L=\lim\_{n\to\infty}\left(1+\frac1n\right)^n.\
-]
+Evaluate the limit
 
-**Step 1: Calculate several values**
+$$
+L=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n.
+$$
 
-Let us calculate the expression for increasing values of (n).
+Calculate the expression for several increasing values of $n$ and compare the results with $e$. Explain what the numerical values suggest and why a finite table does not prove the limit.
 
-| (n)   | (\left(1+\frac1n\right)^n) |
-| ----- | -------------------------- |
-| 1     | 2                          |
-| 2     | 2.25                       |
-| 5     | 2.48832                    |
-| 10    | 2.59374                    |
-| 100   | 2.70481                    |
-| 1000  | 2.71692                    |
-| 10000 | 2.71815                    |
+## Solution
 
-We observe that the values approach approximately (2.71828).
+### 1. Numerical Comparison
 
-**Step 2: Calculate the limit**
+Let $a_n=\left(1+\frac{1}{n}\right)^n$.
 
-The classical definition of the number (e) is
+| $n$ | $a_n$ (rounded to five decimal places) |
+|---:|---:|
+| 1 | 2.00000 |
+| 2 | 2.25000 |
+| 5 | 2.48832 |
+| 10 | 2.59374 |
+| 100 | 2.70481 |
+| 1,000 | 2.71692 |
+| 10,000 | 2.71815 |
 
-[\
-e=\lim\_{n\to\infty}\left(1+\frac1n\right)^n.\
-]
+The displayed values are below $e\approx2.71828$ and get closer to it as $n$ increases.
 
-Therefore,
+### 2. Evaluate the Limit
 
-[\
-\boxed{\lim\_{n\to\infty}\left(1+\frac1n\right)^n=e}\
-]
+By the classical limit definition of $e$,
 
-where
+$$
+\boxed{L=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e}.
+$$
 
-[\
-e\approx 2.71828.\
-]
+The base approaches $1$ while the exponent grows without bound. This is the indeterminate form $1^\infty$, so the behavior of the base alone does not determine the limit.
 
-**Step 3: Explain the observed behavior**
+### 3. Why the Table Does Not Prove the Limit
 
-As (n) increases, the fraction (\frac1n) approaches zero. However, the entire expression is raised to the power (n). These two effects combine so that the expression approaches the finite number (e), rather than (1) or infinity.
-
-**Step 4: Why are a few values not a proof?**
-
-Calculating several terms helps us understand the behavior of the sequence, but it does not prove the limit. Even if the first several values approach a particular number, later terms could behave differently. A mathematical proof must show that the sequence approaches (e) as (n) tends to infinity, not merely that some calculated values are close to (e).
-
-**Final Answer:**
-
-[\
-\boxed{L=e\approx 2.71828}\
-]
+The table illustrates convergence by showing selected terms close to $e$. A proof must establish that for every $\varepsilon>0$, all terms with sufficiently large $n$ are within $\varepsilon$ of $e$. A finite table leaves infinitely many later terms untested.
