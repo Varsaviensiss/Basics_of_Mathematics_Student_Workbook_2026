@@ -1,71 +1,41 @@
-# Exercise 10. Inverse of a Diagonal Matrix
+# Exercise 10. A Polynomial Through Three Points
 
-Given:
+## Question
 
-$$
-D=\begin{pmatrix}2&0&0\\0&-3&0\\0&0&5\end{pmatrix},
-\qquad
-E=\begin{pmatrix}2&0&0\\0&0&0\\0&0&5\end{pmatrix}
-$$
+Find a polynomial $p(x)=ax^2+bx+c$ whose graph passes through $(0,1)$, $(1,3)$, and $(2,9)$. Reduce the problem to a system of equations and verify the result by substituting all three points.
 
-## Step 1. Determine which matrix is invertible
+## Solution
 
-A diagonal matrix is invertible if and only if every diagonal entry is nonzero.
+Substitute each point into $p(x)=ax^2+bx+c$:
 
-For \(D\), the diagonal entries are \(2,-3,5\), all nonzero. Therefore, \(D\) is invertible.
+```math
+\begin{aligned}
+p(0)=1 &\quad\Longrightarrow\quad c=1,\\
+p(1)=3 &\quad\Longrightarrow\quad a+b+c=3,\\
+p(2)=9 &\quad\Longrightarrow\quad 4a+2b+c=9.
+\end{aligned}
+```
 
-For \(E\), one diagonal entry is zero. Therefore, \(E\) is not invertible.
+Substituting $c=1$ gives $a+b=2$ and $4a+2b=8$. Subtract twice the first equation from the second:
 
-Equivalently:
+```math
+(4a+2b)-2(a+b)=8-2(2)
+\quad\Longrightarrow\quad 2a=4
+\quad\Longrightarrow\quad a=2.
+```
 
-$$
-\det(D)=2(-3)(5)=-30\neq0
-$$
+Then $b=2-a=0$. Therefore,
 
-$$
-\det(E)=2(0)(5)=0
-$$
+```math
+\boxed{p(x)=2x^2+1}.
+```
 
-Thus:
+## Check All Three Points
 
-$$
-\boxed{D\text{ is invertible; }E\text{ is not invertible}}
-$$
+```math
+p(0)=2(0)^2+1=1,\qquad
+p(1)=2(1)^2+1=3,\qquad
+p(2)=2(2)^2+1=9.
+```
 
-## Step 2. Find \(D^{-1}\)
-
-Take the reciprocal of each diagonal entry:
-
-$$
-\boxed{
-D^{-1}=\begin{pmatrix}
-\frac12&0&0\\
-0&-\frac13&0\\
-0&0&\frac15
-\end{pmatrix}
-}
-$$
-
-## Step 3. Verify by multiplication
-
-$$
-DD^{-1}
-=
-\begin{pmatrix}2&0&0\\0&-3&0\\0&0&5\end{pmatrix}
-\begin{pmatrix}\frac12&0&0\\0&-\frac13&0\\0&0&\frac15\end{pmatrix}
-$$
-
-$$
-DD^{-1}=
-\begin{pmatrix}
-2\cdot\frac12&0&0\\
-0&(-3)\left(-\frac13\right)&0\\
-0&0&5\cdot\frac15
-\end{pmatrix}
-$$
-
-$$
-\boxed{DD^{-1}=I_3}
-$$
-
-The inverse is correct. Matrix \(E\) has no inverse because its determinant is zero.
+The polynomial passes through all three required points.
