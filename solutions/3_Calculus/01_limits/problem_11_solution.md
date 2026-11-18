@@ -1,55 +1,41 @@
 # Exercise 11. An n-th Root
 
-We need to compute
+## Question
 
-\[
-L=\lim_{n\to\infty}\sqrt[n]{5n+2n}.
-\]
+Evaluate the limit
 
-**Step 1: Simplify the expression**
+$$
+\lim_{n\to\infty}\sqrt[n]{5^n+2^n}.
+$$
 
-Inside the root,
+Explain why the larger exponential base determines the limit, and compare this with the role of the highest degree in polynomial expressions.
 
-\[
-5n+2n=7n.
-\]
+## Solution
 
-Therefore,
+Factor out $5^n$, the term with the larger exponential base:
 
-\[
-L=\lim_{n\to\infty}\sqrt[n]{7n}.
-\]
+$$
+\sqrt[n]{5^n+2^n}
+=
+\sqrt[n]{5^n\left(1+\left(\frac25\right)^n\right)}
+=
+5\left(1+\left(\frac25\right)^n\right)^{1/n}.
+$$
 
-**Step 2: Separate the factors**
+For every positive integer $n$, we have $0<\left(\frac25\right)^n<1$. Therefore,
 
-Using the property of roots,
+$$
+5\leq\sqrt[n]{5^n+2^n}\leq5\cdot2^{1/n}.
+$$
 
-\[
-L=\lim_{n\to\infty}\sqrt[n]{7}\cdot\sqrt[n]{n}.
-\]
+Since $2^{1/n}\to1$, both bounds approach $5$. By the Squeeze Theorem,
 
-As \(n\to\infty\),
+$$
+\boxed{\lim_{n\to\infty}\sqrt[n]{5^n+2^n}=5}.
+$$
 
-\[
-\sqrt[n]{7}\to1
-\quad\text{and}\quad
-\sqrt[n]{n}\to1.
-\]
+## Comparison with Polynomial Expressions
 
-Therefore,
+For the exponentials, the ratio of the smaller term to the larger term is $(2/5)^n$, which tends to zero. The remaining dominant factor is $5^n$, whose $n$-th root is $5$.
 
-\[
-L=1\cdot1.
-\]
-
-**Final Answer:**
-
-\[
-\boxed{L=1}
-\]
-
-**Explanation:**
-
-The \(n\)-th root grows more slowly than the expression inside it. Even though \(5n+2n=7n\) increases without bound, taking the \(n\)-th root makes the expression approach \(1\).
-
-Unlike a quotient of polynomials, where we compare the highest powers, here we use the behavior of \(n\)-th roots as \(n\) approaches infinity.
+In a polynomial, dividing by the highest power of $n$ makes the lower-degree terms tend to zero. In both cases, factoring out the fastest-growing term reveals what determines the limit. For exponentials with the same exponent $n$, the base determines which term grows faster. For polynomial terms, the degree determines which term grows faster.
