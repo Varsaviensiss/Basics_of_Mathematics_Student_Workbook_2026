@@ -1,87 +1,59 @@
 # Exercise 9. Composing Transformations
 
-Given:
+Given
 
 $$
 S=\begin{pmatrix}2&0\\0&1\end{pmatrix},
 \qquad
 R=\begin{pmatrix}0&-1\\1&0\end{pmatrix},
 \qquad
-x=\begin{pmatrix}1\\2\end{pmatrix}
+x=\begin{pmatrix}1\\2\end{pmatrix},
 $$
 
-## 1. Compute \(RSx\)
+compute $RSx$ and $SRx$, compare the results, and explain geometrically why the order matters.
 
-First, calculate \(Sx\):
+## 1. Compute $RSx$
 
-$$
-Sx=
-\begin{pmatrix}2&0\\0&1\end{pmatrix}
-\begin{pmatrix}1\\2\end{pmatrix}
-=\begin{pmatrix}2\\2\end{pmatrix}
-$$
-
-Next, multiply by \(R\):
+First apply $S$ to $x$. Each component is the dot product of a row of $S$ with $x$:
 
 $$
-RSx=
-\begin{pmatrix}0&-1\\1&0\end{pmatrix}
-\begin{pmatrix}2\\2\end{pmatrix}
-=\begin{pmatrix}-2\\2\end{pmatrix}
+Sx
+=\begin{pmatrix}2\cdot1+0\cdot2\\0\cdot1+1\cdot2\end{pmatrix}
+=\begin{pmatrix}2\\2\end{pmatrix}.
 $$
 
-Therefore,
+Then apply $R$ to the resulting vector:
 
 $$
-\boxed{RSx=\begin{pmatrix}-2\\2\end{pmatrix}}
+RSx=R(Sx)
+=\begin{pmatrix}0\cdot2-1\cdot2\\1\cdot2+0\cdot2\end{pmatrix}
+=\begin{pmatrix}-2\\2\end{pmatrix}.
 $$
 
-## 2. Compute \(SRx\)
+## 2. Compute $SRx$
 
-First, calculate \(Rx\):
-
-$$
-Rx=
-\begin{pmatrix}0&-1\\1&0\end{pmatrix}
-\begin{pmatrix}1\\2\end{pmatrix}
-=\begin{pmatrix}-2\\1\end{pmatrix}
-$$
-
-Next, multiply by \(S\):
+First apply $R$ to $x$:
 
 $$
-SRx=
-\begin{pmatrix}2&0\\0&1\end{pmatrix}
-\begin{pmatrix}-2\\1\end{pmatrix}
-=\begin{pmatrix}-4\\1\end{pmatrix}
+Rx
+=\begin{pmatrix}0\cdot1-1\cdot2\\1\cdot1+0\cdot2\end{pmatrix}
+=\begin{pmatrix}-2\\1\end{pmatrix}.
 $$
 
-Therefore,
+Then apply $S$ to the resulting vector:
 
 $$
-\boxed{SRx=\begin{pmatrix}-4\\1\end{pmatrix}}
+SRx=S(Rx)
+=\begin{pmatrix}2\cdot(-2)+0\cdot1\\0\cdot(-2)+1\cdot1\end{pmatrix}
+=\begin{pmatrix}-4\\1\end{pmatrix}.
 $$
 
 ## 3. Compare the Results
 
-The results are different:
-
-$$
-RSx=\begin{pmatrix}-2\\2\end{pmatrix},
-\qquad
-SRx=\begin{pmatrix}-4\\1\end{pmatrix}
-$$
-
-Thus, \(RSx\ne SRx\).
+The results are different, so $RSx\ne SRx$.
 
 ## 4. Geometric Explanation
 
-The matrix \(S\) doubles the horizontal coordinate and leaves the vertical coordinate unchanged. The matrix \(R\) rotates a vector by \(90^\circ\) counterclockwise.
+The matrix $S$ doubles the horizontal coordinate and leaves the vertical coordinate unchanged. The matrix $R$ rotates a vector $90^\circ$ counterclockwise.
 
-When we scale first and then rotate, we obtain \((-2,2)\). When we rotate first and then scale, we obtain \((-4,1)\).
-
-The order matters because the scaling is nonuniform. Rotating the vector first changes its coordinates before the scaling is applied, producing a different final result.
-
-## Conclusion
-
-This example shows that matrix multiplication represents the composition of transformations. Changing the order of transformations can change the final result.
+If we scale first, the doubled horizontal coordinate becomes the vertical coordinate after rotation. If we rotate first, the original vertical coordinate becomes the new horizontal coordinate with its sign reversed, and $S$ then doubles it. This is why the two orders give different results.
