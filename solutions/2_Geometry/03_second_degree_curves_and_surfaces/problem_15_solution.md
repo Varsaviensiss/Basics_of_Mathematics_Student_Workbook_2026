@@ -1,140 +1,50 @@
+# Exercise 15. Recognition and Sketch Without a Given Name
 
-## Exercise 15. Recognition and Sketch Without a Given Name
+## Question
 
-### Part 1. Reduce the Equation to Canonical Form
+1. Reduce $4x^2+9y^2-8x+36y+4=0$ to canonical form. Identify the curve, find its center and semiaxis lengths, and draw a labeled sketch showing its four axis endpoints.
+2. Identify the surface $4x^2+y^2=z^2$ using its cross-sections in the planes $z=c$, $x=0$, and $y=0$. Draw a labeled sketch of the surface and show how the horizontal semiaxis lengths compare.
 
-**Given equation:**
+## Solution
 
-\[
-4x^2+9y^2-8x+36y+4=0
-\]
+### Part 1. Identify the Curve
 
-Group the terms:
+Group the terms and complete the square:
 
-\[
-4(x^2-2x)+9(y^2+4y)+4=0
-\]
+$$
+4(x^2-2x)+9(y^2+4y)+4=0.
+$$
 
-Complete the square:
+$$
+4[(x-1)^2-1]+9[(y+2)^2-4]+4=0.
+$$
 
-\[
-4[(x-1)^2-1]+9[(y+2)^2-4]+4=0
-\]
+Rearranging gives $4(x-1)^2+9(y+2)^2=36$. Dividing by $36$ gives
 
-Expand and simplify:
+$$
+\boxed{\frac{(x-1)^2}{9}+\frac{(y+2)^2}{4}=1}.
+$$
 
-\[
-4(x-1)^2-4+9(y+2)^2-36+4=0
-\]
+This is an ellipse centered at $(1,-2)$. Its horizontal semiaxis is $3$ and its vertical semiaxis is $2$, so the major axis is horizontal. The vertices are $(-2,-2)$ and $(4,-2)$, and the co-vertices are $(1,-4)$ and $(1,0)$.
 
-\[
-4(x-1)^2+9(y+2)^2=36
-\]
+To sketch it, mark the center and move $3$ units left and right and $2$ units up and down. Draw the ellipse through these four points.
 
-Divide both sides by \(36\):
+### Part 2. Identify the Surface
 
-\[
-\boxed{\frac{(x-1)^2}{9}+\frac{(y+2)^2}{4}=1}
-\]
+**Horizontal sections at $z=c$.** Substitution gives $4x^2+y^2=c^2$. For $c\ne0$, this becomes
 
-### Center and Semiaxis Lengths
+$$
+\frac{x^2}{c^2/4}+\frac{y^2}{c^2}=1.
+$$
 
-Compare with the standard equation:
+The section is an ellipse centered at $(0,0,c)$ with semiaxes $\lvert c\rvert/2$ along $x$ and $\lvert c\rvert$ along $y$. Thus the $y$ semiaxis is twice the $x$ semiaxis. At $c=0$, the section is the single point $(0,0,0)$.
 
-\[
-\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1
-\]
+**Vertical section at $x=0$.** The equation becomes $y^2=z^2$, giving the intersecting lines $z=\pm y$ in the $yz$-plane.
 
-Therefore:
+**Vertical section at $y=0$.** The equation becomes $4x^2=z^2$, giving the intersecting lines $z=\pm2x$ in the $xz$-plane.
 
-- **Center:** \(C=(1,-2)\)
-- **Horizontal semiaxis:** \(a=\sqrt{9}=3\)
-- **Vertical semiaxis:** \(b=\sqrt{4}=2\)
-- **Vertices:** \((-2,-2)\) and \((4,-2)\)
-- **Co-vertices:** \((1,-4)\) and \((1,0)\)
+The surface is an **elliptic double cone** with its vertex at the origin. To sketch it, draw two halves extending along the positive and negative $z$-axis. Draw horizontal ellipses that widen as $\lvert z\rvert$ increases, keeping the $y$ semiaxis twice the $x$ semiaxis. For example, at $z=2$ the semiaxes are $1$ along $x$ and $2$ along $y$.
 
-Since \(a>b\), the major axis is horizontal.
+## Labeled Sketches
 
-**Sketch:** Draw an ellipse centered at \((1,-2)\), extending \(3\) units left and right and \(2\) units up and down.
-
----
-
-### Part 2. Analyze the Surface Using Cross-Sections
-
-**Given equation:**
-
-\[
-4x^2+y^2=z^2
-\]
-
-#### 1. Horizontal Cross-Sections: \(z=c\)
-
-Substitute \(z=c\):
-
-\[
-4x^2+y^2=c^2
-\]
-
-For \(c\neq0\), divide by \(c^2\):
-
-\[
-\boxed{\frac{x^2}{c^2/4}+\frac{y^2}{c^2}=1}
-\]
-
-These cross-sections are ellipses with semiaxis lengths
-
-\[
-a_x=\frac{|c|}{2},\qquad a_y=|c|.
-\]
-
-The ellipse is twice as wide along the \(y\)-direction as along the \(x\)-direction.
-
-When \(c=0\):
-
-\[
-4x^2+y^2=0
-\]
-
-This gives only the point \((0,0,0)\).
-
-#### 2. Cross-Section by the Plane \(x=0\)
-
-Substitute \(x=0\):
-
-\[
-y^2=z^2
-\]
-
-Therefore:
-
-\[
-\boxed{z=\pm y}
-\]
-
-The cross-section consists of two intersecting straight lines in the \(yz\)-plane.
-
-#### 3. Cross-Section by the Plane \(y=0\)
-
-Substitute \(y=0\):
-
-\[
-4x^2=z^2
-\]
-
-Therefore:
-
-\[
-\boxed{z=\pm2x}
-\]
-
-The cross-section consists of two intersecting straight lines in the \(xz\)-plane.
-
-#### 4. Identify the Surface
-
-The horizontal cross-sections are ellipses whose sizes increase with \(|z|\). The vertical cross-sections through the \(z\)-axis consist of intersecting straight lines.
-
-Therefore, the surface is an **elliptic double cone** with its vertex at the origin.
-
-The equation shows that the cone is narrower along the \(x\)-direction than along the \(y\)-direction.
-
-**Sketch:** Draw two cone-shaped parts meeting at the origin, extending upward and downward along the \(z\)-axis. Their horizontal cross-sections are ellipses, wider along \(y\) than \(x\).
+![Translated ellipse with its four axis endpoints, elliptic double cone, and the horizontal section at z=2 showing semiaxes 1 and 2](./ellipse-cone-exercise-15.png)
