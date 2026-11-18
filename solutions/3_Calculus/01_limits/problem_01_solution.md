@@ -1,29 +1,27 @@
-**Exercise 1. Dominant Terms in a Sequence**
+# Exercise 1. Dominant Terms in a Sequence
 
-Given:
+## Question
 
-[\
-\lim\_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}\
-]
+Evaluate the limit
 
-**Solution:**
+$$
+\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}.
+$$
 
-Divide the numerator and denominator by (n^2):
+Identify the dominant terms in the numerator and denominator, and explain why they determine the limit.
 
-[\
-\=\lim\_{n\to\infty}\frac{4-\frac{3}{n}+\frac{1}{n^2}}{2+\frac{5}{n}-\frac{7}{n^2}}\
-]
+## Solution
 
-As (n\to\infty), the terms (\frac{1}{n}) and (\frac{1}{n^2}) approach (0).
+The dominant terms are $4n^2$ in the numerator and $2n^2$ in the denominator. Divide both by $n^2$:
 
-Therefore,
+$$
+\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}
+=
+\lim_{n\to\infty}\frac{4-3/n+1/n^2}{2+5/n-7/n^2}.
+$$
 
-[\
-\=\frac{4-0+0}{2+0-0}\
-\=\frac{4}{2}\
-\=\boxed{2}\
-]
+As $n\to\infty$, both $1/n$ and $1/n^2$ tend to zero. Thus, after division by $n^2$, the lower-degree terms vanish and only the leading coefficients remain. Since the denominator tends to $2\ne 0$, the limit is
 
-**Explanation:**
-
-The highest-degree terms determine the limit because they grow faster than the lower-degree terms. Therefore, the limit equals the ratio of their coefficients, (4/2=2).
+$$
+\frac{4}{2}=\boxed{2}.
+$$
