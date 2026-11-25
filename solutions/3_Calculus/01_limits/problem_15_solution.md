@@ -54,7 +54,6 @@ $$
 $$
 
 ### 3. Sketches
-### 3. Sketches
 
 **Sequence from Exercise 5**
 
