@@ -28,6 +28,20 @@ The one-sided limits go to opposite infinities, so the two-sided limit does not 
 
 ### Graph
 
-![Graph of f(x) = 1/(x-2), showing both branches and the dashed vertical asymptote x=2](./exercise-09-graph.png)
+```text
+                     x = 2
+                       : ↑  +inf
+                       : *
+                       :  *
+                       :     * (3, 1)
+                       :          * * * ...
+-----------------------:--------------------> x (y = 0)
+ ... * * *             :
+           * (1, -1)   :
+                *      :
+                   *   :
+                     * :
+               -inf  ↓ :
+```
 
 The left branch lies below the horizontal axis and falls without bound near $x=2$. The right branch lies above the horizontal axis and rises without bound near $x=2$. Far from the asymptote, both branches approach $y=0$.
