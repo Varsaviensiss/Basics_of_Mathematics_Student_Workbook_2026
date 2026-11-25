@@ -54,11 +54,38 @@ $$
 $$
 
 ### 3. Sketches
+### 3. Sketches
 
-![Sequence approaching e and function following y = x - 1 with an open circle at (3, 2)](./exercise-15-graphs.png)
+**Sequence from Exercise 5**
 
-The sequence sketch shows discrete terms approaching $e$. The function sketch follows $y=x-1$ with an open circle at $(3,2)$ because $f(3)$ is undefined.
+```text
+a_n
+  e  | - - - - - - - - - - - - - -  y = e
+     |                       *  *
+     |                  *
+     |             *
+     |        *
+2.0  |   *
+     +-----------------------------> n
+```
 
+The dots represent individual terms of $a_n=(1+1/n)^n$. As $n$ increases, the terms approach $e$ from below. The sketch is not to scale.
+
+**Function from Exercise 7**
+
+```text
+f(x)
+  ^
+3 |                 *  (4, 3)
+  |               /
+2 |             o  (3, 2)
+  |           /
+1 |         *  (2, 1)
+  |       /
+  +--------------------------> x
+```
+
+The graph follows $y=x-1$ for $x\ne3$. The open circle at $(3,2)$ marks the hole because $f(3)$ is undefined. Both sides approach the same height, $2$.
 ### 4. Observation Versus Proof
 
 The tables and sketches agree with the analytical limits. A finite table leaves infinitely many sequence terms and function values untested. The logarithmic argument establishes convergence for all sufficiently large $n$. For the function, $|f(x)-2|=|x-3|$ for every $x\ne3$, so the values approach $2$ from either side.
