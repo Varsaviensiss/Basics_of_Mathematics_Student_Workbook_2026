@@ -1,134 +1,57 @@
+# Problem 9. An Oblique Asymptote
 
-# Problem 9. Analyze the Ellipsoid
+## Question
 
-Given the surface:
+For the function
 
-\[
-\frac{x^2}{9}+\frac{y^2}{4}+\frac{z^2}{16}=1
-\]
+$$
+f(x)=\frac{x^2+1}{x-1},
+$$
 
-## 1. Identify the Surface
+find the vertical and oblique asymptotes. Use polynomial division and explain why the difference between the function and its oblique asymptote tends to zero as $x\to+\infty$ and as $x\to-\infty$.
 
-The equation is in the standard form of an ellipsoid:
+## Solution
 
-\[
-\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1
-\]
+### 1. Divide the polynomials
 
-Comparing the equations:
+Since $(x-1)(x+1)=x^2-1$, the division gives quotient $x+1$ and remainder $2$:
 
-\[
-a^2=9,\qquad b^2=4,\qquad c^2=16
-\]
+$$
+x^2+1=(x-1)(x+1)+2.
+$$
 
-Therefore, the semi-axis lengths are:
+Dividing by $x-1$ gives
 
-\[
-a=3,\qquad b=2,\qquad c=4
-\]
+$$
+f(x)=x+1+\frac{2}{x-1},\qquad x\ne 1.
+$$
 
-- Surface type: Ellipsoid
-- Center: \((0,0,0)\)
-- Semi-axis lengths: \(3,2,4\)
+### 2. Find the vertical asymptote
 
-## 2. Find the Intercepts
+As $x$ approaches $1$, the term $x+1$ tends to $2$, while the remainder term $\frac{2}{x-1}$ grows without bound in magnitude. The denominator is negative to the left of $1$ and positive to the right, so
 
-Set two variables equal to zero at a time.
+$$
+\lim_{x\to1^-}f(x)=-\infty,
+\qquad
+\lim_{x\to1^+}f(x)=+\infty.
+$$
 
-**x-intercepts:** Set \(y=0\) and \(z=0\).
+Therefore, the vertical asymptote is **$x=1$**.
 
-\[
-\frac{x^2}{9}=1
-\]
+### 3. Find the oblique asymptote
 
-\[
-x=\pm3
-\]
+The difference between the function and the line $y=x+1$ is
 
-Points:
+$$
+f(x)-(x+1)=\frac{2}{x-1}.
+$$
 
-\[
-(\pm3,0,0)
-\]
+As $x\to+\infty$ or $x\to-\infty$, the magnitude $|x-1|$ grows without bound while the numerator stays equal to $2$. Therefore,
 
-**y-intercepts:** Set \(x=0\) and \(z=0\).
+$$
+\lim_{x\to+\infty}\bigl(f(x)-(x+1)\bigr)=0,
+\qquad
+\lim_{x\to-\infty}\bigl(f(x)-(x+1)\bigr)=0.
+$$
 
-\[
-\frac{y^2}{4}=1
-\]
-
-\[
-y=\pm2
-\]
-
-Points:
-
-\[
-(0,\pm2,0)
-\]
-
-**z-intercepts:** Set \(x=0\) and \(y=0\).
-
-\[
-\frac{z^2}{16}=1
-\]
-
-\[
-z=\pm4
-\]
-
-Points:
-
-\[
-(0,0,\pm4)
-\]
-
-## 3. Find the Horizontal Traces
-
-Set \(z=c\):
-
-\[
-\frac{x^2}{9}+\frac{y^2}{4}+\frac{c^2}{16}=1
-\]
-
-Rearranging:
-
-\[
-\frac{x^2}{9}+\frac{y^2}{4}
-=1-\frac{c^2}{16}
-\]
-
-For \(|c|<4\), divide by the right-hand side:
-
-\[
-\frac{x^2}{9\left(1-\frac{c^2}{16}\right)}
-+
-\frac{y^2}{4\left(1-\frac{c^2}{16}\right)}
-=1
-\]
-
-These traces are ellipses.
-
-- If \(|c|<4\), the trace is an ellipse.
-- If \(c=\pm4\), the trace is a single point.
-- If \(|c|>4\), there are no real points.
-
-The semi-axis lengths of each horizontal ellipse are:
-
-\[
-a_x=3\sqrt{1-\frac{c^2}{16}}
-\]
-
-\[
-a_y=2\sqrt{1-\frac{c^2}{16}}
-\]
-
-## Final Answers
-
-1. Surface: Ellipsoid.
-2. Center: \((0,0,0)\).
-3. Semi-axis lengths: \(3\) along the \(x\)-axis, \(2\) along the \(y\)-axis, and \(4\) along the \(z\)-axis.
-4. x-intercepts: \((\pm3,0,0)\).
-5. y-intercepts: \((0,\pm2,0)\).
-6. z-intercepts: \((0,0,\pm4)\).
-7. Horizontal traces: Ellipses for \(|c|<4\), points for \(c=\pm4\), and no real points for \(|c|>4\).
+Thus **$y=x+1$** is the oblique asymptote at both ends of the graph.
