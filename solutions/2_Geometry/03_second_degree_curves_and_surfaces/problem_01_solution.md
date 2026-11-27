@@ -13,20 +13,98 @@ Identify the type of curve represented by each equation. Explain how the canonic
 
 ### 1. Circle
 
-Both squared terms have equal positive coefficients. The center is $(0,0)$ and the radius is $3$. The axis intercepts are $(\pm3,0)$ and $(0,\pm3)$.
+The squared terms have equal positive coefficients, so the equation has the form $x^2+y^2=r^2$. The center is $(0,0)$ and the radius is $r=\sqrt{9}=3$. The axis intercepts are $(\pm3,0)$ and $(0,\pm3)$.
+
+```text
+                    ^ y
+                    |
+                ****T****
+             ***    |    ***
+            *       |       *
+           *        |        *
+<----------L--------O--------R----------> x
+           *        |        *
+            *       |       *
+             ***    |    ***
+                ****B****
+                    |
+
+O = (0, 0), radius = 3
+L = (-3, 0), R = (3, 0)
+T = (0, 3),  B = (0, -3)
+```
 
 ### 2. Ellipse
 
-Both squared terms are positive and have different denominators. The center is $(0,0)$. The horizontal semiaxis is $4$ and the vertical semiaxis is $3$, so the ellipse is wider horizontally. Its axis intercepts are $(\pm4,0)$ and $(0,\pm3)$.
+Both squared terms are positive and have different denominators, so the equation represents an ellipse centered at $(0,0)$. The horizontal semiaxis is $\sqrt{16}=4$ and the vertical semiaxis is $\sqrt{9}=3$, so the ellipse is wider along the $x$-axis. The intercepts are $(\pm4,0)$ and $(0,\pm3)$.
+
+```text
+                    ^ y
+                    |
+               *****T*****
+           ****     |     ****
+         **         |         **
+        *           |           *
+<-------L-----------O-----------R-------> x
+        *           |           *
+         **         |         **
+           ****     |     ****
+               *****B*****
+                    |
+
+O = (0, 0)
+L = (-4, 0), R = (4, 0)
+T = (0, 3),  B = (0, -3)
+Horizontal semiaxis = 4, vertical semiaxis = 3
+```
 
 ### 3. Parabola
 
-The equation has the form $y^2=4px$. Since $4p=8$, we get $p=2$. The vertex is $(0,0)$, the axis of symmetry is $y=0$, and the parabola opens to the right. Its focus is $(2,0)$.
+Only $y$ is squared, and the equation has the form $y^2=4px$. Since $4p=8$, we get $p=2$. The vertex is $(0,0)$, the axis of symmetry is $y=0$, and the focus is $(2,0)$. The parabola opens to the right because $p>0$.
+
+```text
+        ^ y
+        |                        *
+        |                 *
+        |           *
+        |      *
+        |   *
+        | *
+<-------V-------F---------------------> x
+        | *
+        |   *
+        |      *
+        |           *
+        |                 *
+        |                        *
+
+V = (0, 0) is the vertex.
+F = (2, 0) is the focus.
+The x-axis (y = 0) is the axis of symmetry.
+```
 
 ### 4. Hyperbola
 
-The squared terms have opposite signs. The positive $x^2$ term means that the two branches open left and right. The center is $(0,0)$, the vertices are $(\pm3,0)$, and the parameters are $a=3$ and $b=2$. The dashed asymptotes are $y=\pm\frac23x$.
+The squared terms have opposite signs, so the equation represents a hyperbola. The positive $x^2$ term means that the branches open left and right. The center is $(0,0)$ and the vertices are $(\pm3,0)$. With $a=3$ and $b=2$, the asymptotes are $y=\pm\frac{b}{a}x=\pm\frac{2}{3}x$.
 
-## Labeled Sketches
+```text
+                            ^ y
+                            |
+  *  .                      |                      .  *
+      *  .                  |                  .  *
+          *  .              |              .  *
+             *   .          |          .   *
+                *    .      |      .    *
+                 *       .  |  .       *
+<-----------------L---------O---------R-----------------> x
+                 *       .  |  .       *
+                *    .      |      .    *
+             *   .          |          .   *
+          *  .              |              .  *
+      *  .                  |                  .  *
+  *  .                      |                      .  *
 
-![Labeled sketches of the circle, ellipse, parabola, and hyperbola](./conics-exercise-01.png)
+O = (0, 0) is the center.
+L = (-3, 0) and R = (3, 0) are the vertices.
+Dots mark the asymptotes y = (2/3)x and y = -(2/3)x.
+```
