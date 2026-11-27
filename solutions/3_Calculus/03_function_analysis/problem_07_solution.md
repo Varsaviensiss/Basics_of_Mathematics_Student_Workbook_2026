@@ -1,84 +1,51 @@
-```
+# Problem 7. A Trigonometric Function on a Closed Interval
 
-# Problem 7. Classify the Quadric Surfaces
+## Question
 
-Identify each equation as an ellipse, hyperbola, parabola, or a surface with no real points.
+Analyze the monotonicity and extrema of
 
-## 1. Equation: \(4x^2+9y^2=36\)
+$$
+f(x)=\sin x+\cos x,\qquad x\in[0,2\pi].
+$$
 
-Divide both sides by \(36\):
+Compare the values at the critical points and endpoints to find the absolute maximum and minimum.
 
-\[
-\frac{x^2}{9}+\frac{y^2}{4}=1
-\]
+## Solution
 
-This is the standard equation of an ellipse.
+### 1. Find the critical points
 
-- Center: \((0,0)\)
-- Semi-major axis: \(3\)
-- Semi-minor axis: \(2\)
+Differentiating and rewriting the result gives
 
-## 2. Equation: \(x^2-y^2=1\)
+$$
+f'(x)=\cos x-\sin x
+=\sqrt{2}\cos\left(x+\frac{\pi}{4}\right).
+$$
 
-This is the standard equation of a hyperbola:
+The derivative is zero when $x+\frac{\pi}{4}=\frac{\pi}{2}+k\pi$, so the critical points in the interval occur at $x=\frac{\pi}{4}$ and $x=\frac{5\pi}{4}$.
 
-\[
-\frac{x^2}{1}-\frac{y^2}{1}=1
-\]
+### 2. Determine monotonicity
 
-Since the squared terms have opposite signs, the graph is a hyperbola.
+The sign of $f'(x)$ follows from the sign of $\cos(x+\frac{\pi}{4})$.
 
-- Center: \((0,0)\)
-- Opens along the \(x\)-axis
-- Vertices: \((\pm1,0)\)
+| Interval | Sign of $f'(x)$ | Behavior of $f$ |
+|---|---|---|
+| $(0,\frac{\pi}{4})$ | $+$ | Increasing |
+| $(\frac{\pi}{4},\frac{5\pi}{4})$ | $-$ | Decreasing |
+| $(\frac{5\pi}{4},2\pi)$ | $+$ | Increasing |
 
-## 3. Equation: \(x^2-4y=0\)
+Thus $x=\frac{\pi}{4}$ is a local maximum and $x=\frac{5\pi}{4}$ is a local minimum.
 
-Solve for \(y\):
+### 3. Compare the critical points and endpoints
 
-\[
-x^2=4y
-\]
+The function is continuous on the closed interval $[0,2\pi]$. To find the absolute extrema, evaluate it at both critical points and both endpoints.
 
-\[
-y=\frac{x^2}{4}
-\]
+$$
+\begin{aligned}
+f(0)&=1,\\
+f\left(\frac{\pi}{4}\right)&=\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}=\sqrt{2},\\
+f\left(\frac{5\pi}{4}\right)&=-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}=-\sqrt{2},\\
+f(2\pi)&=1.
+\end{aligned}
+$$
 
-This is the standard equation of a parabola.
-
-- Vertex: \((0,0)\)
-- Opens upward along the positive \(y\)-axis
-
-## 4. Equation: \(x^2+y^2+1=0\)
-
-Rearrange:
-
-\[
-x^2+y^2=-1
-\]
-
-For real numbers \(x\) and \(y\),
-
-\[
-x^2\geq0,\qquad y^2\geq0
-\]
-
-Therefore,
-
-\[
-x^2+y^2\geq0
-\]
-
-It is impossible for the sum of two real squares to equal \(-1\).
-
-- No real points exist.
-- The graph is an empty set in the real plane.
-
-## Final Answers
-
-1. \(4x^2+9y^2=36\): Ellipse.
-2. \(x^2-y^2=1\): Hyperbola.
-3. \(x^2-4y=0\): Parabola.
-4. \(x^2+y^2+1=0\): No real points.
-
-```
+Since $-\sqrt{2}<1<\sqrt{2}$, the **absolute maximum** is $\sqrt{2}$ at $x=\frac{\pi}{4}$, and the **absolute minimum** is $-\sqrt{2}$ at $x=\frac{5\pi}{4}$.
