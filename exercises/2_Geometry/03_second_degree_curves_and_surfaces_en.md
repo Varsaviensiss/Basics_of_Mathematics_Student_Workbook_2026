@@ -1,138 +1,110 @@
-# Second-Degree Curves and Surfaces
+# Exercise 1. Recognizing Curves from Canonical Form
 
-## Goal of the Set
+## Question
 
-After completing this set, the student should be able to recognize the basic second-degree curves in the plane and the basic second-degree surfaces in space, read their most important features from equations, reduce simple equations to canonical form, and interpret geometric cross-sections.
+Identify the type of curve represented by each equation. Explain how the canonical form determines the type, list the key features, and draw a labeled sketch of each curve.
 
-The main goal is not to memorize a catalog of detailed properties, but to learn how to move from an algebraic equation to a geometric picture and back again.
+1. $x^2+y^2=9$
+2. $\frac{x^2}{16}+\frac{y^2}{9}=1$
+3. $y^2=8x$
+4. $\frac{x^2}{9}-\frac{y^2}{4}=1$
 
-## Basic Exercises
+## Solution
 
-### Exercise 1. Recognizing Curves from Canonical Form
-Recognize the curves
-$$x^2+y^2=9,$$
-$$\frac{x^2}{16}+\frac{y^2}{9}=1,$$
-$$y^2=8x,$$
-$$\frac{x^2}{9}-\frac{y^2}{4}=1.$$
-For each one, identify the most important features and make a sketch. Explain which parts of the equation let you recognize the type of curve.
+### 1. Circle
 
-> **Why this exercise:** builds the basic dictionary: canonical equation → type of curve → shape and scale.
+The squared terms have equal positive coefficients, so the equation has the form $x^2+y^2=r^2$. The center is $(0,0)$ and the radius is $r=\sqrt{9}=3$. The axis intercepts are $(\pm3,0)$ and $(0,\pm3)$.
 
-### Exercise 2. Circle by Completing the Square
-Reduce
-$$x^2+y^2-6x+4y-3=0$$
-to canonical form. Find the center and radius, then substitute two simple points from the circle into both forms of the equation.
+```text
+                    ^ y
+                    |
+                ****T****
+             ***    |    ***
+            *       |       *
+           *        |        *
+<----------L--------O--------R----------> x
+           *        |        *
+            *       |       *
+             ***    |    ***
+                ****B****
+                    |
 
-> **Why this exercise:** practices completing the square as a transition from a general equation to the geometry of the object.
+O = (0, 0), radius = 3
+L = (-3, 0), R = (3, 0)
+T = (0, 3),  B = (0, -3)
+```
 
-### Exercise 3. Ellipse
-For
-$$\frac{x^2}{25}+\frac{y^2}{9}=1,$$
-find the semiaxis lengths, the intercepts with the coordinate axes, and make a sketch. Explain along which axis the ellipse is more stretched and how this is visible in the equation.
+### 2. Ellipse
 
-> **Why this exercise:** teaches how to read the size and orientation of an ellipse without additional conceptual machinery.
+Both squared terms are positive and have different denominators, so the equation represents an ellipse centered at $(0,0)$. The horizontal semiaxis is $\sqrt{16}=4$ and the vertical semiaxis is $\sqrt{9}=3$, so the ellipse is wider along the $x$-axis. The intercepts are $(\pm4,0)$ and $(0,\pm3)$.
 
-### Exercise 4. Parabola
-For
-$$y^2=12x,$$
-identify the vertex, axis of symmetry, and opening direction. Find points on the parabola for $x=3$ and use them to make a sketch.
+```text
+                    ^ y
+                    |
+               *****T*****
+           ****     |     ****
+         **         |         **
+        *           |           *
+<-------L-----------O-----------R-------> x
+        *           |           *
+         **         |         **
+           ****     |     ****
+               *****B*****
+                    |
 
-> **Why this exercise:** teaches how to move from the equation of a parabola to its basic geometry.
+O = (0, 0)
+L = (-4, 0), R = (4, 0)
+T = (0, 3),  B = (0, -3)
+Horizontal semiaxis = 4, vertical semiaxis = 3
+```
 
-### Exercise 5. Hyperbola and Asymptotes
-For
-$$\frac{x^2}{16}-\frac{y^2}{9}=1,$$
-find the intercepts with the $x$-axis, the asymptotes, and make a sketch. Explain why the asymptotes describe the behavior of the curve far from the center.
+### 3. Parabola
 
-> **Why this exercise:** shows the role of asymptotes in understanding the global shape of a hyperbola.
+Only $y$ is squared, and the equation has the form $y^2=4px$. Since $4p=8$, we get $p=2$. The vertex is $(0,0)$, the axis of symmetry is $y=0$, and the focus is $(2,0)$. The parabola opens to the right because $p>0$.
 
-### Exercise 6. Shifted Ellipse
-Reduce
-$$4x^2+9y^2-16x+18y-11=0$$
-to canonical form. Give the center and semiaxis lengths. Check that substituting the coordinates of the center into the left-hand side gives a value consistent with the form you obtained.
+```text
+        ^ y
+        |                        *
+        |                 *
+        |           *
+        |      *
+        |   *
+        | *
+<-------V-------F---------------------> x
+        | *
+        |   *
+        |      *
+        |           *
+        |                 *
+        |                        *
 
-> **Why this exercise:** reinforces completing the square and recognizing a shift of the coordinate system.
+V = (0, 0) is the vertex.
+F = (2, 0) is the focus.
+The x-axis (y = 0) is the axis of symmetry.
+```
 
-### Exercise 7. Classifying a Second-Degree Equation
-Determine the type of object described by:
-1. $4x^2+9y^2=36$,
-2. $x^2-y^2=1$,
-3. $x^2-4y=0$,
-4. $x^2+y^2+1=0$.
+### 4. Hyperbola
 
-In the last case, explain why there are no real points.
+The squared terms have opposite signs, so the equation represents a hyperbola. The positive $x^2$ term means that the branches open left and right. The center is $(0,0)$ and the vertices are $(\pm3,0)$. With $a=3$ and $b=2$, the asymptotes are $y=\pm\frac{b}{a}x=\pm\frac{2}{3}x$.
 
-> **Why this exercise:** develops quick recognition of the curve type and checking whether real solutions exist.
+```text
+                            ^ y
+                            |
+  *  .                      |                      .  *
+      *  .                  |                  .  *
+          *  .              |              .  *
+             *   .          |          .   *
+                *    .      |      .    *
+                 *       .  |  .       *
+<-----------------L---------O---------R-----------------> x
+                 *       .  |  .       *
+                *    .      |      .    *
+             *   .          |          .   *
+          *  .              |              .  *
+      *  .                  |                  .  *
+  *  .                      |                      .  *
 
-### Exercise 8. Sphere
-Reduce
-$$x^2+y^2+z^2-4x+2y-6z-2=0$$
-to canonical form. Find the center and radius. Give two points on the sphere and check them in the equation.
-
-> **Why this exercise:** transfers the technique known from circles from two dimensions to three.
-
-### Exercise 9. Ellipsoid and Its Cross-Sections
-Consider
-$$\frac{x^2}{9}+\frac{y^2}{4}+\frac{z^2}{16}=1.$$
-Give the semiaxis lengths, describe the cross-section $z=0$, and explain how the cross-sections $z=c$ change for $|c|<4$.
-
-> **Why this exercise:** teaches how to understand a 3D surface through a family of simpler 2D cross-sections.
-
-### Exercise 10. Paraboloids
-Compare
-$$z=x^2+y^2$$
-and
-$$z=x^2-y^2.$$
-For each surface, describe the cross-sections $x=0$, $y=0$, and $z=c$, then make a qualitative sketch.
-
-> **Why this exercise:** teaches how to distinguish two basic types of paraboloids from their cross-sections.
-
-## More Challenging Exercises
-
-### Exercise 11. Two Similar Surfaces
-Compare
-$$x^2+y^2-z^2=1$$
-and
-$$x^2+y^2-z^2=-1.$$
-For several values $z=c$, check whether the cross-section exists and what its radius is. Based on this, describe qualitatively the difference between the surfaces and make sketches.
-
-> **Why this exercise:** teaches how to recognize the shape of a surface from cross-sections instead of from a memorized catalog of names.
-
-### Exercise 12. Recognizing a Surface from Cross-Sections
-A certain surface has the following properties:
-- the cross-section $z=0$ is a point,
-- for $z>0$, the cross-sections $z=\text{const}$ are circles with increasing radius,
-- vertical cross-sections through the $Oz$ axis are parabolas.
-
-Propose a simple equation for such a surface and justify your choice.
-
-> **Why this exercise:** reverses the usual reasoning: from geometry to an equation.
-
-### Exercise 13. Intersection of a Sphere and a Plane
-Given the sphere
-$$x^2+y^2+z^2=25$$
-and the plane $z=3$, find the equation of the intersection curve and its radius. Then describe what happens for $z=c$ depending on $c$.
-
-> **Why this exercise:** connects a surface equation with the geometry of its intersection.
-
-### Exercise 14. Cone and Cylinder
-Compare
-$$x^2+y^2=z^2$$
-and
-$$x^2+y^2=4.$$
-For each surface, describe the cross-sections $z=c$, $x=0$, and $y=0$, make a sketch, and explain why the radius of the cross-section depends on $z$ in the first case but is constant in the second.
-
-> **Why this exercise:** teaches how to distinguish a cone from a cylinder by the behavior of their cross-sections.
-
-### Exercise 15. Recognition and Sketch Without a Given Name
-Consider the two equations:
-
-$$4x^2+9y^2-8x+36y+4=0,$$
-
-$$4x^2+y^2=z^2.$$
-
-For the first equation, reduce it to canonical form, recognize the curve, give its most important features, and make a sketch.
-
-For the second equation, do not begin by using a ready-made name for the surface. First describe the cross-sections $z=c$ and the cross-sections by the planes $x=0$ and $y=0$, paying attention to the different scales along the axes. Only then identify the surface and make a sketch.
-
-> **Why this exercise:** tests transfer of the two main mechanisms of the set—moving to canonical form and recognizing an object through cross-sections—without allowing the easiest example to be chosen.
+O = (0, 0) is the center.
+L = (-3, 0) and R = (3, 0) are the vertices.
+Dots mark the asymptotes y = (2/3)x and y = -(2/3)x.
+```
