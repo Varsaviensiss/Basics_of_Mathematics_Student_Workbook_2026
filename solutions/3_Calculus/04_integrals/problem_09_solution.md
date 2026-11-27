@@ -1,105 +1,46 @@
-```
+# Problem 9. Definite Integral and Geometric Area
 
-# Problem 9: Evaluate the Definite Integral
+## Question
 
-Evaluate:
+Compute
 
-\[
-\int_{-1}^{2} 2x\,dx
-\]
+$$
+\int_{-1}^{2}x\,dx.
+$$
 
-## Step 1: Find the Antiderivative
+Then separately compute the areas of the parts of the graph below and above the $x$-axis and explain the difference between the definite integral and geometric area.
 
-We know that
+## Solution
 
-\[
-\int 2x\,dx=x^2+C
-\]
+### 1. Compute the definite integral
 
-Therefore, an antiderivative is
+An antiderivative of $x$ is $x^2/2$. By the Fundamental Theorem of Calculus,
 
-\[
-F(x)=x^2
-\]
+$$
+\int_{-1}^{2}x\,dx
+=\left[\frac{x^2}{2}\right]_{-1}^{2}
+=\frac{2^2}{2}-\frac{(-1)^2}{2}
+=2-\frac12
+=\frac32.
+$$
 
-## Step 2: Apply the Fundamental Theorem of Calculus
+### 2. Find the two geometric areas
 
-For a definite integral,
+The graph of $y=x$ crosses the $x$-axis at the origin. The line and the $x$-axis form a triangle on each side of the origin over the given interval.
 
-\[
-\int_a^b f(x)\,dx=F(b)-F(a)
-\]
+- On $[-1,0]$, the triangle lies below the $x$-axis. Its base is $1$ and its height is $|f(-1)|=1$, so its area is $\frac12\cdot1\cdot1=\frac12$.
+- On $[0,2]$, the triangle lies above the $x$-axis. Its base is $2$ and its height is $f(2)=2$, so its area is $\frac12\cdot2\cdot2=2$.
 
-Using the limits \(a=-1\) and \(b=2\):
+### 3. Compare the integral and the total area
 
-\[
-\int_{-1}^{2}2x\,dx
-=\left[x^2\right]_{-1}^{2}
-\]
+The definite integral counts the area below the axis negatively and the area above it positively:
 
-Evaluate at the upper limit and subtract the value at the lower limit:
+$$
+-\frac12+2=\frac32.
+$$
 
-\[
-=2^2-(-1)^2
-\]
+The total geometric area counts both triangles positively:
 
-\[
-=4-1
-\]
-
-## Final Answer
-
-\[
-\boxed{3}
-\]
-
-## Step 3: Understand the Geometric Meaning
-
-The graph of \(y=2x\) is a straight line passing through the origin.
-
-- From \(x=-1\) to \(x=0\), the graph is below the \(x\)-axis.
-- From \(x=0\) to \(x=2\), the graph is above the \(x\)-axis.
-
-A definite integral measures **signed area**: areas above the \(x\)-axis count as positive, while areas below it count as negative.
-
-### Area from \(x=-1\) to \(x=0\)
-
-This region is a triangle with base \(1\) and height \(2\).
-
-\[
-A_1=\frac12(1)(2)=1
-\]
-
-Because it lies below the \(x\)-axis, its signed contribution is \(-1\).
-
-### Area from \(x=0\) to \(x=2\)
-
-This region is a triangle with base \(2\) and height \(4\).
-
-\[
-A_2=\frac12(2)(4)=4
-\]
-
-Because it lies above the \(x\)-axis, its contribution is \(+4\).
-
-The net signed area is
-
-\[
--1+4=3
-\]
-
-This agrees with our calculation.
-
-## Key Idea
-
-A definite integral gives the **net signed area**, not necessarily the total geometric area.
-
-For this problem:
-
-\[
-\text{Net signed area}=4-1=\boxed{3}
-\]
-
-The total geometric area, counting both regions as positive, would instead be \(4+1=5\).
-
-```
+$$
+\frac12+2=\frac52.
+$$
