@@ -1,99 +1,45 @@
-```
+# Problem 6. When Does a Logarithm Appear from an Integral?
 
-# Problem 6: Find the Indefinite Integral
+## Question
 
-Evaluate:
+Compute
 
-\[
-\int \frac{2x}{x^2+5}\,dx
-\]
+$$
+\int\frac{2x}{x^2+5}\,dx.
+$$
 
-## Step 1: Choose a Method
+Identify the denominator as a candidate for substitution, compare the numerator with its derivative, and explain the source of the logarithm in the result.
 
-The denominator is \(x^2+5\), and its derivative is \(2x\), which matches the numerator.
+## Solution
 
-Therefore, **use substitution**.
+### 1. Choose the substitution
 
-## Step 2: Define the Substitution
+The denominator is $x^2+5$, and its derivative is $2x$, exactly the numerator. Let $u=x^2+5$. Then $du=2x\,dx$, so
 
-Let
+$$
+\int\frac{2x}{x^2+5}\,dx=\int\frac{1}{u}\,du.
+$$
 
-\[
-u=x^2+5
-\]
+### 2. Explain the logarithm and integrate
 
-Differentiate both sides:
+The substitution leaves the reciprocal $1/u$. Its antiderivative is $\ln|u|$ because $\frac{d}{du}\ln|u|=1/u$ for $u\ne0$. Therefore,
 
-\[
-du=2x\,dx
-\]
+$$
+\int\frac{2x}{x^2+5}\,dx
+=\ln|x^2+5|+C
+=\ln(x^2+5)+C.
+$$
 
-So we can replace \(x^2+5\) with \(u\) and \(2x\,dx\) with \(du\).
+The absolute value can be removed because $x^2+5>0$ for every real $x$.
 
-## Step 3: Rewrite the Integral
+### 3. Verify by differentiation
 
-\[
-\int \frac{2x}{x^2+5}\,dx
-=
-\int \frac{1}{u}\,du
-\]
+By the chain rule,
 
-## Step 4: Integrate
-
-Recall the logarithmic integral rule:
-
-\[
-\int \frac{1}{u}\,du=\ln|u|+C
-\]
-
-Therefore,
-
-\[
-\int \frac{1}{u}\,du=\ln|u|+C
-\]
-
-Substitute \(u=x^2+5\) back into the result:
-
-\[
-\ln|x^2+5|+C
-\]
-
-Since \(x^2+5>0\) for every real number \(x\), we can remove the absolute value.
-
-## Final Answer
-
-\[
-\boxed{\ln(x^2+5)+C}
-\]
-
-## Step 5: Verify by Differentiation
-
-Differentiate the answer:
-
-\[
+$$
 \frac{d}{dx}\left[\ln(x^2+5)+C\right]
-=
-\frac{1}{x^2+5}\cdot 2x
-\]
+=\frac{1}{x^2+5}\cdot2x
+=\frac{2x}{x^2+5}.
+$$
 
-Thus,
-
-\[
-F'(x)=\frac{2x}{x^2+5}
-\]
-
-This matches the original integrand, so the answer is correct.
-
-## Key Idea
-
-When the numerator is the derivative of the denominator, look for the pattern
-
-\[
-\int \frac{g'(x)}{g(x)}\,dx
-=
-\ln|g(x)|+C
-\]
-
-Here, \(g(x)=x^2+5\) and \(g'(x)=2x\).
-
-```
+The derivative matches the original integrand.
