@@ -1,151 +1,67 @@
-
 # Problem 3. A Rational Function
 
-Given the function:
+## Question
 
-\[
-f(x)=\frac{x+1}{x-2}
-\]
+Analyze the domain, zeros, asymptotes, and monotonicity of
 
-Analyze the domain, zeros, asymptotes, and monotonicity. Sketch a graph consistent with the results.
+$$
+f(x)=\frac{x+1}{x-2}.
+$$
 
-## 1. Find the Domain
+Finally, sketch a graph consistent with all the information obtained.
 
-The denominator cannot equal zero:
+## Solution
 
-\[
-x-2\ne0
-\]
+### Domain and zero
 
-\[
-x\ne2
-\]
+The denominator is zero at $x=2$, so the domain is $\mathbb{R}\setminus\{2\}$.
 
-Therefore, the domain is
+The numerator vanishes at $x=-1$. Since the denominator is nonzero there, the only zero is $x=-1$, and the graph crosses the $x$-axis at $(-1,0)$.
 
-\[
-\boxed{D_f=\mathbb{R}\setminus\{2\}}
-\]
+### Asymptotes
 
-## 2. Find the Zero
+Rewrite the function as
 
-Set \(f(x)=0\). A fraction equals zero when its numerator is zero and its denominator is nonzero.
+$$
+f(x)=1+\frac{3}{x-2}.
+$$
 
-\[
-x+1=0
-\]
+As $x$ approaches $2$ from the left, the fraction tends to $-\infty$. As $x$ approaches $2$ from the right, it tends to $+\infty$. Thus $x=2$ is the **vertical asymptote**.
 
-\[
-x=-1
-\]
+As $x\to\pm\infty$, the fraction tends to zero, so $y=1$ is the **horizontal asymptote**. The left branch lies below $y=1$ because $x-2<0$. The right branch lies above $y=1$ because $x-2>0$.
 
-Since \(-1-2\ne0\), this is valid.
+### Monotonicity
 
-Therefore, the zero is
+Differentiating the rewritten form gives
 
-\[
-\boxed{x=-1}
-\]
+$$
+f'(x)=-\frac{3}{(x-2)^2}<0 \qquad (x\ne 2).
+$$
 
-The graph crosses the \(x\)-axis at \((-1,0)\).
+Therefore, the function is strictly decreasing on each interval of its domain, $(-\infty,2)$ and $(2,\infty)$.
 
-## 3. Find the Asymptotes
+### Labeled sketch
 
-Rewrite the function:
+```text
+                    y              x = 2
+                    ↑                :  ↖
+                    │                :   ╲
+                    │                :    ╲
+                    │                :     ╰──╮
+                    │                :        ╰──────→
+····················│················:················  y = 1
+←──────╮            │                :
+       ╰─────╮      │                :
+─────────────A──────┼────────────────:───────────────→ x
+              ╲     │                :
+               ╰────●──╮             :
+                    │  ╰──╮          :
+                    │     ╰──╮       :
+                    │        ╰──╮    :
+                    │           ╲    :
+                    │            ↘   :
 
-\[
-f(x)=\frac{x-2+3}{x-2}
-\]
-
-\[
-f(x)=1+\frac{3}{x-2}
-\]
-
-**Vertical asymptote:**
-
-The denominator approaches zero at \(x=2\), while the numerator approaches \(3\).
-
-\[
-\boxed{x=2}
-\]
-
-**Horizontal asymptote:**
-
-As \(x\to\pm\infty\),
-
-\[
-\frac{3}{x-2}\to0
-\]
-
-Therefore,
-
-\[
-\boxed{y=1}
-\]
-
-## 4. Determine the Monotonicity
-
-Differentiate using the quotient rule:
-
-\[
-f'(x)=\frac{(x-2)-(x+1)}{(x-2)^2}
-\]
-
-Simplify:
-
-\[
-f'(x)=\frac{-3}{(x-2)^2}
-\]
-
-Since \((x-2)^2>0\) for every \(x\ne2\),
-
-\[
-f'(x)<0
-\]
-
-Thus, the function is strictly decreasing on each interval of its domain:
-
-\[
-\boxed{(-\infty,2)}
-\]
-
-\[
-\boxed{(2,\infty)}
-\]
-
-The intervals must be considered separately because the function is undefined at \(x=2\).
-
-## 5. Determine the Behavior Near the Asymptotes
-
-As \(x\to2^-\),
-
-\[
-\lim_{x\to2^-}f(x)=-\infty
-\]
-
-As \(x\to2^+\),
-
-\[
-\lim_{x\to2^+}f(x)=+\infty
-\]
-
-At both ends of the real line,
-
-\[
-\lim_{x\to-\infty}f(x)=1
-\]
-
-\[
-\lim_{x\to+\infty}f(x)=1
-\]
-
-The graph approaches \(y=1\) from below on the left and from above on the right.
-
-## Final Answers
-
-1. Domain: \(\boxed{\mathbb{R}\setminus\{2\}}\).
-2. Zero: \(\boxed{x=-1}\).
-3. Vertical asymptote: \(\boxed{x=2}\).
-4. Horizontal asymptote: \(\boxed{y=1}\).
-5. Derivative: \(\boxed{f'(x)=-\frac{3}{(x-2)^2}}\).
-6. Monotonicity: strictly decreasing on \((-\infty,2)\) and \((2,\infty)\).
+A = (-1, 0)
+● = (0, -1/2), the y-intercept
+Dotted lines mark the asymptotes x = 2 and y = 1.
+```
