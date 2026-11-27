@@ -1,182 +1,64 @@
-```
+# Problem 15. Recovering a Function from Its Derivative and a Condition
 
-# Problem 15: Find a Function Using Its Derivative and an Initial Condition
+## Question
 
-Given:
+The function $F$ satisfies
 
-\[
+$$
 F'(x)=2xe^{x^2}
-\]
+\qquad\text{and}\qquad
+F(0)=3.
+$$
 
-and
+1. Recognize the method needed to find the function $F$.
+2. Determine the entire family of functions with the given derivative.
+3. Use the condition $F(0)=3$ to determine the correct constant.
+4. Verify the final result by differentiation and substitution of $x=0$.
 
-\[
-F(0)=3
-\]
+## Solution
 
-Find \(F(x)\).
+### 1. Choose the method
 
-## Step 1: Understand the Problem
+Use substitution because the exponent is $x^2$ and its derivative, $2x$, appears as a factor. Let $u=x^2$. Then $du=2x\,dx$.
 
-We know the derivative \(F'(x)\), and we are given the value of the original function at \(x=0\).
+### 2. Find the family of functions
 
-To find \(F(x)\), we need to:
+Integrate the given derivative and substitute back:
 
-1. Integrate \(F'(x)\) to find the general antiderivative.
-2. Use the initial condition \(F(0)=3\) to determine the constant \(C\).
-
-## Step 2: Integrate the Derivative
-
-Since
-
-\[
-F'(x)=2xe^{x^2}
-\]
-
-we have
-
-\[
+$$
 F(x)=\int 2xe^{x^2}\,dx
-\]
+=\int e^u\,du
+=e^u+C
+=e^{x^2}+C,
+\qquad C\in\mathbb{R}.
+$$
 
-The exponent contains \(x^2\), whose derivative is \(2x\). This suggests using **substitution**.
+### 3. Determine the constant
 
-Let
+The condition $F(0)=3$ gives
 
-\[
-u=x^2
-\]
+$$
+e^{0^2}+C=1+C=3.
+$$
 
-Differentiate:
+Thus $C=2$, so the function is
 
-\[
-du=2x\,dx
-\]
+$$
+F(x)=e^{x^2}+2.
+$$
 
-## Step 3: Rewrite the Integral
+### 4. Verify both conditions
 
-Substitute \(u=x^2\) and \(du=2x\,dx\):
+The chain rule gives
 
-\[
-F(x)=\int e^u\,du
-\]
+$$
+\frac{d}{dx}\left(e^{x^2}+2\right)=2xe^{x^2},
+$$
 
-Since
+which is the given derivative. Substituting $x=0$ gives
 
-\[
-\int e^u\,du=e^u+C
-\]
+$$
+F(0)=e^0+2=3,
+$$
 
-we obtain
-
-\[
-F(x)=e^u+C
-\]
-
-Substitute \(u=x^2\) back:
-
-\[
-\boxed{F(x)=e^{x^2}+C}
-\]
-
-This is the general antiderivative. We still need to find \(C\).
-
-## Step 4: Use the Initial Condition
-
-We are given
-
-\[
-F(0)=3
-\]
-
-Substitute \(x=0\) into the general solution:
-
-\[
-F(0)=e^{0^2}+C
-\]
-
-Since \(e^0=1\),
-
-\[
-1+C=3
-\]
-
-Solve for \(C\):
-
-\[
-C=3-1
-\]
-
-Therefore,
-
-\[
-\boxed{C=2}
-\]
-
-## Step 5: Write the Particular Solution
-
-Substitute \(C=2\) into the general solution:
-
-\[
-F(x)=e^{x^2}+2
-\]
-
-## Final Answer
-
-\[
-\boxed{F(x)=e^{x^2}+2}
-\]
-
-## Step 6: Verify the Answer
-
-We must check both the derivative and the initial condition.
-
-### Check the derivative
-
-Differentiate:
-
-\[
-\frac{d}{dx}\left(e^{x^2}+2\right)
-\]
-
-Using the chain rule:
-
-\[
-=e^{x^2}\cdot 2x
-\]
-
-Therefore,
-
-\[
-F'(x)=2xe^{x^2}
-\]
-
-This matches the given derivative.
-
-### Check the initial condition
-
-Substitute \(x=0\):
-
-\[
-F(0)=e^{0^2}+2
-\]
-
-\[
-=1+2=3
-\]
-
-This matches the given condition \(F(0)=3\).
-
-Both conditions are satisfied, so the solution is correct.
-
-## Key Idea
-
-When a problem gives both a derivative and an initial condition:
-
-- **Integrate** to find the general antiderivative, including \(C\).
-- **Substitute the initial value** to determine \(C\).
-- **Verify** both the derivative and the initial condition.
-
-The initial condition selects one specific function from the family of antiderivatives.
-
-```
+which confirms the initial condition.
