@@ -1,135 +1,87 @@
-
 # Problem 14. Reconstructing Information from the Derivative
 
-Given:
+## Question
 
-\[
-f'(x)=(x-1)(x+2)
-\]
+It is known that
 
-Determine the monotonicity and extrema, sketch a possible qualitative shape of the function, and verify the derivative for
+$$
+f'(x)=(x-1)(x+2).
+$$
 
-\[
-g(x)=\frac{x^3}{3}+\frac{x^2}{2}-2x.
-\]
+Determine the monotonicity and the locations of the extrema, and sketch a possible qualitative shape of the function. Then, for
 
-## 1. Find the Critical Points
+$$
+g(x)=\frac{x^3}{3}+\frac{x^2}{2}-2x,
+$$
 
-Set the derivative equal to zero:
+verify that $g'(x)=(x-1)(x+2)$, and compare the specific graph with the earlier qualitative sketch.
 
-\[
-(x-1)(x+2)=0
-\]
+## Solution
 
-Therefore,
+### 1. Monotonicity and extrema of $f$
 
-\[
-x=1,\qquad x=-2.
-\]
+The derivative vanishes when $(x-1)(x+2)=0$, so the critical numbers are $x=-2$ and $x=1$. The signs of the two factors determine the sign of the derivative.
 
-These critical points divide the real line into three intervals:
+| Interval | Sign of $x-1$ | Sign of $x+2$ | Sign of $f'(x)$ | Behavior |
+|---|---|---|---|---|
+| $(-\infty,-2)$ | $-$ | $-$ | $+$ | Increasing |
+| $(-2,1)$ | $-$ | $+$ | $-$ | Decreasing |
+| $(1,\infty)$ | $+$ | $+$ | $+$ | Increasing |
 
-\[
-(-\infty,-2),\quad (-2,1),\quad (1,\infty).
-\]
+At $x=-2$, the derivative changes from positive to negative, giving a local maximum. At $x=1$, it changes from negative to positive, giving a local minimum. The derivative determines the locations of the extrema, while their heights depend on the vertical position of the graph.
 
-## 2. Determine the Sign of the Derivative
+### 2. Qualitative sketch of $f$
 
-- For \(x<-2\), both factors are negative, so \(f'(x)>0\).
-- For \(-2<x<1\), one factor is negative and the other is positive, so \(f'(x)<0\).
-- For \(x>1\), both factors are positive, so \(f'(x)>0\).
+```text
+                local maximum
+                     ●
+                 ╭───┴───╮                             ↗
+              ╭──╯       ╰──╮                        ╭─╯
+           ╭──╯             ╰──╮                  ╭──╯
+         ↙                      ╰───╮        ╭────╯
+                                    ╰───●────╯
+                                    local minimum
 
-The sign chart is:
+                    −2                  1           x values
+```
 
-| Interval | Sign of \(f'(x)\) | Behavior |
-|---|---|---|
-| \((-\infty,-2)\) | \(+\) | Increasing |
-| \((-2,1)\) | \(-\) | Decreasing |
-| \((1,\infty)\) | \(+\) | Increasing |
+The labels give the horizontal positions of the turning points. Their heights are unspecified.
 
-## 3. Determine the Extrema
+### 3. Verify the derivative and find the extrema of $g$
 
-At \(x=-2\), the function changes from increasing to decreasing. Therefore, it has a local maximum at \(x=-2\).
+Differentiating term by term gives
 
-At \(x=1\), the function changes from decreasing to increasing. Therefore, it has a local minimum at \(x=1\).
+$$
+g'(x)=x^2+x-2=(x-1)(x+2).
+$$
 
-For the general function \(f\), the exact extremum values cannot be determined from \(f'(x)\) alone because the original function is not fully specified.
+Thus $g$ has the same increasing and decreasing intervals as $f$. Evaluating $g$ at the critical numbers gives
 
-## 4. Verify the Derivative for \(g(x)\)
+$$
+g(-2)=-\frac83+2+4=\frac{10}{3},
+\qquad
+g(1)=\frac13+\frac12-2=-\frac76.
+$$
 
-Given:
+The local maximum is $M=(-2,10/3)$ and the local minimum is $m=(1,-7/6)$. Also, $g(0)=0$, so the graph passes through the origin.
 
-\[
-g(x)=\frac{x^3}{3}+\frac{x^2}{2}-2x
-\]
+### 4. Sketch of $g$
 
-Differentiate each term:
+```text
+                                ↑ y
+                                │                         ↗
+             ╭──M──╮            │                       ╭─╯
+          ╭──╯     ╰──╮         │                     ╭─╯
+        ╭─╯           ╰──╮      │                   ╭─╯
+───────╱─────────────────╰──────O──────────────────╱──────→ x
+      ╱                         │╰──╮           ╭─╯
+    ↙                           │   ╰────m──────╯
 
-\[
-g'(x)=x^2+x-2
-\]
+M = (-2, 10/3), local maximum
+O = (0, 0), origin
+m = (1, -7/6), local minimum
+```
 
-Factor:
+### 5. Compare the sketches
 
-\[
-g'(x)=(x-1)(x+2).
-\]
-
-This confirms the given derivative.
-
-## 5. Find the Extrema of \(g(x)\)
-
-At \(x=-2\):
-
-\[
-g(-2)=\frac{(-2)^3}{3}+\frac{(-2)^2}{2}-2(-2)
-\]
-
-\[
-=-\frac{8}{3}+2+4=\frac{10}{3}.
-\]
-
-Therefore, the local maximum is
-
-\[
-\boxed{\left(-2,\frac{10}{3}\right)}.
-\]
-
-At \(x=1\):
-
-\[
-g(1)=\frac{1}{3}+\frac{1}{2}-2
-\]
-
-\[
-=\frac{2}{6}+\frac{3}{6}-\frac{12}{6}
-=-\frac{7}{6}.
-\]
-
-Therefore, the local minimum is
-
-\[
-\boxed{\left(1,-\frac{7}{6}\right)}.
-\]
-
-## 6. Qualitative Sketch
-
-The graph of \(g(x)\):
-
-- Increases until \(x=-2\).
-- Reaches a local maximum at \(\left(-2,\frac{10}{3}\right)\).
-- Decreases from \(x=-2\) to \(x=1\).
-- Reaches a local minimum at \(\left(1,-\frac{7}{6}\right)\).
-- Increases again for \(x>1\).
-
-Since \(g(x)\) is a cubic polynomial with a positive leading coefficient, its graph goes down to the left and up to the right.
-
-## Final Answers
-
-1. Critical points: \(x=-2\) and \(x=1\).
-2. Increasing intervals: \((-\infty,-2)\) and \((1,\infty)\).
-3. Decreasing interval: \((-2,1)\).
-4. For the general function \(f\), there is a local maximum at \(x=-2\) and a local minimum at \(x=1\).
-5. The derivative of \(g(x)\) is \(g'(x)=(x-1)(x+2)\).
-6. Local maximum of \(g\): \(\left(-2,\frac{10}{3}\right)\).
-7. Local minimum of \(g\): \(\left(1,-\frac{7}{6}\right)\).
+Because $f'(x)=g'(x)$ for every real $x$, the derivative of $f-g$ is zero everywhere. Therefore, $f(x)=g(x)+C$ for some constant $C$. The two graphs have the same shape and turn at the same $x$-values. The constant $C$ shifts the graph vertically, moving the extremum heights to $10/3+C$ and $-7/6+C$.
