@@ -1,135 +1,65 @@
-```
+# Problem 1. A Cubic Polynomial
 
-# Problem 15. Find the Error in the Monotonicity Analysis
+## Question
 
-Given:
+Analyze the monotonicity and extrema of
 
-\[
-f(x)=x^3-3x
-\]
+$$
+f(x)=x^3-3x^2+2.
+$$
 
-The derivative is correctly computed as:
+Sketch the graph based on the results and mark the critical points.
 
-\[
-f'(x)=3(x-1)(x+1)
-\]
+## Solution
 
-A student claims that the function is decreasing on \((-\infty,-1)\cup(1,\infty)\) and increasing on \((-1,1)\).
+### Derivative and monotonicity
 
-## 1. Find the Error
+Differentiate and factor:
 
-The critical points are found by setting the derivative equal to zero:
+$$
+f'(x)=3x^2-6x=3x(x-2).
+$$
 
-\[
-3(x-1)(x+1)=0
-\]
+The derivative exists for all real $x$. It is zero at $x=0$ and $x=2$, so these values divide the real line into three intervals. The signs of the two factors determine whether the function increases or decreases.
 
-\[
-x=-1,\qquad x=1
-\]
+| Interval | Sign of $x$ | Sign of $x-2$ | Sign of $f'(x)$ | Behavior of $f$ |
+|---|---|---|---|---|
+| $(-\infty,0)$ | $-$ | $-$ | $+$ | Increasing |
+| $(0,2)$ | $+$ | $-$ | $-$ | Decreasing |
+| $(2,\infty)$ | $+$ | $+$ | $+$ | Increasing |
 
-The student's error is reversing the signs of the derivative. Since the derivative has a positive leading coefficient, it is positive outside the roots and negative between them.
+### Local extrema
 
-## 2. Construct the Correct Sign Chart
+At $x=0$, the derivative changes from positive to negative. Since $f(0)=2$, the graph has a **local maximum at $M=(0,2)$**.
 
-The critical points divide the real line into three intervals:
+At $x=2$, the derivative changes from negative to positive. Since $f(2)=8-12+2=-2$, the graph has a **local minimum at $m=(2,-2)$**.
 
-\[
-(-\infty,-1),\qquad (-1,1),\qquad (1,\infty)
-\]
+### Labeled sketch
 
-The derivative signs are:
+To locate the $x$-intercepts, factor the original polynomial:
 
-| Interval | Sign of \(f'(x)\) |
-|---|---|
-| \((-\infty,-1)\) | Positive \((+)\) |
-| \((-1,1)\) | Negative \((-)\) |
-| \((1,\infty)\) | Positive \((+)\) |
+$$
+f(x)=(x-1)(x^2-2x-2)=(x-1)\bigl((x-1)^2-3\bigr).
+$$
 
-## 3. Determine Monotonicity and Extrema
+The graph crosses the $x$-axis at $x=1-\sqrt{3}$, $x=1$, and $x=1+\sqrt{3}$. The positive leading term $x^3$ sends the left tail downward and the right tail upward.
 
-- The function is increasing on \((-\infty,-1)\).
-- The function is decreasing on \((-1,1)\).
-- The function is increasing on \((1,\infty)\).
+```text
+                ↑ y
+                │                              ↗
+                │                             ╱
+           ╭────M────╮                       ╱
+         ╭─╯    │    ╰─╮                    ╱
+        ╱       │      ╰─╮                 ╱
+───────A────────┼─────────B───────────────C────→ x
+      ╱         │          ╰─╮          ╭─╯
+     ╱          │            ╰─╮      ╭─╯
+    ╱           │              ╰────m─╯
+   ↙            │
 
-At \(x=-1\), the function changes from increasing to decreasing. Therefore, there is a local maximum:
-
-\[
-f(-1)=(-1)^3-3(-1)=-1+3=2
-\]
-
-Local maximum point:
-
-\[
-\boxed{(-1,2)}
-\]
-
-At \(x=1\), the function changes from decreasing to increasing. Therefore, there is a local minimum:
-
-\[
-f(1)=1^3-3(1)=1-3=-2
-\]
-
-Local minimum point:
-
-\[
-\boxed{(1,-2)}
-\]
-
-## 4. Verify Using Test Points
-
-Choose one test point from each interval.
-
-**Interval 1: \((-\infty,-1)\)**
-
-Choose \(x=-2\):
-
-\[
-f'(-2)=3(-2-1)(-2+1)
-\]
-
-\[
-=3(-3)(-1)=9>0
-\]
-
-Therefore, the function is increasing.
-
-**Interval 2: \((-1,1)\)**
-
-Choose \(x=0\):
-
-\[
-f'(0)=3(0-1)(0+1)
-\]
-
-\[
-=3(-1)(1)=-3<0
-\]
-
-Therefore, the function is decreasing.
-
-**Interval 3: \((1,\infty)\)**
-
-Choose \(x=2\):
-
-\[
-f'(2)=3(2-1)(2+1)
-\]
-
-\[
-=3(1)(3)=9>0
-\]
-
-Therefore, the function is increasing.
-
-## Final Answers
-
-1. The student's error is reversing the signs of the derivative.
-2. The correct derivative signs are \(+,-,+\).
-3. Increasing intervals: \((-\infty,-1)\) and \((1,\infty)\).
-4. Decreasing interval: \((-1,1)\).
-5. Local maximum: \((-1,2)\).
-6. Local minimum: \((1,-2)\).
-7. Test points \(-2\), \(0\), and \(2\) confirm the correct sign chart.
-
+A = (1 - sqrt(3), 0)
+B = (1, 0)
+C = (1 + sqrt(3), 0)
+M = (0, 2), local maximum and y-intercept
+m = (2, -2), local minimum
 ```
