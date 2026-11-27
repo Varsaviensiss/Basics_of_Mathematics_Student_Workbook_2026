@@ -1,134 +1,51 @@
-```
+# Problem 13. An Integral Depending on the Upper Limit
 
-# Problem 13: Use the Fundamental Theorem of Calculus
+## Question
 
-Given:
+Let
 
-\[
-F(x)=\int_0^x(t^2+1)\,dt
-\]
+$$
+F(x)=\int_0^x(t^2+1)\,dt.
+$$
 
-Find \(F(x)\) and \(F'(x)\). Explain the relationship between the derivative and the integrand.
+Determine $F(x)$, compute $F'(x)$, and compare the result with the integrand. Explain in your own words why the height of the function describes the local rate of increase of the accumulated area.
 
-## Step 1: Understand the Integral
+## Solution
 
-We are given
+### 1. Evaluate the integral
 
-\[
-F(x)=\int_0^x(t^2+1)\,dt
-\]
+An antiderivative of $t^2+1$ is $t^3/3+t$. Evaluating at the upper and lower limits gives
 
-The lower limit is \(0\), and the upper limit is \(x\).
-
-The variable \(t\) is a dummy variable of integration. It is used inside the integral, while \(x\) determines the upper limit.
-
-To find \(F(x)\), we first evaluate the integral.
-
-## Step 2: Find the Antiderivative
-
-Integrate each term:
-
-\[
-\int(t^2+1)\,dt
-=\frac{t^3}{3}+t+C
-\]
-
-Therefore,
-
-\[
+$$
 F(x)=\left[\frac{t^3}{3}+t\right]_0^x
-\]
+=\frac{x^3}{3}+x.
+$$
 
-## Step 3: Apply the Limits
+### 2. Differentiate and compare
 
-Evaluate at the upper limit \(t=x\):
+Differentiating the result gives
 
-\[
-\frac{x^3}{3}+x
-\]
+$$
+F'(x)=\frac{d}{dx}\left(\frac{x^3}{3}+x\right)=x^2+1.
+$$
 
-Evaluate at the lower limit \(t=0\):
+This is the original integrand evaluated at the upper limit $t=x$. It agrees with the Fundamental Theorem of Calculus because the integrand is continuous.
 
-\[
-\frac{0^3}{3}+0=0
-\]
+### 3. Explain the accumulated area geometrically
 
-Subtract the lower-limit value from the upper-limit value:
+Let $f(t)=t^2+1$. Moving the upper limit from $x$ to $x+h$ changes the accumulated area by
 
-\[
-F(x)=\left(\frac{x^3}{3}+x\right)-0
-\]
+$$
+F(x+h)-F(x)=\int_x^{x+h}f(t)\,dt.
+$$
 
-Thus,
+For small positive $h$, this adds a thin strip of width $h$. Because $f$ is continuous, the height throughout that strip is close to $f(x)$. Its area is therefore approximately $h f(x)$. For negative $h$, a strip is removed, giving the same signed approximation.
 
-\[
-\boxed{F(x)=\frac{x^3}{3}+x}
-\]
+Dividing by $h$ gives the average height over the strip. As $h\to0$, that average approaches the height at the boundary:
 
-## Step 4: Find \(F'(x)\)
+$$
+\lim_{h\to0}\frac{F(x+h)-F(x)}{h}
+=f(x)=x^2+1.
+$$
 
-Differentiate \(F(x)\):
-
-\[
-F'(x)=\frac{d}{dx}\left(\frac{x^3}{3}+x\right)
-\]
-
-Differentiate each term:
-
-\[
-F'(x)=x^2+1
-\]
-
-Therefore,
-
-\[
-\boxed{F'(x)=x^2+1}
-\]
-
-## Step 5: Explain the Relationship
-
-Recall the **Fundamental Theorem of Calculus**:
-
-\[
-\frac{d}{dx}\left(\int_a^x f(t)\,dt\right)=f(x)
-\]
-
-This theorem tells us that differentiating an accumulation function recovers the original integrand evaluated at the upper limit.
-
-In this problem,
-
-\[
-F(x)=\int_0^x(t^2+1)\,dt
-\]
-
-so
-
-\[
-F'(x)=x^2+1
-\]
-
-The derivative is exactly the original integrand, with \(t\) replaced by \(x\).
-
-## Final Answers
-
-\[
-\boxed{F(x)=\frac{x^3}{3}+x}
-\]
-
-\[
-\boxed{F'(x)=x^2+1}
-\]
-
-## Key Idea: Accumulation and Rate of Change
-
-The function \(F(x)\) measures the accumulated signed area under \(y=t^2+1\) from \(0\) to \(x\).
-
-Its derivative \(F'(x)\) describes how quickly that accumulated area changes as the upper limit moves.
-
-Because the integrand is \(t^2+1\), the rate of change at \(x\) is
-
-\[
-\boxed{F'(x)=x^2+1}
-\]
-
-```
+Thus the graph's height at the moving upper limit is the local rate at which the signed area accumulates.
