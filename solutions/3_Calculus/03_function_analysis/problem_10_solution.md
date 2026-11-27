@@ -1,109 +1,103 @@
-```
+# Problem 10. Complete Function Analysis
 
-# Problem 10. Identify and Describe the Paraboloids
+## Question
 
-Consider the following surfaces:
+Perform a complete analysis of
 
-\[
-z=x^2+y^2
-\]
+$$
+f(x)=\frac{x}{x^2+1}.
+$$
 
-and
+Include the domain, symmetry, zeros, limits, monotonicity, extrema, and convexity. Finally, produce a sketch based only on this information.
 
-\[
-z=x^2-y^2
-\]
+## Solution
 
-## 1. Surface: \(z=x^2+y^2\)
+### 1. Domain, symmetry, and zeros
 
-Since both squared terms have positive coefficients,
+Since $x^2+1>0$ for every real $x$, the domain is $\mathbb{R}$. Also,
 
-\[
-z=x^2+y^2
-\]
+$$
+f(-x)=\frac{-x}{x^2+1}=-f(x),
+$$
 
-the surface is an **elliptic paraboloid** opening upward along the positive \(z\)-axis.
+so $f$ is odd and its graph is symmetric about the origin. The numerator is zero only at $x=0$, so $(0,0)$ is the only intercept.
 
-**Horizontal traces (\(z=c\)):**
+### 2. Limits and asymptotes
 
-\[
-x^2+y^2=c
-\]
+For $x\ne0$, dividing the numerator and denominator by $x^2$ gives
 
-- If \(c>0\), the trace is a circle with radius \(\sqrt{c}\).
-- If \(c=0\), the trace is the origin.
-- If \(c<0\), there are no real points.
+$$
+f(x)=\frac{1/x}{1+1/x^2}.
+$$
 
-**Vertical traces:**
+Thus $f(x)\to0$ as $x\to-\infty$ and as $x\to+\infty$. The graph approaches the horizontal asymptote $y=0$ from below on the left and from above on the right because $f(x)$ has the same sign as $x$. There are no vertical asymptotes because the denominator never vanishes.
 
-\[
-y=0 \implies z=x^2
-\]
+### 3. Monotonicity and extrema
 
-\[
-x=0 \implies z=y^2
-\]
+The quotient rule gives
 
-Both traces are upward-opening parabolas.
+$$
+f'(x)=\frac{(x^2+1)-2x^2}{(x^2+1)^2}
+=\frac{1-x^2}{(x^2+1)^2}.
+$$
 
-- Surface type: Elliptic paraboloid
-- Vertex: \((0,0,0)\)
-- Opening direction: Positive \(z\)-axis
+The denominator is positive, so the sign of the derivative is determined by $1-x^2$. The only critical numbers are $x=-1$ and $x=1$.
 
-## 2. Surface: \(z=x^2-y^2\)
+| Interval | Sign of $f'(x)$ | Behavior |
+|---|---|---|
+| $(-\infty,-1)$ | $-$ | Decreasing |
+| $(-1,1)$ | $+$ | Increasing |
+| $(1,\infty)$ | $-$ | Decreasing |
 
-Since the squared terms have opposite signs,
+At $x=-1$, the derivative changes from negative to positive, giving a minimum at $m=(-1,-1/2)$. At $x=1$, it changes from positive to negative, giving a maximum at $M=(1,1/2)$. Both extrema are absolute because the middle interval joins these two values monotonically, while the outer intervals approach $0$.
 
-\[
-z=x^2-y^2
-\]
+### 4. Concavity and inflection points
 
-the surface is a **hyperbolic paraboloid**, commonly called a saddle surface.
+Differentiating again and simplifying gives
 
-**Horizontal traces (\(z=c\)):**
+$$
+f''(x)
+=\frac{-2x(x^2+1)-4x(1-x^2)}{(x^2+1)^3}
+=\frac{2x(x^2-3)}{(x^2+1)^3}.
+$$
 
-\[
-x^2-y^2=c
-\]
+The denominator is positive. The numerator changes sign at $x=-\sqrt{3}$, $x=0$, and $x=\sqrt{3}$.
 
-- If \(c>0\), the trace is a hyperbola opening along the \(x\)-direction.
-- If \(c<0\), the trace is a hyperbola opening along the \(y\)-direction.
-- If \(c=0\), the trace consists of two intersecting lines:
+| Interval | Sign of $f''(x)$ | Concavity |
+|---|---|---|
+| $(-\infty,-\sqrt{3})$ | $-$ | Concave down |
+| $(-\sqrt{3},0)$ | $+$ | Concave up |
+| $(0,\sqrt{3})$ | $-$ | Concave down |
+| $(\sqrt{3},\infty)$ | $+$ | Concave up |
 
-\[
-x^2-y^2=0
-\]
+Concavity changes at all three values, so the inflection points are
 
-\[
-(x-y)(x+y)=0
-\]
+$$
+I_-=\left(-\sqrt{3},-\frac{\sqrt{3}}4\right),
+\qquad
+O=(0,0),
+\qquad
+I_+=\left(\sqrt{3},\frac{\sqrt{3}}4\right).
+$$
 
-Therefore,
+### 5. Labeled sketch
 
-\[
-y=x \quad \text{or} \quad y=-x
-\]
+```text
+                               y
+                               ↑
+                               │       ╭──M──╮
+                               │     ╭─╯     ╰──I+──╮
+                               │   ╭─╯              ╰──────→
+                               │ ╭─╯
+───────────────────────────────O────────────────────────────→ x
+                             ╭─╯
+←──────╮                   ╭─╯ │
+       ╰──I-──╮          ╭─╯   │
+              ╰────m─────╯     │
 
-**Vertical traces:**
-
-\[
-y=0 \implies z=x^2
-\]
-
-\[
-x=0 \implies z=-y^2
-\]
-
-One trace opens upward, while the other opens downward.
-
-- Surface type: Hyperbolic paraboloid
-- Saddle point: \((0,0,0)\)
-- Shape: Saddle
-
-## Final Answers
-
-1. \(z=x^2+y^2\): Elliptic paraboloid opening upward, with vertex \((0,0,0)\).
-2. \(z=x^2-y^2\): Hyperbolic paraboloid (saddle surface), with saddle point \((0,0,0)\).
-3. The key difference is that the first surface curves upward in every vertical direction, while the second curves upward in one direction and downward in the other.
-
+m = (-1, -1/2)   absolute minimum
+M = (1, 1/2)     absolute maximum
+I- = (-sqrt(3), -sqrt(3)/4) and I+ = (sqrt(3), sqrt(3)/4)
+O = (0, 0)      intercept and inflection point
+The x-axis, y = 0, is the horizontal asymptote.
 ```
