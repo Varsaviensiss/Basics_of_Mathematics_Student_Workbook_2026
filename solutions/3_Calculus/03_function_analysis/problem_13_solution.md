@@ -1,152 +1,78 @@
-```
-
 # Problem 13. A Logarithm and an Asymptote
 
-Given:
+## Question
 
-\[
-f(x)=\frac{\ln x}{x},\qquad x>0.
-\]
+For the function
 
-Perform a complete analysis of the function. Find the maximum and examine its behavior at the ends of the domain. Explain what information is necessary for a correct sketch.
+$$
+f(x)=\frac{\ln x}{x},\qquad x>0,
+$$
 
-## 1. Find the Domain
+perform a complete analysis. Find the maximum, examine the behavior at both ends of the domain, and explain what information is needed to sketch the graph correctly.
 
-The natural logarithm \(\ln x\) is defined only for \(x>0\). Therefore,
+## Solution
 
-\[
-\boxed{D_f=(0,\infty)}
-\]
+### 1. Domain, zero, and sign
 
-## 2. Find the Zero
+The natural logarithm is defined for $x>0$, so the domain is $(0,\infty)$. The denominator is positive throughout the domain, so $f$ has the same sign as $\ln x$. Hence $f(x)<0$ on $(0,1)$, $f(1)=0$, and $f(x)>0$ on $(1,\infty)$. The only intercept is $(1,0)$.
 
-Set \(f(x)=0\):
+### 2. Monotonicity and maximum
 
-\[
-\frac{\ln x}{x}=0
-\]
+The quotient rule gives
 
-Since \(x>0\), this means
+$$
+f'(x)=\frac{x(1/x)-\ln x}{x^2}
+=\frac{1-\ln x}{x^2}.
+$$
 
-\[
-\ln x=0
-\]
+Since $x^2>0$, the sign of $f'(x)$ is determined by $1-\ln x$. It is positive on $(0,e)$, zero at $x=e$, and negative on $(e,\infty)$. Therefore, $f$ increases on $(0,e)$ and decreases on $(e,\infty)$. Its absolute maximum is at
 
-\[
-x=1.
-\]
+$$
+\left(e,f(e)\right)=\left(e,\frac1e\right).
+$$
 
-The function has one zero:
+### 3. Limits and asymptotes
 
-\[
-\boxed{(1,0)}
-\]
+For $0<x<e^{-1}$, we have $\ln x<-1$. Dividing by the positive number $x$ gives $f(x)<-1/x$. Since $-1/x\to-\infty$ as $x\to0^+$, it follows that
 
-## 3. Find the Derivative
-
-Using the quotient rule:
-
-\[
-f'(x)=\frac{x\cdot\frac1x-\ln x\cdot1}{x^2}
-\]
-
-Simplify:
-
-\[
-f'(x)=\frac{1-\ln x}{x^2}
-\]
-
-Set the derivative equal to zero:
-
-\[
-1-\ln x=0
-\]
-
-\[
-\ln x=1
-\]
-
-\[
-x=e.
-\]
-
-The critical point is \(x=e\).
-
-## 4. Determine Monotonicity
-
-Since \(x^2>0\) for every \(x>0\), the sign of \(f'(x)\) depends on \(1-\ln x\).
-
-- For \(0<x<e\), \(1-\ln x>0\), so \(f'(x)>0\).
-- For \(x>e\), \(1-\ln x<0\), so \(f'(x)<0\).
-
-Therefore, the function is:
-
-- Increasing on \((0,e)\).
-- Decreasing on \((e,\infty)\).
-
-## 5. Find the Maximum
-
-The derivative changes from positive to negative at \(x=e\). Thus, the function has a maximum there.
-
-Calculate the function value:
-
-\[
-f(e)=\frac{\ln e}{e}=\frac1e.
-\]
-
-The maximum point is
-
-\[
-\boxed{\left(e,\frac1e\right)}.
-\]
-
-This is the global maximum on the domain.
-
-## 6. Examine the Limits
-
-As \(x\to0^+\):
-
-\[
+$$
 \lim_{x\to0^+}\frac{\ln x}{x}=-\infty.
-\]
+$$
 
-Therefore, \(x=0\) is a vertical asymptote.
+Thus $x=0$ is a vertical asymptote.
 
-As \(x\to\infty\):
+As $x\to+\infty$, both $\ln x$ and $x$ tend to $+\infty$. L'Hôpital's rule gives
 
-\[
-\lim_{x\to\infty}\frac{\ln x}{x}=0.
-\]
+$$
+\lim_{x\to+\infty}\frac{\ln x}{x}
+=\lim_{x\to+\infty}\frac{1/x}{1}
+=0.
+$$
 
-Therefore, \(y=0\) is a horizontal asymptote as \(x\to\infty\).
+Thus $y=0$ is a horizontal asymptote on the right. Since $f(x)>0$ for $x>1$, the graph approaches it from above.
 
-## 7. Determine the Sign of the Function
+### 4. Concavity and inflection point
 
-- For \(0<x<1\), \(\ln x<0\), so \(f(x)<0\).
-- At \(x=1\), \(f(x)=0\).
-- For \(x>1\), \(\ln x>0\), so \(f(x)>0\).
+Differentiating $f'(x)=(1-\ln x)x^{-2}$ gives
 
-## 8. Qualitative Sketch
+$$
+f''(x)=-x^{-3}-2(1-\ln x)x^{-3}
+=\frac{2\ln x-3}{x^3}.
+$$
 
-The graph:
+The denominator is positive. The numerator vanishes when $\ln x=3/2$, so the concavity changes at $x=e^{3/2}$.
 
-- Starts at negative infinity as \(x\to0^+\).
-- Crosses the \(x\)-axis at \((1,0)\).
-- Continues increasing until the maximum \(\left(e,\frac1e\right)\).
-- Decreases after \(x=e\).
-- Approaches the horizontal asymptote \(y=0\) from above as \(x\to\infty\).
+| Interval | Sign of $f''(x)$ | Concavity |
+|---|---|---|
+| $(0,e^{3/2})$ | $-$ | Concave down |
+| $(e^{3/2},\infty)$ | $+$ | Concave up |
 
-For a correct sketch, mark the domain, intercept, maximum point, vertical asymptote, horizontal asymptote, and increasing/decreasing intervals.
+Since $f(e^{3/2})=3/(2e^{3/2})$, the inflection point is
 
-## Final Answers
+$$
+\left(e^{3/2},\frac{3}{2e^{3/2}}\right).
+$$
 
-1. Domain: \((0,\infty)\).
-2. Zero: \(x=1\).
-3. Derivative: \(f'(x)=\frac{1-\ln x}{x^2}\).
-4. Increasing interval: \((0,e)\).
-5. Decreasing interval: \((e,\infty)\).
-6. Global maximum: \(\left(e,\frac1e\right)\).
-7. Vertical asymptote: \(x=0\).
-8. Horizontal asymptote: \(y=0\), as \(x\to\infty\).
+### 5. Sketch guidance
 
-```
+Draw the graph to the right of the vertical asymptote $x=0$. It rises from $-\infty$, crosses the $x$-axis at $(1,0)$, and reaches its maximum at $(e,1/e)$. It then decreases, remaining concave down up to the inflection point. Beyond that point, it is concave up and continues decreasing toward the horizontal asymptote $y=0$ from above.
