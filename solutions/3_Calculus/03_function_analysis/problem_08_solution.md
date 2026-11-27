@@ -1,112 +1,91 @@
-```
+# Problem 8. A Quartic Polynomial
 
-# Problem 8. Find the Center and Radius of a Sphere
+## Question
 
-Given the equation:
+Analyze the monotonicity, extrema, and concavity of
 
-\[
-x^2+y^2+z^2-4x+2y-6z-2=0
-\]
+$$
+f(x)=x^4-4x^2.
+$$
 
-## 1. Rewrite the Equation
+Find the inflection points and sketch the graph, marking the extrema and inflection points.
 
-Group the variables:
+## Solution
 
-\[
-(x^2-4x)+(y^2+2y)+(z^2-6z)=2
-\]
+The function is defined for every real $x$. Since $f(-x)=f(x)$, the graph is symmetric about the $y$-axis.
 
-Complete the square for each variable.
+### 1. Monotonicity and extrema
 
-For \(x\):
+Differentiate and factor:
 
-\[
-x^2-4x=(x-2)^2-4
-\]
+$$
+f'(x)=4x^3-8x=4x(x^2-2).
+$$
 
-For \(y\):
+The derivative is zero at $x=-\sqrt{2}$, $x=0$, and $x=\sqrt{2}$. The signs of $x$ and $x^2-2$ give the following intervals.
 
-\[
-y^2+2y=(y+1)^2-1
-\]
+| Interval | Sign of $f'(x)$ | Behavior of $f$ |
+|---|---|---|
+| $(-\infty,-\sqrt{2})$ | $-$ | Decreasing |
+| $(-\sqrt{2},0)$ | $+$ | Increasing |
+| $(0,\sqrt{2})$ | $-$ | Decreasing |
+| $(\sqrt{2},\infty)$ | $+$ | Increasing |
 
-For \(z\):
+At $x=\pm\sqrt{2}$, the derivative changes from negative to positive. Since
 
-\[
-z^2-6z=(z-3)^2-9
-\]
+$$
+f(x)=(x^2-2)^2-4\ge -4,
+$$
 
-Substitute these expressions into the original equation:
+both points $(-\sqrt{2},-4)$ and $(\sqrt{2},-4)$ are absolute minima. At $x=0$, the derivative changes from positive to negative, so $(0,0)$ is a local maximum. There is no absolute maximum because $f(x)\to+\infty$ as $x\to\pm\infty$.
 
-\[
-(x-2)^2-4+(y+1)^2-1+(z-3)^2-9=2
-\]
+### 2. Concavity and inflection points
 
-Simplify:
+The second derivative is
 
-\[
-(x-2)^2+(y+1)^2+(z-3)^2=16
-\]
+$$
+f''(x)=12x^2-8=4(3x^2-2).
+$$
 
-## 2. Identify the Center and Radius
+Let $a=\sqrt{2/3}$. The second derivative is zero at $x=-a$ and $x=a$.
 
-The standard equation of a sphere is:
+| Interval | Sign of $f''(x)$ | Concavity |
+|---|---|---|
+| $(-\infty,-a)$ | $+$ | Concave up |
+| $(-a,a)$ | $-$ | Concave down |
+| $(a,\infty)$ | $+$ | Concave up |
 
-\[
-(x-a)^2+(y-b)^2+(z-c)^2=r^2
-\]
+The concavity changes at both values. Since
 
-Comparing with the equation:
+$$
+f(\pm a)=\left(\frac23\right)^2-4\left(\frac23\right)=-\frac{20}{9},
+$$
 
-\[
-(x-2)^2+(y+1)^2+(z-3)^2=16
-\]
+the inflection points are
 
-we obtain:
+$$
+\left(-\sqrt{\frac23},-\frac{20}{9}\right)
+\quad\text{and}\quad
+\left(\sqrt{\frac23},-\frac{20}{9}\right).
+$$
 
-\[
-a=2,\qquad b=-1,\qquad c=3
-\]
+### 3. Labeled sketch
 
-and
+Factoring $f(x)=x^2(x-2)(x+2)$ gives the zeros $-2$, $0$, and $2$. The graph crosses the $x$-axis at $-2$ and $2$, and touches it at the local maximum $(0,0)$. Both tails rise.
 
-\[
-r=\sqrt{16}=4
-\]
+```text
+                          ↑ y
+    ↖                     │                     ↗
+     ╲                    │                    ╱
+──────A───────────────────M───────────────────B──────→ x
+       ╲               ╭──╯──╮               ╱
+        ╲             ╱   │   ╲             ╱
+         ╲          I₁    │    I₂          ╱
+          ╲        ╱      │      ╲        ╱
+           ╰──L───╯       │       ╰──R───╯
 
-Therefore:
-
-- Center: \((2,-1,3)\)
-- Radius: \(4\)
-
-## 3. Find Two Points on the Sphere
-
-To find points on the sphere, move a distance of \(4\) units from the center along the \(x\)-axis.
-
-**Positive \(x\)-direction:**
-
-\[
-(2+4,-1,3)=(6,-1,3)
-\]
-
-**Negative \(x\)-direction:**
-
-\[
-(2-4,-1,3)=(-2,-1,3)
-\]
-
-Both points lie on the sphere.
-
-## Final Answers
-
-1. Standard form:
-
-\[
-(x-2)^2+(y+1)^2+(z-3)^2=16
-\]
-
-2. Center: \((2,-1,3)\).
-3. Radius: \(4\).
-4. Two points on the sphere: \((6,-1,3)\) and \((-2,-1,3)\).
-
+A = (-2, 0) and B = (2, 0): x-axis crossings
+M = (0, 0): local maximum
+L = (-sqrt(2), -4) and R = (sqrt(2), -4): absolute minima
+I₁ = (-sqrt(2/3), -20/9) and I₂ = (sqrt(2/3), -20/9): inflection points
 ```
