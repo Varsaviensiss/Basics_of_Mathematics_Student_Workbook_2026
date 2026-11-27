@@ -1,160 +1,76 @@
+# Problem 12. Compare Two Definite Integrals
+
+## Question
+
+Compare
+
+$$
+\int_{-2}^{2}x\,dx
+\qquad\text{and}\qquad
+\int_{-2}^{2}|x|\,dx.
+$$
+
+Before calculating, sketch $y=x$ and $y=|x|$ on $[-2,2]$. Use symmetry and the signed areas to predict the two values. Then evaluate both integrals and explain why the results differ.
+
+## Solution
+
+### 1. Sketch and predict the results
+
+```text
+y = x
+
+                  ^ y
+                  |               B (2, 2)
+                  |           /// |
+                  |       ///     |   Right triangle: +2
+                  |   ///         |
+  (-2, 0) +-------O---------------+----> x
+          |   /// |
+          |///    |   Left triangle: -2
+ A (-2,-2)        |
+
+O = (0, 0)
 ```
 
-# Problem 12: Compare Two Definite Integrals
+Each triangle has base $2$ and height $2$, so its geometric area is $\frac12\cdot2\cdot2=2$. The function $y=x$ is odd. On the symmetric interval $[-2,2]$, the left triangle contributes $-2$ and the right triangle contributes $+2$. The predicted integral is **$0$**.
 
-Compare the following integrals and explain why they have different values.
+```text
+y = |x|
 
-\[
-\int_{-2}^{2}x\,dx
-\qquad \text{and} \qquad
-\int_{-2}^{2}|x|\,dx
-\]
+                  ^ y
+  A' (-2, 2)      |               B (2, 2)
+          | \     |             / |
+          |   \   |         /     |
+          |     \ |     /         |
+  (-2, 0) +-------O---------------+----> x
 
-## Part 1: Evaluate \(\int_{-2}^{2}x\,dx\)
+      Left triangle: +2     Right triangle: +2
+O = (0, 0)
+```
 
-### Step 1: Find the Antiderivative
+Taking the absolute value reflects the left triangle above the $x$-axis. The function $y=|x|$ is even, so both triangles contribute $+2$. The predicted integral is **$4$**.
 
-\[
-\int x\,dx=\frac{x^2}{2}+C
-\]
+### 2. Evaluate the integral of $x$
 
-### Step 2: Apply the Limits
-
-\[
+$$
 \int_{-2}^{2}x\,dx
 =\left[\frac{x^2}{2}\right]_{-2}^{2}
-\]
-
-Substitute the upper and lower limits:
-
-\[
 =\frac{2^2}{2}-\frac{(-2)^2}{2}
-\]
+=2-2=0.
+$$
 
-\[
-=\frac42-\frac42
-\]
+### 3. Evaluate the integral of $|x|$
 
-Therefore,
+For $x<0$, we have $|x|=-x$. For $x\ge0$, we have $|x|=x$. Splitting at $x=0$ gives
 
-\[
-\boxed{\int_{-2}^{2}x\,dx=0}
-\]
-
-### Why Is the Result Zero?
-
-The function \(f(x)=x\) is an **odd function**, meaning
-
-\[
-f(-x)=-f(x)
-\]
-
-Its graph is symmetric about the origin.
-
-- From \(x=-2\) to \(x=0\), the graph forms a triangle below the \(x\)-axis.
-- From \(x=0\) to \(x=2\), it forms an equal triangle above the \(x\)-axis.
-
-The left triangle contributes \(-2\), and the right triangle contributes \(+2\).
-
-These signed areas cancel:
-
-\[
--2+2=0
-\]
-
----
-
-## Part 2: Evaluate \(\int_{-2}^{2}|x|\,dx\)
-
-### Step 1: Understand the Absolute Value
-
-The absolute value function is defined as
-
-\[
-|x|=
-\begin{cases}
--x, & x<0\\
-x, & x\geq 0
-\end{cases}
-\]
-
-This means negative values of \(x\) become positive.
-
-Therefore,
-
-\[
+$$
+\begin{aligned}
 \int_{-2}^{2}|x|\,dx
-=\int_{-2}^{0}(-x)\,dx+\int_{0}^{2}x\,dx
-\]
+&=\int_{-2}^{0}(-x)\,dx+\int_{0}^{2}x\,dx\\
+&=\left[-\frac{x^2}{2}\right]_{-2}^{0}
++\left[\frac{x^2}{2}\right]_{0}^{2}\\
+&=2+2=4.
+\end{aligned}
+$$
 
-### Step 2: Integrate Each Part
-
-For the first part:
-
-\[
-\int_{-2}^{0}(-x)\,dx
-=\left[-\frac{x^2}{2}\right]_{-2}^{0}
-\]
-
-\[
-=0-\left(-\frac42\right)=2
-\]
-
-For the second part:
-
-\[
-\int_{0}^{2}x\,dx
-=\left[\frac{x^2}{2}\right]_{0}^{2}
-\]
-
-\[
-=\frac42-0=2
-\]
-
-### Step 3: Add the Results
-
-\[
-\int_{-2}^{2}|x|\,dx=2+2
-\]
-
-Therefore,
-
-\[
-\boxed{\int_{-2}^{2}|x|\,dx=4}
-\]
-
----
-
-## Final Comparison
-
-\[
-\boxed{\int_{-2}^{2}x\,dx=0}
-\]
-
-\[
-\boxed{\int_{-2}^{2}|x|\,dx=4}
-\]
-
-The first integral is zero because the positive and negative signed areas cancel. The second integral is \(4\) because the absolute value makes the entire graph lie on or above the \(x\)-axis.
-
-## Key Idea: Symmetry
-
-For an odd function \(f\), over a symmetric interval,
-
-\[
-\int_{-a}^{a}f(x)\,dx=0
-\]
-
-For this problem, \(x\) is odd, so its integral is zero.
-
-However, \(|x|\) is an even function, since
-
-\[
-|-x|=|x|
-\]
-
-Its two halves contribute equal positive areas rather than canceling each other.
-
-**Remember:** A definite integral measures signed area. Taking the absolute value of the function changes negative contributions into positive ones.
-
-```
+Both calculations confirm the predictions. For $y=x$, the two signed areas cancel. For $y=|x|$, both areas are above the axis and add together.
