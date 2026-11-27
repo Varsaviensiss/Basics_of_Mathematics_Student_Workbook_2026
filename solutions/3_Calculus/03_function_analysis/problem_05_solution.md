@@ -1,150 +1,49 @@
-
 # Problem 5. An Exponential Function with a Maximum
 
-Given the function:
+## Question
 
-\[
-f(x)=xe^{-x}
-\]
+Analyze the monotonicity and extrema of
 
-Analyze its monotonicity, extrema, and behavior as \(x\to\infty\).
+$$
+f(x)=xe^{-x}.
+$$
 
-## 1. Find the Domain
+Also examine the behavior as $x\to\infty$ and explain how the limit affects the shape of the graph on the right-hand side.
 
-The exponential function \(e^{-x}\) is defined for every real number. Therefore,
+## Solution
 
-\[
-\boxed{D_f=\mathbb{R}}
-\]
+### 1. Domain
 
-## 2. Find the Derivative
+The exponential function $e^{-x}$ is defined for every real $x$, so the domain is $\mathbb{R}$.
 
-Use the product rule:
+### 2. Derivative and Monotonicity
 
-\[
-f'(x)=1\cdot e^{-x}+x(-e^{-x})
-\]
+Using the product rule gives
 
-Simplify:
+$$
+f'(x)=e^{-x}-xe^{-x}=e^{-x}(1-x).
+$$
 
-\[
-f'(x)=e^{-x}(1-x)
-\]
+Since $e^{-x}>0$ for every real $x$, the sign of $f'(x)$ depends on $1-x$. The derivative vanishes only at $x=1$.
 
-Since \(e^{-x}>0\) for all real \(x\), the sign of \(f'(x)\) depends only on \(1-x\).
+- For $x<1$, $f'(x)>0$, so $f$ is increasing on $(-\infty,1)$.
+- For $x>1$, $f'(x)<0$, so $f$ is decreasing on $(1,\infty)$.
 
-Set the derivative equal to zero:
+### 3. Extrema
 
-\[
-e^{-x}(1-x)=0
-\]
+The function increases up to $x=1$ and decreases afterward, so its global maximum occurs at $x=1$. Since $f(1)=1/e$, the maximum point is $(1,1/e)$.
 
-Because \(e^{-x}\ne0\),
+As $x\to-\infty$, we have $e^{-x}\to+\infty$ and $x\to-\infty$, so $xe^{-x}\to-\infty$. The function has no minimum.
 
-\[
-1-x=0
-\]
+### 4. Limit and Shape of the Graph on the Right
 
-\[
-x=1
-\]
+Rewrite $f(x)=x/e^x$. As $x\to\infty$, both the numerator and denominator tend to $+\infty$, so L'Hôpital's rule gives
 
-## 3. Determine the Monotonicity
+$$
+\lim_{x\to\infty}xe^{-x}
+=\lim_{x\to\infty}\frac{x}{e^x}
+=\lim_{x\to\infty}\frac{1}{e^x}
+=0.
+$$
 
-For \(x<1\),
-
-\[
-1-x>0\implies f'(x)>0
-\]
-
-Therefore, \(f\) is increasing on
-
-\[
-\boxed{(-\infty,1)}
-\]
-
-For \(x>1\),
-
-\[
-1-x<0\implies f'(x)<0
-\]
-
-Therefore, \(f\) is decreasing on
-
-\[
-\boxed{(1,\infty)}
-\]
-
-## 4. Find the Maximum
-
-The function changes from increasing to decreasing at \(x=1\), so it has a maximum there.
-
-Evaluate the function:
-
-\[
-f(1)=1\cdot e^{-1}
-\]
-
-\[
-f(1)=\frac{1}{e}
-\]
-
-Thus, the maximum point is
-
-\[
-\boxed{\left(1,\frac{1}{e}\right)}
-\]
-
-This is the global maximum because the function increases before \(x=1\) and decreases afterward.
-
-## 5. Examine the Limit as \(x\to\infty\)
-
-Rewrite the function:
-
-\[
-f(x)=\frac{x}{e^x}
-\]
-
-As \(x\to\infty\), both numerator and denominator approach infinity. Applying L'Hôpital's rule gives
-
-\[
-\lim_{x\to\infty}\frac{x}{e^x}
-=
-\lim_{x\to\infty}\frac{1}{e^x}
-=0
-\]
-
-Therefore,
-
-\[
-\boxed{\lim_{x\to\infty}xe^{-x}=0}
-\]
-
-The graph approaches the horizontal asymptote \(y=0\) from above on the right-hand side. After reaching its maximum, the function decreases toward zero but remains positive for \(x>0\).
-
-## 6. Examine the Behavior as \(x\to-\infty\)
-
-As \(x\to-\infty\),
-
-\[
-e^{-x}\to\infty
-\]
-
-while \(x\to-\infty\). Consequently,
-
-\[
-\boxed{\lim_{x\to-\infty}xe^{-x}=-\infty}
-\]
-
-Thus, the left-hand side of the graph descends without bound.
-
-## Final Answers
-
-1. Domain: \(\boxed{\mathbb{R}}\).
-2. Derivative: \(\boxed{f'(x)=e^{-x}(1-x)}\).
-3. Increasing on: \(\boxed{(-\infty,1)}\).
-4. Decreasing on: \(\boxed{(1,\infty)}\).
-5. Global maximum point: \(\boxed{\left(1,\frac{1}{e}\right)}\).
-6. Limit as \(x\to\infty\): \(\boxed{0}\).
-7. Horizontal asymptote on the right: \(\boxed{y=0}\).
-8. Limit as \(x\to-\infty\): \(\boxed{-\infty}\).
+Thus $y=0$ is the horizontal asymptote on the right. After the maximum at $(1,1/e)$, the graph decreases toward the $x$-axis from above because $xe^{-x}>0$ for $x>0$.
