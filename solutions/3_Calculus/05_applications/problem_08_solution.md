@@ -1,93 +1,49 @@
-
 # Problem 8. Number of Requests Handled by a Server
 
-The arrival rate during the first 5 minutes is
+## Question
 
-\[
-r(t)=100+20t,\qquad 0\le t\le5
-\]
+During the first five minutes, requests arrive at a server at the rate
 
-where \(r(t)\) is measured in requests per minute.
+$$
+r(t)=100+20t,\qquad 0\le t\le5,
+$$
 
-## 1. Compute the Total Number of Requests
+where $t$ is measured in minutes and $r(t)$ in requests per minute.
 
-The total number of requests is the integral of the arrival rate:
+1. Compute the total number of requests during the first five minutes.
+2. Compute the average arrival rate over this interval.
+3. Compare the average rate with the rates at the beginning and end of the interval.
 
-\[
-N=\int_0^5 r(t)\,dt
-\]
+## Solution
 
-Substitute the given function:
+### 1. Compute the total number of requests
 
-\[
-N=\int_0^5(100+20t)\,dt
-\]
+Integrating the arrival rate over the first five minutes gives
 
-Integrate:
+$$
+N=\int_0^5r(t)\,dt
+=\int_0^5(100+20t)\,dt
+=\left[100t+10t^2\right]_0^5
+=500+250
+=750\ \text{requests}.
+$$
 
-\[
-N=\left[100t+10t^2\right]_0^5
-\]
+### 2. Compute the average rate
 
-Evaluate the limits:
+Divide the total number of requests by the length of the interval:
 
-\[
-N=(100\cdot5+10\cdot25)-0
-\]
+$$
+r_{\mathrm{avg}}=\frac{1}{5-0}\int_0^5r(t)\,dt
+=\frac{750}{5}
+=150\ \text{requests/min}.
+$$
 
-\[
-N=500+250=750
-\]
+### 3. Compare with the endpoint rates
 
-Therefore, the total number of requests is
+The rate starts at $r(0)=100$ requests per minute and ends at $r(5)=200$ requests per minute. Since the rate increases linearly, its time average is exactly halfway between the endpoint rates:
 
-\[
-\boxed{N=750\text{ requests}}
-\]
-
-## 2. Compute the Average Rate
-
-The average rate over an interval is the total number of requests divided by the interval length:
-
-\[
-r_{\text{avg}}=\frac{1}{5-0}\int_0^5r(t)\,dt
-\]
-
-Using the result from Part 1:
-
-\[
-r_{\text{avg}}=\frac{750}{5}
-\]
-
-\[
-\boxed{r_{\text{avg}}=150\text{ requests/min}}
-\]
-
-## 3. Compare the Average Rate with the Endpoint Values
-
-At the beginning:
-
-\[
-r(0)=100+20(0)=100
-\]
-
-At the end:
-
-\[
-r(5)=100+20(5)=200
-\]
-
-Therefore,
-
-\[
-r(0)=100,\qquad r_{\text{avg}}=150,\qquad r(5)=200
-\]
-
-The average rate is exactly halfway between the endpoint values because the rate increases linearly.
-
-## Final Answers
-
-1. Total requests: \(\boxed{750}\).
-2. Average rate: \(\boxed{150\text{ requests/min}}\).
-3. Initial rate: \(100\text{ requests/min}\).
-4. Final rate: \(200\text{ requests/min}\).
+$$
+r_{\mathrm{avg}}=\frac{r(0)+r(5)}{2}
+=\frac{100+200}{2}
+=150\ \text{requests/min}.
+$$
