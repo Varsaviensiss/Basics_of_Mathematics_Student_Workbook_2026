@@ -1,79 +1,41 @@
-```
-
 # Problem 11. Volume of a Solid of Revolution
 
-Find the volume of the solid formed by rotating the region under the curve \(y=\sqrt{x}\), from \(x=0\) to \(x=4\), about the \(x\)-axis.
+## Question
 
-## Step 1: Identify the Method
+The region under the graph
 
-Since the region is rotated about the \(x\)-axis, we use the **disk method**.
+$$
+y=\sqrt{x},\qquad x\in[0,4],
+$$
 
-The volume formula is
+is rotated about the $x$-axis.
 
-\[
-V=\pi\int_a^b [f(x)]^2\,dx.
-\]
+1. Construct the integral describing the volume using the disk method.
+2. Compute the volume.
+3. Explain where the factor $\pi y^2$ in the integral comes from.
 
-Here,
+## Solution
 
-\[
-f(x)=\sqrt{x}, \qquad a=0,\qquad b=4.
-\]
+### 1. Construct the volume integral
 
-## Step 2: Set Up the Integral
+At a fixed $x$, the vertical segment from the $x$-axis to the curve has length $y=\sqrt{x}$. Rotating that segment about the $x$-axis fills a disk of radius $y$. Its cross-sectional area is $\pi y^2$.
 
-Substitute \(f(x)=\sqrt{x}\) into the formula:
+A thin slice of thickness $\Delta x$ has approximate volume $\pi y^2\Delta x$. Adding the slices and taking the limit gives
 
-\[
-V=\pi\int_0^4(\sqrt{x})^2\,dx.
-\]
+$$
+V=\int_0^4\pi y^2\,dx
+=\pi\int_0^4(\sqrt{x})^2\,dx
+=\pi\int_0^4x\,dx.
+$$
 
-Since \((\sqrt{x})^2=x\), this simplifies to
+### 2. Compute the volume
 
-\[
-V=\pi\int_0^4x\,dx.
-\]
+An antiderivative of $x$ is $x^2/2$, so
 
-## Step 3: Evaluate the Integral
+$$
+V=\pi\left[\frac{x^2}{2}\right]_0^4
+=\pi\left(\frac{16}{2}-0\right)
+=8\pi.
+$$
 
-The antiderivative of \(x\) is
-
-\[
-\int x\,dx=\frac{x^2}{2}.
-\]
-
-Therefore,
-
-\[
-V=\pi\left[\frac{x^2}{2}\right]_0^4.
-\]
-
-Substitute the limits:
-
-\[
-V=\pi\left(\frac{4^2}{2}-\frac{0^2}{2}\right).
-\]
-
-Simplify:
-
-\[
-V=\pi\left(\frac{16}{2}\right).
-\]
-
-\[
-V=8\pi.
-\]
-
-## Final Answer
-
-\[
-\boxed{V=8\pi\text{ cubic units}}
-\]
-
-Approximately,
-
-\[
-\boxed{V\approx25.13\text{ cubic units}}.
-\]
-
-```
+The volume is **$8\pi$ cubic units**, approximately **$25.13$ cubic units**.
