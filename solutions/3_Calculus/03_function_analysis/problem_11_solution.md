@@ -1,79 +1,46 @@
+# Problem 11. A Parameter and the Number of Extrema
 
-# Problem 11. Compare the Hyperboloids
+## Question
 
-Consider the following surfaces:
+Consider the family of functions
 
-\[
-x^2+y^2-z^2=1
-\]
+$$
+f_a(x)=x^3-3ax,\qquad a\in\mathbb{R}.
+$$
 
-and
+Determine how the number and type of local extrema depend on $a$. Analyze the cases $a>0$, $a=0$, and $a<0$ separately.
 
-\[
-x^2+y^2-z^2=-1
-\]
+## Solution
 
-## 1. Surface: \(x^2+y^2-z^2=1\)
+Differentiating gives
 
-Rewrite the equation:
+$$
+f_a'(x)=3x^2-3a=3(x^2-a).
+$$
 
-\[
-x^2+y^2=1+z^2
-\]
+The derivative exists for every real $x$. The critical numbers therefore satisfy $x^2=a$.
 
-For a horizontal trace \(z=c\):
+### 1. Case $a>0$
 
-\[
-x^2+y^2=1+c^2
-\]
+There are two critical numbers, $x=-\sqrt a$ and $x=\sqrt a$. The derivative is positive when $|x|>\sqrt a$ and negative when $|x|<\sqrt a$.
 
-This represents a circle with radius:
+| Interval | Sign of $f_a'(x)$ | Behavior of $f_a$ |
+|---|---|---|
+| $(-\infty,-\sqrt a)$ | $+$ | Increasing |
+| $(-\sqrt a,\sqrt a)$ | $-$ | Decreasing |
+| $(\sqrt a,\infty)$ | $+$ | Increasing |
 
-\[
-r=\sqrt{1+c^2}
-\]
+At $x=-\sqrt a$, the derivative changes from positive to negative. At $x=\sqrt a$, it changes from negative to positive. At either critical number, $x^2=a$, so $f_a(x)=x(x^2-3a)=-2ax$. Therefore:
 
-Since the radius is always positive, the surface is connected.
+- The local maximum is $\left(-\sqrt a,\,2a\sqrt a\right)$.
+- The local minimum is $\left(\sqrt a,\,-2a\sqrt a\right)$.
 
-- Surface type: Hyperboloid of one sheet
-- Axis: \(z\)-axis
-- Minimum radius: \(1\), at \(z=0\)
-- Waist circle: \(x^2+y^2=1\)
+### 2. Case $a=0$
 
-## 2. Surface: \(x^2+y^2-z^2=-1\)
+Here $f_0(x)=x^3$ and $f_0'(x)=3x^2$. The derivative is zero at $x=0$ and positive on both sides, so the function increases through $x=0$ and has no local extremum there.
 
-Rewrite the equation:
+The second derivative is $f_0''(x)=6x$. It changes from negative to positive at $x=0$, so the graph changes concavity there. Since $f_0'(0)=0$ and $f_0(0)=0$, the origin is a **stationary inflection point**.
 
-\[
-z^2-x^2-y^2=1
-\]
+### 3. Case $a<0$
 
-For a horizontal trace \(z=c\):
-
-\[
-x^2+y^2=c^2-1
-\]
-
-There are three cases:
-
-- If \(|c|>1\), the trace is a circle with radius
-
-\[
-r=\sqrt{c^2-1}
-\]
-
-- If \(c=\pm1\), the trace is a single point.
-- If \(|c|<1\), there are no real points.
-
-The surface has two separate parts, one above and one below the \(xy\)-plane.
-
-- Surface type: Hyperboloid of two sheets
-- Axis: \(z\)-axis
-- Vertices: \((0,0,1)\) and \((0,0,-1)\)
-- Exists only for \(z\geq1\) or \(z\leq-1\)
-
-## Final Answers
-
-1. \(x^2+y^2-z^2=1\): Hyperboloid of one sheet, connected, with minimum radius \(1\).
-2. \(x^2+y^2-z^2=-1\): Hyperboloid of two sheets, with vertices \((0,0,\pm1)\).
-3. Both surfaces have the \(z\)-axis as their axis of symmetry.
+Since $x^2-a=x^2+|a|>0$ for all real $x$, the derivative is strictly positive everywhere. Thus $f_a$ is strictly increasing on $\mathbb{R}$ and has no critical points or local extrema.
