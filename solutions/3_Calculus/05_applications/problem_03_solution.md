@@ -1,257 +1,57 @@
-# Problem 3: A Box Made from Cardboard
+# Problem 3. A Box Made from Cardboard
 
-## Given
+## Question
 
-A rectangular sheet of cardboard measures \(30\text{ cm}\times40\text{ cm}\). Squares of side length \(x\) are cut from each corner, and the remaining cardboard is folded upward to form an open box.
+A rectangular sheet of cardboard measures $30\ \mathrm{cm}\times40\ \mathrm{cm}$. Squares of side length $x$ are cut from each corner, and the remaining cardboard is folded upward to form an open box.
 
-We need to determine the volume function, its physically meaningful domain, and the value of \(x\) that maximizes the volume.
+1. Write the volume as a function of $x$.
+2. Determine the physically meaningful domain.
+3. Find the value of $x$ that maximizes the volume and justify the maximum.
 
-## 1. Write the volume as a function of \(x\)
+## Solution
 
-After cutting out squares of side length \(x\) from each corner and folding the edges upward, the box has the following dimensions:
+### 1. Find the volume function
 
-- **Height:** \(x\) cm
-- **Length:** \(40-2x\) cm
-- **Width:** \(30-2x\) cm
+The height is $x$, the width is $30-2x$, and the length is $40-2x$. Multiplying the three dimensions gives
 
-The volume of a rectangular box is
-
-$$
-V=\text{length}\times\text{width}\times\text{height}
-$$
-
-Substituting the dimensions gives
-
-$$
-V(x)=x(30-2x)(40-2x)
-$$
-
-Expanding,
-
-$$
-(30-2x)(40-2x)=1200-140x+4x^2
-$$
-
-Therefore,
-
-$$
-V(x)=x(1200-140x+4x^2)
-$$
-
-The volume function is
-
-$$
-\boxed{V(x)=4x^3-140x^2+1200x}
-$$
-
-where \(V(x)\) is measured in cubic centimeters.
-
-## 2. Determine the physically meaningful domain
-
-For the box to be physically possible, all three dimensions must be positive.
-
-First, the height must satisfy
-
-$$
-x>0
-$$
-
-The width must also be positive:
-
-$$
-30-2x>0
-$$
-
-Solving this inequality gives
-
-$$
-x<15
-$$
-
-Similarly, the length must be positive:
-
-$$
-40-2x>0
-$$
-
-Therefore,
-
-$$
-x<20
-$$
-
-Combining all the conditions, we obtain
-
-$$
-x>0,\qquad x<15,\qquad x<20
-$$
-
-The most restrictive upper bound is \(x<15\). Thus, the physically meaningful domain is
-
-$$
-\boxed{0<x<15}
-$$
-
-## 3. Find the value of \(x\) that maximizes the volume
-
-The volume function is
-
-$$
-V(x)=4x^3-140x^2+1200x
-$$
-
-Differentiate with respect to \(x\):
-
-$$
-V'(x)=12x^2-280x+1200
-$$
-
-To find the critical points, set the first derivative equal to zero:
-
-$$
-12x^2-280x+1200=0
-$$
-
-Dividing both sides by \(4\),
-
 $$
-3x^2-70x+300=0
+V(x)=x(30-2x)(40-2x)=4x^3-140x^2+1200x.
 $$
 
-Using the quadratic formula,
+### 2. Determine the physical domain
 
-$$
-x=\frac{70\pm\sqrt{70^2-4(3)(300)}}{2(3)}
-$$
-
-Simplifying,
-
-$$
-x=\frac{70\pm\sqrt{4900-3600}}{6}
-$$
-
-$$
-x=\frac{70\pm\sqrt{1300}}{6}
-$$
-
-Since \(\sqrt{1300}=10\sqrt{13}\),
-
-$$
-x=\frac{70\pm10\sqrt{13}}{6}
-$$
-
-Therefore,
-
-$$
-x=\frac{35\pm5\sqrt{13}}{3}
-$$
-
-The two critical points are
-
-$$
-x_1=\frac{35-5\sqrt{13}}{3}
-\approx5.66
-$$
-
-and
-
-$$
-x_2=\frac{35+5\sqrt{13}}{3}
-\approx17.67
-$$
-
-The second critical point is outside the physically meaningful domain \(0<x<15\), so it must be rejected.
-
-Hence, the only critical point in the domain is
-
-$$
-\boxed{x=\frac{35-5\sqrt{13}}{3}\approx5.66\text{ cm}}
-$$
-
-## 4. Verify that the volume is maximized
-
-The first derivative is
+All three dimensions must be positive. The conditions $x>0$, $30-2x>0$, and $40-2x>0$ give the physical domain $0<x<15$.
 
-$$
-V'(x)=12x^2-280x+1200
-$$
-
-Taking the second derivative gives
-
-$$
-V''(x)=24x-280
-$$
-
-At the critical point \(x=\frac{35-5\sqrt{13}}{3}\),
-
-$$
-V''(x)=24\left(\frac{35-5\sqrt{13}}{3}\right)-280
-$$
-
-Simplifying,
-
-$$
-V''(x)=280-40\sqrt{13}-280
-$$
-
-$$
-V''(x)=-40\sqrt{13}<0
-$$
-
-Since the second derivative is negative at this critical point, the volume function has a local maximum there.
-
-Furthermore, the volume approaches zero at both ends of the physical domain:
-
-$$
-\lim_{x\to0^+}V(x)=0
-$$
-
-$$
-\lim_{x\to15^-}V(x)=0
-$$
-
-Therefore, the critical point gives the greatest possible volume on the physically meaningful domain.
-
-## Final Answer
-
-The volume function is
+### 3. Find the maximizing cut size
 
-$$
-\boxed{V(x)=x(30-2x)(40-2x)}
-$$
+Differentiating gives
 
-or, in expanded form,
-
 $$
-\boxed{V(x)=4x^3-140x^2+1200x}
+V'(x)=12x^2-280x+1200=4(3x^2-70x+300).
 $$
 
-The physically meaningful domain is
+Solving $V'(x)=0$ with the quadratic formula gives
 
 $$
-\boxed{0<x<15}
+x=\frac{70\pm\sqrt{4900-3600}}6
+=\frac{35\pm5\sqrt{13}}3.
 $$
 
-The value of \(x\) that maximizes the volume is
+The larger root is approximately $17.68$, outside the physical domain. The only critical point in the domain is
 
 $$
-\boxed{x=\frac{35-5\sqrt{13}}{3}\approx5.66\text{ cm}}
+x_*=\frac{35-5\sqrt{13}}3\approx5.66\ \mathrm{cm}.
 $$
 
-At this value, the box has approximate dimensions
+### 4. Justify the maximum and evaluate the volume
 
-$$
-\begin{aligned}
-\text{Height}&\approx5.66\text{ cm}\\
-\text{Width}&\approx18.68\text{ cm}\\
-\text{Length}&\approx28.68\text{ cm}
-\end{aligned}
-$$
+Since $V''(x)=24x-280$, we have $V''(x_*)=-40\sqrt{13}<0$, so $x_*$ gives a local maximum. The volume function extends continuously to $[0,15]$, where $V(0)=V(15)=0$. Because the volume is positive on $(0,15)$ and $x_*$ is the only interior critical point, it gives the global maximum.
 
-The maximum volume is approximately
+Substituting the exact cut size before rounding gives
 
 $$
-\boxed{V_{\max}\approx3033.13\text{ cm}^3}
+V_{\max}=x_*(30-2x_*)(40-2x_*)
+\approx3032.30\ \mathrm{cm}^3.
 $$
 
-Thus, cutting squares of side length approximately \(5.66\) cm from each corner produces the open box with the greatest volume.
+The box is approximately $5.66\ \mathrm{cm}$ high, $18.69\ \mathrm{cm}$ wide, and $28.69\ \mathrm{cm}$ long.
