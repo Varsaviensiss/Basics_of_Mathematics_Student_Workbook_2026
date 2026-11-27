@@ -1,170 +1,123 @@
+# Problem 12. Complete Model and Computer Verification
 
-# Problem 12. Maximizing the Area of a Rectangular Museum Room
+## Question
 
-A rectangular museum room is built next to an existing wall. The wall forms one side of the rectangle, so no construction is needed on that side.
+A museum wants to create a rectangular exhibition room next to an existing straight wall. The side along the wall does not need to be built. The two sides perpendicular to the wall cost $300\ \mathrm{PLN/m}$ each, while the side parallel to the wall costs $500\ \mathrm{PLN/m}$. The budget is $30{,}000\ \mathrm{PLN}$.
 
-The two sides perpendicular to the wall cost 300 PLN per meter, and the side parallel to the wall costs 500 PLN per meter. The total budget is 30,000 PLN.
+Build a model that maximizes the area of the room and prepare a complete analysis containing:
 
-Find the dimensions that maximize the room's area.
+- definition of variables and units,
+- mathematical model,
+- domain resulting from the problem statement,
+- computation of the derivative,
+- determination and verification of the optimum,
+- interpretation of the result,
+- graph of the objective function,
+- numerical verification of several values near the optimum found.
 
-## Step 1: Define the Variables
+Finally, indicate which part of the solution required modeling the problem and which part was only the execution of the calculation. Produce the graph and computer calculations only after completing the mathematical solution, and treat them as verification.
 
-Let:
+## Solution
 
-- \(x\) = the length of each side perpendicular to the wall, in meters.
-- \(y\) = the length of the side parallel to the wall, in meters.
+### 1. Define the variables and build the model
 
-The area of the rectangular room is
+Let $x$ be the length of each side perpendicular to the wall and $y$ the length of the side parallel to the wall. Both lengths are measured in meters. The area is $A=xy$.
 
-\[
-A=xy.
-\]
+Only three sides are built, so the total cost is $600x+500y$. At the maximum the full budget is used. If any budget remained, we could increase $y$ while keeping $x>0$ fixed, which would increase the area. Therefore,
 
-## Step 2: Write the Budget Equation
-
-There are two sides of length \(x\), each costing 300 PLN per meter. The third constructed side has length \(y\) and costs 500 PLN per meter.
-
-Therefore, the total construction cost is
-
-\[
-300x+300x+500y=30000.
-\]
-
-Simplify:
-
-\[
-600x+500y=30000.
-\]
-
-Solve for \(y\):
-
-\[
-500y=30000-600x.
-\]
-
-\[
+$$
+600x+500y=30{,}000
+\qquad\Longrightarrow\qquad
 y=60-1.2x.
-\]
+$$
 
-## Step 3: Express the Area as a Function of One Variable
+Substituting into the area formula gives
 
-The area is
+$$
+A(x)=x(60-1.2x)=60x-1.2x^2.
+$$
 
-\[
-A=xy.
-\]
+### 2. Determine the physical domain
 
-Substitute \(y=60-1.2x\):
+The room must have two positive side lengths. Thus $x>0$ and $y=60-1.2x>0$, which gives
 
-\[
-A(x)=x(60-1.2x).
-\]
+$$
+0<x<50.
+$$
 
-Expand:
+### 3. Find and verify the maximum analytically
 
-\[
-\boxed{A(x)=60x-1.2x^2}.
-\]
+Differentiating gives
 
-## Step 4: Find the Critical Point
-
-Differentiate the area function:
-
-\[
-A'(x)=60-2.4x.
-\]
-
-Set the derivative equal to zero:
-
-\[
-60-2.4x=0.
-\]
-
-\[
-2.4x=60.
-\]
-
-\[
-\boxed{x=25\text{ m}}.
-\]
-
-## Step 5: Verify the Maximum
-
-Differentiate again:
-
-\[
+$$
+A'(x)=60-2.4x,
+\qquad
 A''(x)=-2.4.
-\]
+$$
 
-Since
+Solving $A'(x)=0$ gives $x=25$, which lies in the physical domain. Since $A''(x)<0$ throughout the domain, the stationary point is the unique global maximum.
 
-\[
-A''(x)<0,
-\]
+The other dimension is $y=60-1.2(25)=30$ m. The maximum area is $A(25)=25\cdot30=750\ \mathrm{m}^2$. The cost is
 
-the area function is concave down. Therefore, the critical point gives the maximum area.
+$$
+2(300)(25)+500(30)=15{,}000+15{,}000=30{,}000\ \mathrm{PLN}.
+$$
 
-## Step 6: Find the Other Dimension
+Thus each side perpendicular to the wall should be **25 m** long, and the constructed side parallel to the wall should be **30 m** long.
 
-Use the budget equation:
+### 4. Verify with a graph and computer calculations
 
-\[
-y=60-1.2x.
-\]
+The objective function is a downward-opening parabola. Its vertex is $(25,750)$. The open circles mark the excluded endpoints, where the rectangle would have zero area.
 
-Substitute \(x=25\):
+```text
+A(x) (m²)
+  ^
+750 |                  ╭──●──╮
+    |              ╭───╯     ╰───╮
+    |           ╭──╯             ╰──╮
+    |        ╭──╯                   ╰──╮
+    |     ╭──╯                         ╰──╮
+    |   ╭─╯                               ╰─╮
+  0 ○─────────────────────┬─────────────────○──> x (m)
+    0                    25                50
 
-\[
-y=60-1.2(25).
-\]
+                         ● (25, 750)
+```
 
-\[
-y=60-30.
-\]
+The following values check the area near the analytical optimum.
 
-\[
-\boxed{y=30\text{ m}}.
-\]
+| $x$ (m) | $A(x)$ (m²) |
+|---:|---:|
+| 24.0 | 748.80 |
+| 24.5 | 749.70 |
+| 25.0 | 750.00 |
+| 25.5 | 749.70 |
+| 26.0 | 748.80 |
 
-## Step 7: Calculate the Maximum Area
+This Python code reproduces the values and plots the objective function:
 
-\[
-A=xy.
-\]
+```python
+import matplotlib.pyplot as plt
 
-\[
-A=25(30).
-\]
+def area(x):
+    return x * (60 - 1.2 * x)
 
-\[
-\boxed{A_{\max}=750\text{ m}^2}.
-\]
+for x in [24, 24.5, 25, 25.5, 26]:
+    print(f"x = {x:4.1f} m, A(x) = {area(x):.2f} m²")
 
-## Step 8: Check the Budget
+x_values = [i / 10 for i in range(1, 500)]
+plt.plot(x_values, [area(x) for x in x_values])
+plt.scatter([0, 50], [0, 0], facecolors="none", edgecolors="black")
+plt.scatter([25], [area(25)], color="black")
+plt.annotate("(25, 750)", (25, 750), xytext=(8, -15),
+             textcoords="offset points")
+plt.xlabel("x (m)")
+plt.ylabel("A(x) (m²)")
+plt.show()
+```
 
-The two perpendicular sides cost
+The graph and nearby values agree with the maximum proved analytically.
 
-\[
-2(300)(25)=15000\text{ PLN}.
-\]
+### 5. Distinguish modeling from calculation
 
-The parallel side costs
-
-\[
-500(30)=15000\text{ PLN}.
-\]
-
-The total cost is
-
-\[
-15000+15000=30000\text{ PLN}.
-\]
-
-The budget is satisfied exactly.
-
-## Final Answers
-
-- **Each perpendicular side:** \(25\text{ m}\)
-- **The parallel side:** \(30\text{ m}\)
-- **Maximum area:** \(\boxed{750\text{ m}^2}\)
-- **Total construction cost:** \(30,000\text{ PLN}\)
+Modeling required choosing the side lengths as variables, counting the three constructed sides, using their different costs, justifying full use of the budget, and restricting the domain to positive dimensions. Once the model was established, differentiating $A(x)$, solving $A'(x)=0$, and checking $A''(x)$ were the calculation steps.
