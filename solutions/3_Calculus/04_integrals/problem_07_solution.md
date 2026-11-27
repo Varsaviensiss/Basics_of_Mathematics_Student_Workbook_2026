@@ -1,116 +1,58 @@
+# Problem 7. Integration by Parts as Reversing the Product Rule
 
-# Problem 7: Find the Indefinite Integral
+## Question
 
-Evaluate:
+Compute
 
-\[
-\int xe^x\,dx
-\]
+$$
+\int xe^x\,dx.
+$$
 
-## Step 1: Choose a Method
+First write the product differentiation rule and, on that basis, explain the meaning of the integration-by-parts formula. Verify the result by differentiation.
 
-The integrand is a product of two functions: \(x\) and \(e^x\).
+## Solution
 
-We should use **integration by parts**.
+### 1. Derive the integration-by-parts formula
 
-The formula is:
+The product rule states that
 
-\[
-\int u\,dv=uv-\int v\,du
-\]
+$$
+(uv)'=u'v+uv'.
+$$
 
-## Step 2: Choose \(u\) and \(dv\)
+Integrating both sides gives
 
-Let
+$$
+uv=\int u'v\,dx+\int uv'\,dx,
+$$
 
-\[
-u=x \qquad dv=e^x\,dx
-\]
+with the constant of integration absorbed into the antiderivatives. Rearranging gives
 
-Differentiate \(u\):
+$$
+\int uv'\,dx=uv-\int u'v\,dx.
+$$
 
-\[
-du=dx
-\]
+Integration by parts reverses the product rule by rewriting the integral of $uv'$ as the product $uv$ minus the integral of $u'v$. This helps when differentiating $u$ makes the remaining integral simpler.
 
-Integrate \(dv\):
+### 2. Apply the formula
 
-\[
-v=\int e^x\,dx=e^x
-\]
+Choose $u=x$ and $v'=e^x$. Then $u'=1$ and we can take $v=e^x$. This choice reduces the remaining integral to $\int e^x\,dx$.
 
-We choose \(u=x\) because differentiating it simplifies it to \(1\), while \(e^x\) is easy to integrate.
-
-## Step 3: Apply the Formula
-
-Using
-
-\[
-\int u\,dv=uv-\int v\,du
-\]
-
-we get
-
-\[
+$$
 \int xe^x\,dx
 =xe^x-\int e^x\,dx
-\]
+=xe^x-e^x+C
+=e^x(x-1)+C.
+$$
 
-## Step 4: Evaluate the Remaining Integral
+### 3. Verify by differentiation
 
-Since
+Using the product rule gives
 
-\[
-\int e^x\,dx=e^x
-\]
-
-we obtain
-
-\[
-\int xe^x\,dx=xe^x-e^x+C
-\]
-
-Factor out \(e^x\):
-
-\[
-\int xe^x\,dx=e^x(x-1)+C
-\]
-
-## Final Answer
-
-\[
-\boxed{e^x(x-1)+C}
-\]
-
-## Step 5: Verify by Differentiation
-
-Differentiate using the product rule:
-
-\[
+$$
 \frac{d}{dx}\left[e^x(x-1)+C\right]
-\]
+=e^x(x-1)+e^x
+=xe^x.
+$$
 
-\[
-=e^x(x-1)+e^x(1)
-\]
-
-Simplify:
-
-\[
-=e^x(x-1+1)
-\]
-
-\[
-=xe^x
-\]
-
-This matches the original integrand, so the answer is correct.
-
-## Key Idea
-
-Use integration by parts when an integral contains a product of functions and differentiating one of them makes it simpler.
-
-For this problem:
-
-- \(u=x\), because its derivative is \(1\).
-- \(dv=e^x\,dx\), because its integral is \(e^x\).
+The derivative matches the original integrand.
