@@ -1,143 +1,69 @@
-
 # Problem 9. Minimizing the Material Used for a Can
 
-A closed cylinder has a fixed volume \(V\). Find the dimensions that minimize its surface area.
+## Question
 
-## 1. Write the Volume Constraint
+A closed cylinder has fixed volume $V$.
 
-Let:
+1. Write the volume constraint.
+2. Eliminate one of the variables.
+3. Express the surface area as a function of the radius $r$.
+4. Find the relation between the height $h$ and the radius $r$ for which the material usage is minimal.
 
-- \(r\) be the radius of the cylinder.
-- \(h\) be its height.
-- \(V>0\) be its fixed volume.
+Interpret the obtained relation geometrically.
 
-The volume of a cylinder is
+## Solution
 
-\[
-V=\pi r^2h
-\]
+### 1. Write the volume constraint
 
-Therefore, the constraint is
+Let $r>0$ be the radius, $h>0$ the height, and $V>0$ the fixed volume. The volume constraint is
 
-\[
-\boxed{\pi r^2h=V}
-\]
+$$
+\pi r^2h=V.
+$$
 
-## 2. Eliminate One Variable
+### 2. Eliminate the height
 
-Solve the volume constraint for \(h\):
+Solving the volume constraint for $h$ gives
 
-\[
-h=\frac{V}{\pi r^2}
-\]
+$$
+h=\frac{V}{\pi r^2}.
+$$
 
-Since \(V>0\) and the radius must be positive,
+For every $r>0$, this formula gives a positive height.
 
-\[
-r>0
-\]
+### 3. Express the surface area as a function of the radius
 
-## 3. Express the Surface Area as a Function of \(r\)
+The two circular ends contribute $2\pi r^2$, and the curved side contributes $2\pi rh$. Substituting the expression for $h$ gives
 
-A closed cylinder has two circular ends and one curved lateral surface.
+$$
+S(r)=2\pi r^2+2\pi rh
+=2\pi r^2+\frac{2V}{r},
+\qquad r>0.
+$$
 
-Its surface area is
+### 4. Find and justify the minimum
 
-\[
-S=2\pi r^2+2\pi rh
-\]
+Differentiating and setting the derivative equal to zero gives
 
-Substitute \(h=\frac{V}{\pi r^2}\):
+$$
+S'(r)=4\pi r-\frac{2V}{r^2}=0
+\quad\Longrightarrow\quad
+r^3=\frac{V}{2\pi}.
+$$
 
-\[
-S(r)=2\pi r^2+
-2\pi r\left(\frac{V}{\pi r^2}\right)
-\]
+Therefore, the optimal radius is $r_*=\sqrt[3]{V/(2\pi)}$. Since
 
-Simplify:
+$$
+S''(r)=4\pi+\frac{4V}{r^3}>0
+\qquad\text{for every }r>0,
+$$
 
-\[
-\boxed{S(r)=2\pi r^2+\frac{2V}{r}}
-\]
+the surface area is strictly convex, so this stationary point is the unique global minimum. At the minimum, $V=2\pi r_*^3$, and the volume constraint gives
 
-The objective is to minimize \(S(r)\) for \(r>0\).
+$$
+h_*=\frac{V}{\pi r_*^2}=2r_*.
+$$
 
-## 4. Find the Critical Point
+### Geometric interpretation
 
-Differentiate:
-
-\[
-S'(r)=4\pi r-\frac{2V}{r^2}
-\]
-
-Set the derivative equal to zero:
-
-\[
-4\pi r-\frac{2V}{r^2}=0
-\]
-
-Multiply by \(r^2\):
-
-\[
-4\pi r^3=2V
-\]
-
-Therefore,
-
-\[
-r^3=\frac{V}{2\pi}
-\]
-
-The optimal radius is
-
-\[
-\boxed{r=\sqrt[3]{\frac{V}{2\pi}}}
-\]
-
-## 5. Determine the Corresponding Height
-
-Use the volume constraint:
-
-\[
-h=\frac{V}{\pi r^2}
-\]
-
-Since \(V=2\pi r^3\) at the critical point,
-
-\[
-h=\frac{2\pi r^3}{\pi r^2}
-\]
-
-Thus,
-
-\[
-\boxed{h=2r}
-\]
-
-## 6. Verify That It Is a Minimum
-
-The second derivative is
-
-\[
-S''(r)=4\pi+\frac{4V}{r^3}
-\]
-
-For every \(r>0\),
-
-\[
-S''(r)>0
-\]
-
-Therefore, the critical point is a minimum.
-
-Also, \(S(r)\to\infty\) as \(r\to0^+\) and as \(r\to\infty\), so this is the global minimum.
-
-## Final Answers
-
-1. Volume constraint: \(\boxed{\pi r^2h=V}\).
-2. Height as a function of radius: \(\boxed{h=\frac{V}{\pi r^2}}\).
-3. Surface area: \(\boxed{S(r)=2\pi r^2+\frac{2V}{r}}\).
-4. Optimal radius: \(\boxed{r=\sqrt[3]{\frac{V}{2\pi}}}\).
-5. Optimal height: \(\boxed{h=2r}\).
-
-**Geometric interpretation:** The minimum amount of material is used when the cylinder's height equals its diameter.
+The closed cylinder uses the least material when its height equals its diameter.
