@@ -1,136 +1,61 @@
-```
+# Problem 10. A Cable Through Water and Land
 
-# Problem 10. Optimal Cable Installation
+## Question
 
-## Step 1: Define the Variables
+Point $A$ lies on one bank of a river of width $100$ m, and point $B$ lies on the other bank, $500$ m along the bank from the point directly opposite $A$.
 
-The river is 100 meters wide, and point B is 500 meters along the opposite bank from the point directly across from A.
+The cost per meter of cable underwater is twice the cost per meter of cable on land.
 
-Let:
-- \(x\) = the distance along the opposite bank from the point directly across from A to where the cable reaches the bank.
-- \(500-x\) = the remaining land distance to point B.
+Build a cost function depending on the point where the cable comes out of the water, determine the domain, and find the solution that minimizes the cost.
 
-The underwater cable costs twice as much per meter as the land cable.
+## Solution
 
-## Step 2: Express the Cable Lengths
+### 1. Define the variable and its domain
 
-Using the Pythagorean theorem, the underwater cable length is
+Let $P$ be the point directly opposite $A$. Let $x$ be the distance from $P$ to the cable's emergence point, measured along the opposite bank toward $B$.
 
-\[
-L_{\text{water}}=\sqrt{100^2+x^2}
-=\sqrt{10000+x^2}.
-\]
+If the cable emerges beyond either end of the segment from $P$ to $B$, moving the emergence point to the nearest endpoint shortens both the underwater and land portions. Thus it is enough to consider emergence points on that segment. The physical domain is
 
-The land cable length is
+$$
+0\le x\le500.
+$$
 
-\[
-L_{\text{land}}=500-x.
-\]
+### 2. Build the cost function
 
-## Step 3: Construct the Cost Function
+By the Pythagorean theorem, the underwater cable length is $\sqrt{100^2+x^2}$. The remaining land cable length is $500-x$.
 
-Let \(c\) be the cost per meter of land cable. The underwater cable costs \(2c\) per meter.
+Let $c>0$ be the cost per meter of land cable. Since underwater cable costs $2c$ per meter, the total cost is
 
-Therefore, the total cost is
-
-\[
+$$
 C(x)=2c\sqrt{10000+x^2}+c(500-x).
-\]
+$$
 
-Factor out \(c\):
+Dividing by the positive constant $c$ preserves the minimizer, so we minimize
 
-\[
-C(x)=c\left[2\sqrt{10000+x^2}+500-x\right].
-\]
-
-Since \(c\) is a positive constant, minimize
-
-\[
+$$
 f(x)=2\sqrt{10000+x^2}+500-x.
-\]
+$$
 
-## Step 4: Find the Critical Point
+### 3. Find and verify the minimum
 
-Differentiate:
+Differentiating gives
 
-\[
+$$
 f'(x)=\frac{2x}{\sqrt{10000+x^2}}-1.
-\]
+$$
 
-Set the derivative equal to zero:
+Setting $f'(x)=0$ gives $2x=\sqrt{10000+x^2}$. Both sides are nonnegative on the domain. Squaring and simplifying gives $3x^2=10000$, so
 
-\[
-\frac{2x}{\sqrt{10000+x^2}}-1=0.
-\]
+$$
+x_*=\frac{100}{\sqrt3}\approx57.74\ \mathrm{m}.
+$$
 
-Thus,
+Since $0<100/\sqrt3<100<500$, this point lies inside the physical domain. Also,
 
-\[
-\frac{2x}{\sqrt{10000+x^2}}=1.
-\]
+$$
+f''(x)=\frac{20000}{(10000+x^2)^{3/2}}>0
+$$
 
-Multiply both sides by the denominator:
+throughout the domain. The cost is strictly convex, so this interior stationary point gives the unique global minimum.
 
-\[
-2x=\sqrt{10000+x^2}.
-\]
-
-Square both sides:
-
-\[
-4x^2=10000+x^2.
-\]
-
-Simplify:
-
-\[
-3x^2=10000.
-\]
-
-\[
-x^2=\frac{10000}{3}.
-\]
-
-Since \(x\) is a distance, take the positive root:
-
-\[
-\boxed{x=\frac{100}{\sqrt{3}}\approx57.74\text{ m}}.
-\]
-
-## Step 5: Verify the Minimum
-
-Differentiate again:
-
-\[
-f''(x)=\frac{20000}{(10000+x^2)^{3/2}}.
-\]
-
-Because
-
-\[
-f''(x)>0,
-\]
-
-the cost function is concave up, so the critical point gives a minimum.
-
-## Step 6: Calculate the Land Cable Length
-
-The remaining distance along the bank is
-
-\[
-500-x=500-\frac{100}{\sqrt{3}}.
-\]
-
-Therefore,
-
-\[
-\boxed{L_{\text{land}}\approx442.26\text{ m}}.
-\]
-
-## Final Answer
-
-The cable should reach the opposite bank approximately **57.74 meters** from the point directly across from A.
-
-The remaining land cable from that point to B should be approximately **442.26 meters**.
-
-```
+The cable should emerge **$57.74$ m from $P$ toward $B$**, leaving approximately **$442.26$ m** of land cable.
