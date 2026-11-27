@@ -1,67 +1,60 @@
-Önceki konuşmada Problem 12 olarak \\(z=x^2+y^2\\) yüzeyini incelemiştik. Çözümü aynı formatta aşağıya yazdım.
+# Problem 12. The Graph of an Absolute Value
 
+## Question
+
+Sketch the graph of $y=x^2-4$ and use it to sketch
+
+$$
+f(x)=|x^2-4|.
+$$
+
+Explain how the absolute value changes the graph and why corners occur at $x=-2$ and $x=2$.
+
+## Solution
+
+### 1. Sketch the original parabola and reflect its negative arc
+
+The graph of $g(x)=x^2-4$ is an upward-opening parabola with vertex $(0,-4)$ and zeros at $x=-2$ and $x=2$. It lies below the $x$-axis for $-2<x<2$ and on or above the axis for $|x|\ge 2$.
+
+The absolute value reflects the negative arc across the $x$-axis. The outer branches and the two zeros stay in place. Therefore,
+
+$$
+f(x)=
+\begin{cases}
+x^2-4, & |x|\ge2,\\
+4-x^2, & |x|<2.
+\end{cases}
+$$
+
+The reflected middle arc opens downward and has its highest point at $(0,4)$.
+
+```text
+                             ↑ y
+       ↖                     │                     ↗
+        ╲                ╭───T───╮                ╱
+         ╲             ╭─╯   │   ╰─╮             ╱
+          ╲          ╭─╯     │     ╰─╮          ╱
+           ╲       ╭─╯       │       ╰─╮       ╱
+────────────L──────╯─────────┼─────────╰──────R────────────→ x
+             ··              │              ··
+               ···           │           ···
+                  ···        │        ···
+                     ········V········
+
+L = (-2, 0) and R = (2, 0): corners
+T = (0, 4): top of the reflected arc
+V = (0, -4): vertex of the original parabola
+Solid curve: y = |x^2 - 4|
+Dotted arc plus the shared outer branches: y = x^2 - 4
 ```
 
-# Problem 12. Analyze the Surface \(z=x^2+y^2\)
+### 2. Explain the corners
 
-Given the surface:
+On the outer branches, $f'(x)=2x$. On the middle arc, $f'(x)=-2x$. These formulas give the one-sided slopes:
 
-\[
-z=x^2+y^2
-\]
+| Point | Left-hand slope | Right-hand slope |
+|---|---|---|
+| $x=-2$ | $2(-2)=-4$ | $-2(-2)=4$ |
+| $x=2$ | $-2(2)=-4$ | $2(2)=4$ |
 
-## 1. Horizontal Traces (\(z=c\))
-
-Substitute \(z=c\):
-
-\[
-x^2+y^2=c
-\]
-
-- If \(c>0\), the trace is a circle centered at the origin with radius \(\sqrt{c}\).
-- If \(c=0\), the trace is a single point \((0,0,0)\).
-- If \(c<0\), there are no real points.
-
-## 2. Vertical Traces
-
-**In the plane \(y=0\):**
-
-\[
-z=x^2
-\]
-
-This is a parabola opening upward.
-
-**In the plane \(x=0\):**
-
-\[
-z=y^2
-\]
-
-This is also a parabola opening upward.
-
-## 3. Identify the Surface
-
-Since
-
-\[
-z=x^2+y^2
-\]
-
-the surface is an elliptic paraboloid opening upward along the positive \(z\)-axis.
-
-Its vertex is at the origin:
-
-\[
-(0,0,0)
-\]
-
-## Final Answers
-
-1. Horizontal traces: circles for \(c>0\), a point for \(c=0\), and no real points for \(c<0\).
-2. Vertical traces: upward-opening parabolas.
-3. Surface: elliptic paraboloid.
-4. Vertex: \((0,0,0)\).
-5. Opening direction: positive \(z\)-axis.
-
-```
+The two pieces meet continuously at each zero, but the one-sided slopes differ at both points. Therefore, $f$ is not differentiable at $x=-2$ or $x=2$, and the graph has a corner at each point.
